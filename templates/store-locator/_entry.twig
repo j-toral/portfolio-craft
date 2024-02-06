@@ -1,0 +1,53 @@
+{% extends '_layouts/layout' %}
+
+{% set transform = { mode: 'fit', width: 650 } %}
+
+{# Getting the blocks from the hub builder #}
+{% set blocks = entry.storeBuilder.all() %}
+
+{# Getting the images for the store #}
+{% set images = entry.storeImages.all() %}
+
+{% block main %}
+
+  <link rel="stylesheet" href="/assets/css/leaflet@1.9.4.css" />
+  <script src="/assets/js/leaflet@1.9.4.min.js"></script>
+
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-1 px-4 pb-4 pt-6 md:p-10 lg:gap-x-10 lg:grid-cols-3">
+    <div class="col-span-2">
+      {# Store Content #}
+      {% if blocks|length %}
+        {% for block in blocks %}
+          {% switch block.type %}
+            {# Rendering the topBlock block #}
+            {% case "findUsTopBlock" %}
+              {# Including the partial and passing the Top block into the partial #}
+              {% include "_partials/storebuilder/topBlock" with { 'topBlock': block } %}
+            {# Rendering the findUsMainContent block #}
+            {% case "findUsMainContent" %}
+              {# Including the partial and passing the Top block into the partial #}
+              {% include "_partials/storebuilder/mainContent" with { 'mainContent': block } %}
+            {# Rendering the findUsMainContent block #}
+            {% case "findUsCTA" %}
+              {# Including the partial and passing the Top block into the partial #}
+              {% include "_partials/storebuilder/cta" with { 'cta': block } %}
+            {# Rendering the findUsFacilities block #}
+            {% case "findUsFacilities" %}
+              {# Including the partial and passing the Facilities block into the partial #}
+              {% include "_partials/storebuilder/facilities" with { 'facilities': block } %}
+          {% endswitch %}
+        {% endfor %}
+      {% endif %}
+      {# END of Store Content #}
+    </div>
+
+    <div>
+      <div class="grid grid-cols-1 sm:grid-cols-{{ images | length }} lg:grid-cols-1 sm:gap-x-4 gap-y-4 sm:gap-y-0 lg:gap-x-0 lg:gap-y-4">
+        {% for image in images %}
+            <img src="/images/{{ image.getUrl() }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="w-full block">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends '_layouts/layout-nopartials' %}
+
+{% set pImage = entry.primaryImage.one() %}
+
+{% block main %}
+{# parent container #}
+<div class="w-full min-h-screen bg-[rgba(182, 169, 155, 0.25)] flex lg:items-center py-8">
+    {# Timeline slider #}
+    <div id="{{ entry.title }}" class="lg:relative flex flex-wrap container mx-auto lg:min-h-[70vh] px-4">
+        {# Slide top navigation #}
+        <div class="basis-full mb-8 flex lg:justify-between lg:absolute lg:top-0 lg:right-0 lg:px-4 z-10">
+            <h1 class="lg:hidden">{{ entry.title }}</h1>
+            {# Dropdown Date Selector #}
+            <div class="ml-auto lg:pt-4 lg:pr-4">
+                <div class="bg-[#EBE7E3] rounded text-sm uppercase px-3 pt-3 pb-2 text-gray-600">
+                    <span class="mr-1">Date: </span>1799
+                </div>
+            </div>
+        </div>
+        {# Left/Top Pane #}
+        <div class="basis-full lg:basis-1/2 flex flex-col lg:justify-between">
+            <h1 class="hidden lg:block">{{ entry.title }}</h1>
+            <div class="lg:w-10/12 mb-8">
+                <div class="prose text-black max-w-none text-2xl mb-4">
+                    {{ entry.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                </div>
+                <div class="prose text-black max-w-none">
+                    {{ entry.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                </div>
+            </div>
+            {# slide paganted navigation #}
+            <div class="hidden lg:block">
+                <a class="btn btn-outline-dark" href="#">Previous</a>
+                <a class="btn btn-outline-dark" href="#">Next</a>
+            </div>
+        </div>
+        {# Right/Bottom Pane #}
+        <div class="basis-full lg:basis-1/2 flex mb-8 lg:mb-0 relative lg:overflow-hidden">
+            {% switch entry.imageSetting.value %}
+                {% case "singleImage" %}
+                <div class="place-self-center">
+                    <img class="{% if entry.mixBlendModeMultiply %}mix-blend-multiply{% endif %}" src="{{ pImage.url }}" alt="{% if pImage.alt %}{{ pImage.alt }}{% else %}Alt Text Timeline {{ entry.title }}{% endif %}">
+                </div>
+                {% case "doubleImage" %}
+                {# All double images will be uploaded as singles until this component option can be enabled #}
+                {% case "5050" %}
+                    {# Block Background Image #}
+                    <div class="absolute inset-0 aspect-square lg:aspect-auto">
+                        <img class="h-full w-full object-cover" src="{{ pImage.url }}" alt="{% if pImage.alt %}{{ pImage.alt }}{% else %}Alt Text Timeline {{ entry.title }}{% endif %}">
+                    </div>
+            {% endswitch %}
+        </div>
+        <div class="lg:hidden w-full text-right">
+            <a class="btn btn-outline-dark" href="#">/<</a>
+            <a class="btn btn-outline-dark" href="#">/></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

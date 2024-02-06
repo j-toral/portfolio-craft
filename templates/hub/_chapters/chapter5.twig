@@ -1,0 +1,98 @@
+{% extends '_layouts/layout' %}
+
+{% set blocks = entry.chapterContentBuilder.all() %}
+{% set heroImage = entry.heroBackground.one() %}
+
+{% block main %}
+  <main class="pt-20">
+    {# Hero Section #}
+    <div id="chapter-heading" class="container mx-auto text-center px-4 pt-4 lg:pt-12">
+      <h2 class="uppercase mb-3 lg:mb-5">{{ entry.title }}</h2>
+      <h1 class="uppercase">{{ entry.chapterTitle }}</h1>
+    </div>
+
+    <div id="chapter-hero-image" class="container mx-auto pt-4 lg:pt-16">
+      <img src="/images/{{ heroImage.url }}" alt="{% if heroImage.alt %}{{ heroImage.alt }}{% else %}Alt Text{% endif %}" loading="lazy" class="w-full">
+    </div>
+    {# END of Hero Section #}
+
+    {# Page Content #}
+    {% if blocks|length %}
+      {% for block in blocks %}
+        {% if block.image %}
+          {% set blImage = block.image.one() %}
+        {% endif %}
+        {% switch block.type %}
+        {% case "insetFiftyFifty" %}
+          <div class="{% if block == blocks|first %}mt-20{% endif %}">
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
+              {% if block.image %}
+                <div class="flex px-4 justify-center items-center order-last lg:order-none">
+                  <div>
+                    <img src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% else %}Alt Text Timeline {{ entry.title }}{% endif %}">
+                  </div>
+                </div>
+              {% endif %}
+              <div class="flex flex-col justify-center items-center {% if block.desktopOrder %}lg:order-first{% endif %}">
+                <div class="p-8 {% if block == blocks|first %}lg:pb-16 xl:pb-24{% else %}lg:py-16 xl:py-24{% endif %} lg:px-12 xl:px-20">
+                  {% if block.introText %}
+                    <div class="text-xl md:text-2xl mb-6 prose text-black max-w-none">
+                      {{ block.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                  {% if block.bodyText %}
+                    <div class="prose text-black max-w-none">
+                      {{ block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% case "fullWidthImage" %}
+          {% if blImage %}
+            <div class="block">
+              <div{% if block.displayWidth %} class="container mx-auto"{% endif %}>
+                <img src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% endif %}">
+              </div>
+            </div>
+          {% endif %}
+        {% case "fiftyfifty" %}
+          <div>
+            <div class="{% if block == blocks|first %}mt-20{% endif %} container mx-auto grid grid-cols-1 lg:grid-cols-2">
+              {% if block.image %}
+                <div class="relative aspect-video lg:aspect-auto 2xl:min-h-[500px] lg:order-none">
+                  <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover" src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                  </div>
+                </div>
+              {% endif %}
+              <div class="flex flex-col justify-center items-center bg-white {% if block.desktopOrder %}lg:order-first{% endif %}">
+                <div class="p-8 lg:p-16 xl:p-24">
+                  {% if block.introText %}
+                    <div class="text-xl md:text-2xl mb-6 prose text-black max-w-none">
+                      {{ block.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                  {% if block.bodyText %}
+                    <div class="prose text-black max-w-none">
+                      {{ block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% case "fullWidthText" %}
+          <div class="container mx-auto">
+            <div class="text-center text-xl px-4 py-12 md:px-14 md:py-16 lg:px-20 lg:py-16 2xl:text-2xl 2xl:px-28 2xl:py-24">
+              {{ block.bodyText }}
+            </div>
+          </div>
+        {% endswitch %}
+      {% endfor %}
+    {% endif %}
+    {# END of Page Content #}
+  </main>
+
+{% endblock %}

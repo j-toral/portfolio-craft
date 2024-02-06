@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0211bdba-4813-477a-9e80-356c54781ef1 # Store Locator
+handle: stockistLocations
+instructions: null
+name: 'Stockist Locations'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_stockistlocations}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

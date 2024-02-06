@@ -1,0 +1,31 @@
+{% set env = craft.app.config.env %}
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="{{ _charset }}">
+  <title>CraftCMS Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/portfolio.css?v=1">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+
+  <script defer src="/assets/js/alpine.validate@1.7.15.min.js"></script>
+  <script defer src="/assets/js/alpinejs-intersect@3.10.3.min.js"></script>
+  <script defer src="/assets/js/alpinejs@3.10.3.min.js"></script>
+  <script defer src="/assets/js/global.js"></script>
+
+  {{ head() }}
+</head>
+<body class="bg-white text-black">
+
+{# Sending in the first segment of the url as metaField #}
+{% include "_partials/_primaryNav" with { 'metaField': craft.app.request.getSegment(1) } %}
+
+{% block main %}
+
+{% endblock %}
+
+{% include "_partials/_footer" %}
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{# Creating the transforms for the different breakpoints #}
+{% set xlTransform = { mode: 'crop', width: 1200, height: 675 } %}
+{% set mdTransform = { mode: 'crop', width: 1024, height: 576 } %}
+{% set smallestTransform = { mode: 'crop', width: 774, height: 1376 } %}
+
+{# Getting the image #}
+{% set image = text5050ImageBlock.image.one() %}
+
+{# Block that contains the code for the heading #}
+{% block text5050Image %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div class="py-30">
+    {# Setting the w-full #}
+    {# Adding styles if there is an image #}
+    <div class="relative flex items-center justify-center px-4 w-full{% if image %} h-max min-h-[100vmax] text-light-100 overflow-hidden lg:min-h-screen{% endif %}">
+      {# Rendering the image if it exists #}
+      {% if image %}
+        <div class="absolute inset-0">
+          <picture>
+            <source media="(min-width: 1536px)" srcset="/images/{{ image.url }}">
+            <source media="(min-width: 1280px)" srcset="/images/{{ image.getUrl() }}">
+            <source media="(min-width: 768px)" srcset="/images/{{ image.getUrl() }}">
+            <img src="/images/{{ image.getUrl() }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="object-cover w-full h-full">
+          </picture>
+        </div>
+      {% endif %}
+      <div class="relative grid grid-cols-1 lg:grid-cols-2">
+        {# Changing the decoration of the anchor tags if there is an image #}
+        <div class="px-4 sm:px-12 md:px-32 flex flex-col space-y-4">
+          {{ text5050ImageBlock.rtf1 }}
+          {% if text5050ImageBlock.svg | length > 0 %}
+            <div class="flex justify-start pb-5 lg:pt-5 lg:pb-0 order-first lg:order-none">
+              {% include '_misc/' ~ text5050ImageBlock.svg ~ '.twig' with { 'classes': 'fill-white max-h-[8rem] lg:max-h-[11rem] 2xl:max-h-[15rem]' } %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="px-4 sm:px-12 md:px-32 flex flex-col mt-6">
+          {{ text5050ImageBlock.rtf2 | retconAttr('a', { 'class': 'uppercase block decoration-white font-sans mb-2 tracking-widest' }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+

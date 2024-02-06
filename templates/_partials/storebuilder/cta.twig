@@ -1,0 +1,6 @@
+{# Block that contains the code for the cta content #}
+{% block cta %}
+  <div class="mb-5">
+    <a href="{{ cta.cta[0].buttonUrl }}" class="btn {{ cta.cta[0].buttonType }}">{{ cta.cta[0].buttonText }}</a>
+  </div>
+{% endblock %}

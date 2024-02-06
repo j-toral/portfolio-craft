@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-craft",
+  "version": "1.0.0",
+  "description": "Portfolio | CraftCMS",
+  "main": "./web/index.php",
+  "scripts": {
+    "build": "conc \"npm:build:*\" ",
+    "predev": "ddev start",
+    "dev": "conc -c \"auto\" \"npm:watch:*\" \"npm:syncbrowsers\" --kill-others-on-fail",
+    "postdev": "ddev stop",
+    "syncbrowsers": "browser-sync start --proxy discover.ddev.site --files './templates/**/*.twig'",
+    "watch:css": "npx tailwindcss -i ./src/css/main.css -o ./web/assets/css/portfolio.css --watch",
+    "build:css": "npx tailwindcss -i ./src/css/main.css -o ./web/assets/css/portfolio.css --minify"
+  },
+  "author": "Jonah Juliao Toral | Web Developer",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.7",
+    "browser-sync": "^2.27.10",
+    "concurrently": "^7.6.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss": "^3.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1"
+  }
+}

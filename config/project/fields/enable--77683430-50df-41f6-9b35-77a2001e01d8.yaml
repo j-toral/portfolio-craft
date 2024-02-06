@@ -1,0 +1,14 @@
+columnSuffix: aojvdyrt
+contentColumnType: boolean
+fieldGroup: 44c08e23-d086-4187-8c6e-1d8f08fdeb5c # Homepage
+handle: enable
+instructions: 'Determines whether a section shows up on the homepage.'
+name: 'Enable on Homepage'
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

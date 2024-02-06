@@ -1,0 +1,45 @@
+columnSuffix: nnzmmhhp
+contentColumnType: string
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: videoOptions
+instructions: 'Options to enable on Vimeo videos.'
+name: 'Video Options'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Autoplay
+        -
+          - value
+          - autoplay
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Controls
+        -
+          - value
+          - controls
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Loop
+        -
+          - value
+          - loop
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

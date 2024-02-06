@@ -1,0 +1,34 @@
+columnSuffix: jvosindy
+contentColumnType: string
+fieldGroup: 8c99a7b5-ae42-4cae-aad1-37185eb9e95f # Timeline
+handle: stackOrder
+instructions: 'Which of the added images should be displayed on top?'
+name: 'Stack Order'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Primary Image'
+        -
+          - value
+          - primaryImage
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Secondary Image'
+        -
+          - value
+          - secondaryImage
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

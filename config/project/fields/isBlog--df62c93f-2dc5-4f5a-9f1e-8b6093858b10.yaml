@@ -1,0 +1,14 @@
+columnSuffix: uncaholr
+contentColumnType: boolean
+fieldGroup: a7520f9b-411b-4a62-9508-90b54dd1217c # Navigation
+handle: isBlog
+instructions: null
+name: isBlog
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

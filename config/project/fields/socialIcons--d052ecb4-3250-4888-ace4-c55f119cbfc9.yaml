@@ -1,0 +1,77 @@
+columnSuffix: mkctbhua
+contentColumnType: text
+fieldGroup: a7520f9b-411b-4a62-9508-90b54dd1217c # Navigation
+handle: socialIcons
+instructions: null
+name: 'Social Icons'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Social Name'
+            -
+              - handle
+              - socialName
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Asset Url'
+            -
+              - handle
+              - assetUrl
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Social Url'
+            -
+              - handle
+              - socialUrl
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  defaults:
+    -
+      __assoc__:
+        -
+          - col3
+          - ''
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: null
+  minRows: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

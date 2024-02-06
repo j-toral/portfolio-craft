@@ -1,0 +1,14 @@
+columnSuffix: biwdvvrq
+contentColumnType: boolean
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: transparentPrimaryNav
+instructions: null
+name: 'Transparent Primary Nav'
+searchable: false
+settings:
+  default: true
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

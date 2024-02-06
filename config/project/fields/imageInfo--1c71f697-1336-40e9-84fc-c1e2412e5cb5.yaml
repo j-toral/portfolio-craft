@@ -1,0 +1,88 @@
+columnSuffix: yjtbjwpp
+contentColumnType: text
+fieldGroup: a7520f9b-411b-4a62-9508-90b54dd1217c # Navigation
+handle: imageInfo
+instructions: null
+name: 'Image Info'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Image Title'
+            -
+              - handle
+              - imageTitle
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Image Description'
+            -
+              - handle
+              - imageDescription
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Image URL'
+            -
+              - handle
+              - imageUrl
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  defaults:
+    -
+      __assoc__:
+        -
+          - col3
+          - ''
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+    -
+      __assoc__:
+        -
+          - col3
+          - ''
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: 2
+  minRows: 0
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

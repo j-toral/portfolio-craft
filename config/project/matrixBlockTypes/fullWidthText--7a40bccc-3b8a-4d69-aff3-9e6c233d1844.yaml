@@ -1,0 +1,50 @@
+field: aec3f388-f651-4e63-aeff-ca02a1dc257d # Chapter Content Builder
+fieldLayouts:
+  a838e755-26bb-4074-bae8-a63f2d13cb3a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 925d767b-d1d1-4090-a0e6-789486058c60 # Body Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 19aa7394-af4b-4cc7-b1d7-248f4fc16efb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 44433995-2202-4bcf-bceb-17d7c3cb3a66
+        userCondition: null
+fields:
+  925d767b-d1d1-4090-a0e6-789486058c60: # Body Text
+    columnSuffix: kjjiphtg
+    contentColumnType: text
+    fieldGroup: null
+    handle: bodyText
+    instructions: null
+    name: 'Body Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+handle: fullWidthText
+name: fullWidthText
+sortOrder: 5

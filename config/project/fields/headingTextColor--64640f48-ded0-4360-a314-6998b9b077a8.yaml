@@ -1,0 +1,14 @@
+columnSuffix: qwozlwvf
+contentColumnType: boolean
+fieldGroup: 6091a114-c249-44fa-9a4a-66baa92bfd3b # Regional Sign-Up
+handle: headingTextColor
+instructions: null
+name: 'Heading Text Color'
+searchable: false
+settings:
+  default: false
+  offLabel: Dark
+  onLabel: Light
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

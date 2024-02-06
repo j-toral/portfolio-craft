@@ -1,0 +1,23 @@
+columnSuffix: zbbhgnlm
+contentColumnType: text
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: heroBody
+instructions: 'This is a body of text that sits under the title in the hero.'
+name: 'Hero Body'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+  columnType: text
+  defaultTransform: null
+  purifierConfig: null
+  purifyHtml: true
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

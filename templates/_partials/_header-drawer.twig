@@ -1,0 +1,93 @@
+{#
+    Renders a header drawer menu for mobile.
+
+    Usage:
+    {% include 'header-drawer' %}
+#}
+{% block headerDrawer %}
+    <header-drawer id="mobile-nav-icons" data-breakpoint="tablet" class="flex lg:hidden w-1/5 sm:w-auto">
+        <div class="flex items-center">
+            <details x-data="{ mobileMenuIcons: false }" id="mobile-menu" class="list-none inline-flex items-center overflow-hidden" role="list">
+                <summary id="menu-drawer-summary" class="static z-0 list-none inline-block underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50 aria-expanded:before:top-full aria-expanded:before:left-0 aria-expanded:before:w-full aria-expanded:before:block aria-expanded:before:absolute aria-expanded:before:z-0 aria-expanded:before:opacity-50 aria-expanded:before:bg-black"
+                         aria-label="{{ 'sections.header.menu' | t }}"
+                         @click="mobileMenuIcons = ! mobileMenuIcons"
+                         aria-expanded="false"
+                >
+                    <div class="h-5 w-5 sm:h-6 sm:w-6">
+                      <div x-show="!mobileMenuIcons">
+                        {% include '_misc/hamburgerSVG' with { 'classes': "h-4 w-4 sm:h-5 sm:w-5" } %}
+                      </div>
+                      <div x-cloak x-show="mobileMenuIcons">
+                        {% include '_misc/closeSVG' with { 'classes': "h-4 w-4 sm:h-5 sm:w-5" } %}
+                      </div>
+                    </div>
+                </summary>
+                <div id="menu-drawer" class="menu-drawer z-30 block absolute -translate-x-full top-full left-0 w-[80vw] md:w-[60vw] bg-gray-200 transition-all overflow-hidden">
+                    <nav class="flex flex-col justify-between h-full relative z-30">
+                        <div>
+                            <ul>
+                                {%- for link in parentNodes -%}
+                                    {%- if link.hasDescendants -%}
+                                        <li>
+                                            <details class="list-none">
+                                                <summary class="static z-0 text-sm text-black cursor-pointer uppercase list-none flex items-center justify-between pl-7 py-5 leading-none pr-5 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50">
+                                                      <span class="text-sm text-black">
+                                                        {{ link.title }}
+                                                      </span>
+                                                    {% include '_misc/caretRightSVG' with { "classes": "" } %}
+                                                </summary>
+                                                <div class="w-full h-full">
+                                                    <div class="menu-drawer absolute -translate-x-full bottom-0 left-0 h-full w-[80vw] md:w-[60vw] bg-gray-200 transition-all z-10">
+                                                        <button aria-expanded="true" class="uppercase text-sm list-none flex items-center pl-7 py-5 leading-none pr-5 w-full space-x-2.5 bg-gray-200 text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50">
+                                                            {% include '_misc/caretLeftSVG' with { "classes": "" } %}
+                                                            <span class="text-sm text-black">
+                                                            {{ link.title }}
+                                                          </span>
+                                                        </button>
+                                                        <ul role="list" tabindex="-1">
+                                                            {% if link.isBlog %}
+                                                                {# Querying blog section #}
+                                                                {% set query = craft.entries().section(link.navigationHandle).limit(4) %}
+
+                                                                {% set query = { 'index': { "url": link.url, "title": link.primaryNavDescription } } | merge(query) %}
+
+                                                                {% for entry in query %}
+                                                                    <a href="{{ entry.url }}" class="no-underline uppercase text-sm text-black flex items-center justify-between pl-7 py-5 leading-none pr-5 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50">
+                                                                        {{ entry.title | escape }}
+                                                                    </a>
+                                                                {% endfor %}
+                                                            {% else %}
+                                                                {%- for childLink in link.children -%}
+                                                                    <a href="{{ childLink.url }}" class="no-underline uppercase text-sm text-black flex items-center justify-between pl-7 py-5 leading-none pr-5 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50">
+                                                                        {{ childLink.title | escape }}
+                                                                    </a>
+                                                                {%- endfor -%}
+                                                            {% endif %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </details>
+                                        </li>
+                                    {%- else -%}
+                                        <li>
+                                            <a href="{{ link.url }}" class="no-underline uppercase text-sm flex items-center pl-7 py-5 leading-none pr-5 w-full text-black focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50">
+                                                {{ link.title | escape }}
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                        <div class="w-full bg-gray-200 px-7 py-8">
+                            <div id="mobile-social-links">
+                                <ul class="flex flex-wrap justify-start" role="list">
+                                    {% include '_misc/socialIcons' with { 'table': navigationVariables.socialIcons, 'skip': 'true' } %}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </details>
+        </div>
+    </header-drawer>
+{% endblock %}

@@ -1,0 +1,36 @@
+{# Get all images from the matrix block #}
+{% set image = imageText5050Block.image.one() %}
+
+{# Block that contains the code for the Image 50/50 Text Block #}
+{% block image5050TextBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if imageText5050Block.anchorId %} id="{{ imageText5050Block.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %} class="px-4">
+    {# Adding the container width as well as the top and borrom margins #}
+    <div class="{{ imageText5050Block.containerWidth ~ ' ' }}mx-auto grid grid-cols-1 md:grid-cols-2 gap-8{{ ' ' ~ imageText5050Block.topMargin }}{{ ' ' ~ imageText5050Block.bottomMargin }}">
+      <div class="relative">
+        {# Adding anchor tags if there is an image url #}
+        {% if imageText5050Block.imageUrl %}<a href="{{ imageText5050Block.imageUrl }}">{% endif %}
+          <img class="h-full w-full object-cover" src="/images/{{ image.url }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}">
+        {# Closing anchor tags if there is an image url #}
+        {% if imageText5050Block.imageUrl %}</a>{% endif %}
+      </div>
+      {# Setting order-first to the text if the image is set to being on the right #}
+      <div class="flex flex-col justify-center items-center{% if imageText5050Block.mobileStack and imageText5050Block.sequenceSelection %} order-first md:order-first{% elseif imageText5050Block.mobileStack %} order-first md:order-none{% elseif imageText5050Block.sequenceSelection %} order-none md:order-first{% endif %}">
+        <div>
+          {# Setting the text align and pasting in the rich text body text into the div #}
+          <div class="prose text-black max-w-none{{ ' ' ~ imageText5050Block.textAlignment }}">
+            {{ imageText5050Block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+          </div>
+          {# If there is a row in the CTA table #}
+          {% if imageText5050Block.cta | length %}
+            {# Setting the text alignment for the anchor tag #}
+            <div class="mt-2{{ ' ' ~ imageText5050Block.textAlignment }}">
+              {# Setting the url if it exists as well as the text if that exists in the table #}
+              <a {% if imageText5050Block.cta[0].ctaUrl %}href="{{ imageText5050Block.cta[0].ctaUrl }}"{% endif %}>{% if imageText5050Block.cta[0].ctaText %}{{ imageText5050Block.cta[0].ctaText }}{% endif %}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

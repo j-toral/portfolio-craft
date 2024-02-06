@@ -1,0 +1,543 @@
+field: 474093c5-0f29-4312-92eb-6daba63f461c # Store Builder
+fieldLayouts:
+  0d91c6e8-e8d0-4259-9c53-1e354d34f4af:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d418b984-3cca-433b-8644-f1f6763b9293 # Opening Hours Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 31f9f7c3-58b4-4bd3-b70e-6ee4dd640c13
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d3372fd2-304a-41ea-93fa-d8427a52b7e1 # Opening Hours
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd074921-a9b7-4e84-95f6-dd6e5e6a5a99
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5d5fb197-411b-401c-b4ea-4e8f9d5399fb # Special Opening Hours Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3c5a4ea0-44f8-4053-bbb4-f8f665f49ac7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bb35e1e-c56f-43f3-9c33-1d1d4a8c6e3f # Special Opening Hours
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea5c9ca3-db1a-4021-b973-e338dac57dff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cf212ddf-bdbb-4ca5-a6df-6c392b47d4ad # Special Opening Hours Context
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0651c9c3-15db-49df-a9f8-ff527bc8c551
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ed4519ef-9ee5-4642-95a2-693e7f00dd5c # Find Us Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f8f8c7f8-6374-4994-b595-d7ba536b295d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0dcbb06c-4454-4ebf-8e36-f9762badc184 # Main Address
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be09f1f1-4533-4c19-9225-3d821694f59c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3eb1a99b-ebe0-49d7-bd8c-fa6548fc6192 # City
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8ac8d53-ce83-4b82-95eb-61037622d996
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0166109f-0f32-498c-89d1-5edc08542fa1 # Postcode
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df784ff4-50f1-4b18-8355-16983abfc470
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee299e3e-0cef-4b40-905f-a70af6aa61dd # Phone Number
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5c26a51-cbc6-42f1-91a9-533fd47ab4f8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d9ff42f5-0f1b-4e9f-a11a-8248dc9c4764 # Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7bffe8b-5986-4e91-90a2-33b34bac8782
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1f3e86a0-ff40-4dbb-8070-0e7c21bae465
+        userCondition: null
+fields:
+  0dcbb06c-4454-4ebf-8e36-f9762badc184: # Main Address
+    columnSuffix: ztcepehc
+    contentColumnType: text
+    fieldGroup: null
+    handle: storeMainAddress
+    instructions: null
+    name: 'Main Address'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3eb1a99b-ebe0-49d7-bd8c-fa6548fc6192: # City
+    columnSuffix: ltglyfmg
+    contentColumnType: text
+    fieldGroup: null
+    handle: storeCity
+    instructions: null
+    name: City
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5d5fb197-411b-401c-b4ea-4e8f9d5399fb: # Special Opening Hours Title
+    columnSuffix: hituzpgi
+    contentColumnType: text
+    fieldGroup: null
+    handle: sohTitle
+    instructions: null
+    name: 'Special Opening Hours Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6bb35e1e-c56f-43f3-9c33-1d1d4a8c6e3f: # Special Opening Hours
+    columnSuffix: swbsiths
+    contentColumnType: text
+    fieldGroup: null
+    handle: specialOpeningHours
+    instructions: null
+    name: 'Special Opening Hours'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Day
+                -
+                  - handle
+                  - day
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Opening Time'
+                -
+                  - handle
+                  - openingTime
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - time
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Closing Time'
+                -
+                  - handle
+                  - closingTime
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - time
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Closed
+                -
+                  - handle
+                  - closed
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+      defaults: null
+      maxRows: 7
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  0166109f-0f32-498c-89d1-5edc08542fa1: # Postcode
+    columnSuffix: yzpwvvsh
+    contentColumnType: text
+    fieldGroup: null
+    handle: storePostcode
+    instructions: null
+    name: Postcode
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cf212ddf-bdbb-4ca5-a6df-6c392b47d4ad: # Special Opening Hours Context
+    columnSuffix: ncjtcrtq
+    contentColumnType: text
+    fieldGroup: null
+    handle: sohContext
+    instructions: null
+    name: 'Special Opening Hours Context'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d9ff42f5-0f1b-4e9f-a11a-8248dc9c4764: # Email
+    columnSuffix: scfgfwkg
+    contentColumnType: string
+    fieldGroup: null
+    handle: storeEmail
+    instructions: null
+    name: Email
+    searchable: false
+    settings:
+      placeholder: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Email
+  d418b984-3cca-433b-8644-f1f6763b9293: # Opening Hours Title
+    columnSuffix: ilpkllzo
+    contentColumnType: text
+    fieldGroup: null
+    handle: openingHoursTitle
+    instructions: null
+    name: 'Opening Hours Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d3372fd2-304a-41ea-93fa-d8427a52b7e1: # Opening Hours
+    columnSuffix: etpnhqeo
+    contentColumnType: text
+    fieldGroup: null
+    handle: openingHours
+    instructions: null
+    name: 'Opening Hours'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Day
+                -
+                  - handle
+                  - day
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Opening Time'
+                -
+                  - handle
+                  - openingTime
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - time
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Closing Time'
+                -
+                  - handle
+                  - closingTime
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - time
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Closed
+                -
+                  - handle
+                  - closed
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - lightswitch
+      defaults:
+        -
+          __assoc__:
+            0:
+              - col1
+              - Monday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Tuesday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Wednesday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Thursday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Friday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Saturday
+            3:
+              - col4
+              - ''
+        -
+          __assoc__:
+            0:
+              - col1
+              - Sunday
+            3:
+              - col4
+              - ''
+      maxRows: 7
+      minRows: 7
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  ed4519ef-9ee5-4642-95a2-693e7f00dd5c: # Find Us Title
+    columnSuffix: fsuusutz
+    contentColumnType: text
+    fieldGroup: null
+    handle: findUsTitle
+    instructions: null
+    name: 'Find Us Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ee299e3e-0cef-4b40-905f-a70af6aa61dd: # Phone Number
+    columnSuffix: nbhehqit
+    contentColumnType: text
+    fieldGroup: null
+    handle: storePhoneNumber
+    instructions: null
+    name: 'Phone Number'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: findUsTopBlock
+name: 'Top Block'
+sortOrder: 1

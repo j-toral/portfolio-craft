@@ -1,0 +1,19 @@
+columnSuffix: sehrnutn
+contentColumnType: text
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: divID
+instructions: 'ID for an Div'
+name: 'Div ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

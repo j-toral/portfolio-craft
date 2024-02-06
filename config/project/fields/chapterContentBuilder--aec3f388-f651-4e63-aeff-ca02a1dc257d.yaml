@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: a219b171-fbe0-4a10-8c2a-2f21391f6455 # Hub
+handle: chapterContentBuilder
+instructions: null
+name: 'Chapter Content Builder'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_chaptercontentbuilder}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

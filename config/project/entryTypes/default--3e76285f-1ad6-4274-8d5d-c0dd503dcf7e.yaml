@@ -1,0 +1,154 @@
+fieldLayouts:
+  9681e2ad-3dd6-4bee-833e-aaebf1194a6e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: Year
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: b561dc40-7c5d-44f5-b0ac-cbd6c50de25f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e96748b9-4dfe-48be-a819-f09d40e86e0c # Intro Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e586e522-4c95-4095-a62d-d2beae61ee99
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: ac416c30-45ae-4d45-896d-bff7f86ffc43 # Body Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1528e0c6-62d1-45ee-a7b0-f10aefad22ac
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 64596b78-6f53-4786-854d-b7ca0cab5fb5
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: cfd74738-af19-42fb-8c3e-9fc23e144414 # Image Setting
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 04e1b259-ecfd-45cc-b176-1208a5c96a07
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: cfd74738-af19-42fb-8c3e-9fc23e144414 # Image Setting
+                  operator: in
+                  uid: 15593095-dbc1-4881-b53a-9422a4754e2d
+                  values:
+                    - doubleImage
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 9f585bea-52c2-4a1f-8571-408059133c3c # Stack Order
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c34b0dd8-238d-4c57-bfb4-3a87bc0bb51e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3a66c473-adba-46af-8a77-9ff562eea982 # Primary Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8088b14-56b7-46ee-aff0-15784d8897b8
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3550947b-a8d2-47ce-ac53-bd77642cae86 # Mix Blend Mode Multiply
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a4654b03-5e69-4b6f-bc8d-cd257b17915f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: cfd74738-af19-42fb-8c3e-9fc23e144414 # Image Setting
+                  operator: in
+                  uid: bda1a5dc-4dd2-4d99-bf40-87912f68f3f7
+                  values:
+                    - doubleImage
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 4bc88fef-bc14-4959-94b7-2a3a3b36003b # Secondary Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40314ed5-461a-4d14-8916-df14acd46ba4
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 0a9483a2-783b-465a-8065-6e7a41cfad51
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 892aa43b-fb91-4f15-8cc6-eaa661831cae # Timeline
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

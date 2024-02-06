@@ -1,0 +1,22 @@
+{# Block that contains the code for the Quote #}
+{% block quoteBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div {% if quoteBlock.anchorId %}id="{{ quoteBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%} class="px-4 flex items-center justify-center">
+    {# Setting the container width and the top and bottom margins on the figure class #}
+    <figure class="{{ ' '~ quoteBlock.containerWidth }}{{ ' ' ~ quoteBlock.topMargin }}{{ ' ' ~ quoteBlock.bottomMargin }}">
+      {# Setting the quote and the quote svg into a blockquote tag #}
+      <blockquote class="tracking-wider text-xl md:text-2xl text-center">
+        {# Setting the svg of the quote #}
+        {% include '_misc/quoteSVG' with { 'classes': 'w-8 h-8 inline-flex -mt-12 fill-black' } %}
+        {# Italic Quote Text #}
+        <em>
+        {{ quoteBlock.quoteText }}
+        </em>
+        {# If statement that only prints the figcaption if the quotee exists #}
+        {% if quoteBlock.quoteeText %}
+          <figcaption class="text-lg">- {{ quoteBlock.quoteeText }}</figcaption>
+        {% endif %}
+      </blockquote>
+    </figure>
+  </div>
+{% endblock %}

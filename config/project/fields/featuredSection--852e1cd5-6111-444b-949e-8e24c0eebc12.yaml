@@ -1,0 +1,35 @@
+columnSuffix: uelzmfdj
+contentColumnType: string
+fieldGroup: 44c08e23-d086-4187-8c6e-1d8f08fdeb5c # Homepage
+handle: featuredSection
+instructions: 'This is the section that is being pulled into the homepage.'
+name: 'Featured Section'
+searchable: false
+settings:
+  columnType: string
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Hub
+        -
+          - value
+          - hub
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Our Story'
+        -
+          - value
+          - ourStory
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

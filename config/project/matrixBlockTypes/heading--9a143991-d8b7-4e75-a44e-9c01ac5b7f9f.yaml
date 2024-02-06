@@ -1,0 +1,379 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  dabc8107-4ef5-489a-be34-7f06fff28c08:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: cd94d8fc-4779-44a4-b99c-61274600d161 # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8032f80-4493-4402-bf51-b8b2c2f248d5
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 9dd61af3-7ee2-493a-95c9-91351b27dab9 # Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: defce49d-9522-49a3-96d7-be8467abad8d
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f6a16c96-fac3-4064-8f7b-b30194ab2a6c # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7261d548-c951-4fd0-98f8-191a69659ef7
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: ef794e77-e9b4-42a6-9720-c8a79755ad35 # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: adbf1010-b847-4560-b8d2-0fdbd9de7f06
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 2f8e03ea-040c-4b87-8eec-ee792e6e3987 # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6f3a1ac-b960-4c0e-a5f3-ac653be1b643
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 01d2d01b-8510-43e7-929d-230ae0e18247 # Strapline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1cb91eef-0c41-40bc-badb-abacca69d94b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8184ba52-0687-44a7-85ad-1eabb842dab9 # Heading and Strapline Alignment
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 33902483-3756-40c7-b89b-bf3d2cab83e0
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 3e98f233-f4ca-4685-97bf-8c1aab0617f0
+        userCondition: null
+fields:
+  01d2d01b-8510-43e7-929d-230ae0e18247: # Strapline
+    columnSuffix: fmdlzler
+    contentColumnType: text
+    fieldGroup: null
+    handle: strapline
+    instructions: 'This is the smaller strapline title under the heading'
+    name: Strapline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2f8e03ea-040c-4b87-8eec-ee792e6e3987: # Heading
+    columnSuffix: vwljjxot
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: 'This is the heading title of the blog'
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9dd61af3-7ee2-493a-95c9-91351b27dab9: # Container Width
+    columnSuffix: yxaagluc
+    contentColumnType: string
+    fieldGroup: null
+    handle: containerWidth
+    instructions: 'This sets the maximum width that the heading will be contained at.'
+    name: 'Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  8184ba52-0687-44a7-85ad-1eabb842dab9: # Heading and Strapline Alignment
+    columnSuffix: eblmihtf
+    contentColumnType: string
+    fieldGroup: null
+    handle: headingAndStraplineAlignment
+    instructions: 'This dropdown determines the text alignment for the title and strapline text.'
+    name: 'Heading and Strapline Alignment'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  cd94d8fc-4779-44a4-b99c-61274600d161: # Anchor ID
+    columnSuffix: gakikeaf
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ef794e77-e9b4-42a6-9720-c8a79755ad35: # Bottom Margin
+    columnSuffix: vvewfrqk
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f6a16c96-fac3-4064-8f7b-b30194ab2a6c: # Top Margin
+    columnSuffix: bwfmwgjm
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: heading
+name: Heading
+sortOrder: 2

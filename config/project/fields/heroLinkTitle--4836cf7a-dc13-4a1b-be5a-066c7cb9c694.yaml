@@ -1,0 +1,19 @@
+columnSuffix: rvgchllh
+contentColumnType: text
+fieldGroup: 44c08e23-d086-4187-8c6e-1d8f08fdeb5c # Homepage
+handle: heroLinkTitle
+instructions: 'This is the title that renders on the hero.'
+name: 'Hero Link Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,163 @@
+field: aec3f388-f651-4e63-aeff-ca02a1dc257d # Chapter Content Builder
+fieldLayouts:
+  4f983d02-0d42-481f-859f-ae7f24463b00:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: fa2019a4-2458-4e4c-8468-71e358822d05 # Desktop Order
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 659a8879-8225-4beb-a550-784d5340a16c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a26e34a7-492d-41bc-9c60-2d8e6bd30584 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8580311b-97b1-4ba9-8b98-4b602859e5e3
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 1e8a1846-d4f5-4525-afa0-5ac206590e2a # Intro Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 98075c8d-ee4e-4da5-be09-712011d7c1d9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8caf6de2-9ba0-4a9c-80f0-2bc75606f803 # Body Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf400bf3-afe0-4e32-a31c-7e33a0837cfc
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: ed60aeed-fd95-4f8b-a1c5-f072c262f939
+        userCondition: null
+fields:
+  1e8a1846-d4f5-4525-afa0-5ac206590e2a: # Intro Text
+    columnSuffix: fogppdsz
+    contentColumnType: text
+    fieldGroup: null
+    handle: introText
+    instructions: null
+    name: 'Intro Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  8caf6de2-9ba0-4a9c-80f0-2bc75606f803: # Body Text
+    columnSuffix: rbfvmxls
+    contentColumnType: text
+    fieldGroup: null
+    handle: bodyText
+    instructions: null
+    name: 'Body Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  a26e34a7-492d-41bc-9c60-2d8e6bd30584: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  fa2019a4-2458-4e4c-8468-71e358822d05: # Desktop Order
+    columnSuffix: tningsgo
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: desktopOrder
+    instructions: null
+    name: 'Desktop Order'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'Image Left'
+      onLabel: 'Image Right'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: fiftyfifty
+name: 50-50
+sortOrder: 2

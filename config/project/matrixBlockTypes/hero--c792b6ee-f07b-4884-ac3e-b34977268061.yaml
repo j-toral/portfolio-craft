@@ -1,0 +1,669 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  8ed64b94-f623-459d-90e3-60ba1b30c8fc:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f714f8dc-aa78-4c5a-9d43-940ff2cf1a26 # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 418b42c2-e128-458e-9936-a4e155a5decc
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 03539c83-f934-4725-99a9-af9461e774d7 # Width Options
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 73a08bf3-8824-42e6-9f50-6d19d8a7e135
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 9e0eb0f5-e82b-4993-9a12-124b35680fff # Vertical Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: caa54def-f522-4f6e-b21e-83603491835b
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 8b20e97d-ef32-45b5-ac8e-6fab8dd1ce68 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41447104-f602-4df1-bcee-99aa1a96694c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 5eb6e661-ea95-4fd7-91ae-6ffd6bad6e34 # Mobile Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b18f86bd-ee49-4740-bd62-d2930aa9eefe
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f802c62c-45c9-467d-92ff-d4cd96c85a67 # SVG Overlay
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 48f5d89c-d548-4ee8-9981-a900913cb2d7
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 07c372dc-9d86-4096-8307-39f751766ead # SVG Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 65375058-4c45-4e49-b0d1-f304d35869bc
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 71cff4c5-d0b9-4315-ba60-394651a5282c # Hero Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 002b8952-4d5b-4e3e-bb7b-bf97e6375703
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0502b42a-28c7-4abf-85e7-022b2eb7518e # Hero Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eb180e5c-66d1-4269-b835-d9b263c8a7b5
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a0d9b656-cda1-459e-ba24-3d1e13c7471f # Body and Title Color
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 70a9203e-a378-4b6a-8481-c9236cdbbeb4
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: c2f315f1-b9b6-410c-bde3-ae211162bb50 # Title and Body Vertical Position
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0c7734a-e39a-46c2-9f30-474b5dbfd46c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 2c95d61a-c01b-4cda-b81c-3b82ab493bb4 # Title and Body Horizontal Position
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2126f61-bdd4-4228-9029-a933dfe844bd
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 76e1841d-473d-481e-898b-a2f56b435e96 # Title Body Alignment
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c8c0d9fd-b454-48c1-b2e8-0e0791d6ceea
+            userCondition: null
+            warning: null
+            width: 25
+        name: Content
+        uid: d13d53b3-04e5-4f04-b8d9-dc25811b6daf
+        userCondition: null
+fields:
+  2c95d61a-c01b-4cda-b81c-3b82ab493bb4: # Title and Body Horizontal Position
+    columnSuffix: tbpihkms
+    contentColumnType: string
+    fieldGroup: null
+    handle: titleAndBodyHorizontalPosition
+    instructions: 'This determines the horizontal position of the body and title text.'
+    name: 'Title and Body Horizontal Position'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - justify-start
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - justify-center
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - justify-end
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  5eb6e661-ea95-4fd7-91ae-6ffd6bad6e34: # Mobile Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mobileImage
+    instructions: "This field is optional for when an another image is needed for mobile devices. \r\nDimensions 774 x 1376"
+    name: 'Mobile Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 0
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+          -
+            - conditionRules
+            -
+              -
+                __assoc__:
+                  -
+                    - class
+                    - craft\elements\conditions\assets\FileTypeConditionRule
+                  -
+                    - uid
+                    - d7feffd0-1227-42b1-a5dd-431c9ec28f60
+                  -
+                    - operator
+                    - in
+                  -
+                    - values
+                    -
+                      - image
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  07c372dc-9d86-4096-8307-39f751766ead: # SVG Width
+    columnSuffix: dfkkmpsa
+    contentColumnType: smallint(3)
+    fieldGroup: null
+    handle: svgWidth
+    instructions: 'This field determines the percentage size of the SVG overlay'
+    name: 'SVG Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 50
+      max: 100
+      min: 50
+      prefix: null
+      previewCurrency: null
+      previewFormat: none
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  8b20e97d-ef32-45b5-ac8e-6fab8dd1ce68: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: "This is the main image for the Story Hero. \r\nDimensions 2400 x 1350"
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+          -
+            - conditionRules
+            -
+              -
+                __assoc__:
+                  -
+                    - class
+                    - craft\elements\conditions\assets\FileTypeConditionRule
+                  -
+                    - uid
+                    - c4f160b4-afc9-4bbb-b1a0-6d8463b7a5bb
+                  -
+                    - operator
+                    - in
+                  -
+                    - values
+                    -
+                      - image
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  9e0eb0f5-e82b-4993-9a12-124b35680fff: # Vertical Margin
+    columnSuffix: qrqpyapj
+    contentColumnType: string
+    fieldGroup: null
+    handle: verticalMargin
+    instructions: 'This dropdown determines the margin on the top and bottom of the Story Hero.'
+    name: 'Vertical Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  71cff4c5-d0b9-4315-ba60-394651a5282c: # Hero Title
+    columnSuffix: itntfbue
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroTitle
+    instructions: 'This is the title of the Story Hero.'
+    name: 'Hero Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  76e1841d-473d-481e-898b-a2f56b435e96: # Title Body Alignment
+    columnSuffix: dsculbxn
+    contentColumnType: string
+    fieldGroup: null
+    handle: titleBodyAlignment
+    instructions: 'This dropdown determines the text alignment for the title and body text.'
+    name: 'Title Body Alignment'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  0502b42a-28c7-4abf-85e7-022b2eb7518e: # Hero Body
+    columnSuffix: rrxfzaeu
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroBody
+    instructions: 'This is the body of the Story Hero.'
+    name: 'Hero Body'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  03539c83-f934-4725-99a9-af9461e774d7: # Width Options
+    columnSuffix: hzoctpgv
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: widthOptions
+    instructions: 'This field is required to determine whether the Story Hero is contained or full width.'
+    name: 'Width Options'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'Full Width'
+      onLabel: Contained
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  a0d9b656-cda1-459e-ba24-3d1e13c7471f: # Body and Title Color
+    columnSuffix: uxqeifek
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: bodyAndTitleColor
+    instructions: 'This determines the colour of the Title and Body text.'
+    name: 'Body and Title Color'
+    searchable: false
+    settings:
+      defaultColor: '#ffffff'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  c2f315f1-b9b6-410c-bde3-ae211162bb50: # Title and Body Vertical Position
+    columnSuffix: kaknukut
+    contentColumnType: string
+    fieldGroup: null
+    handle: titleAndBodyVerticalPosition
+    instructions: 'This determines the vertical position of the body and title text.'
+    name: 'Title and Body Vertical Position'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - items-center
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - items-end
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f714f8dc-aa78-4c5a-9d43-940ff2cf1a26: # Anchor ID
+    columnSuffix: gqwzgjbg
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f802c62c-45c9-467d-92ff-d4cd96c85a67: # SVG Overlay
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: svgOverlay
+    instructions: 'This field is to upload an SVG overlay above the Story Hero. If an image is uploaded, then the Body and Title will not appear on the hero. '
+    name: 'SVG Overlay'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 0
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+          -
+            - conditionRules
+            -
+              -
+                __assoc__:
+                  -
+                    - class
+                    - craft\elements\conditions\assets\FileTypeConditionRule
+                  -
+                    - uid
+                    - cb08c544-4523-4fe8-ba9e-63c82ac91e27
+                  -
+                    - operator
+                    - in
+                  -
+                    - values
+                    -
+                      - image
+                      - svg
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: hero
+name: Hero
+sortOrder: 1

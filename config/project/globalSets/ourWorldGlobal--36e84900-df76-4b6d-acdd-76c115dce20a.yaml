@@ -1,0 +1,60 @@
+fieldLayouts:
+  ed4ab4fc-729b-471b-bf57-451f2c5f202b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5550c665-d896-4173-a001-6bb989266de5 # Supertitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5e38c33-e7e8-477d-8902-a3db840dbe3b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8cd3cfcc-0764-4c1a-843c-0b4648f9bf24
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 90dfeb5d-be69-4f2e-b467-e8c607cdc55b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: ffe3af0a-2498-4327-94e4-7080e684b88a # Read More Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e08dd058-9765-4389-b001-42f24aeb6d96
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 9e13e553-8a35-47e5-91ad-70491e153b39 # Read More Url
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3ed467e9-0107-4975-9377-5dab4a985c95
+            userCondition: null
+            warning: null
+            width: 50
+        name: Default
+        uid: d222297a-1651-49b2-ba91-248dc8fdb48b
+        userCondition: null
+handle: ourWorldGlobal
+name: 'Our World'
+sortOrder: 2

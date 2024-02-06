@@ -1,0 +1,21 @@
+css: ".ck.ck-content .uppercase {\r\n  text-transform: uppercase;\r\n}\r\n\r\n.ck.ck-content .text-base {\r\n  font-size: 1rem;\r\n  line-height: 1.5rem;\r\n}\r\n\r\n.ck.ck-content .py-2 {\r\n  padding-top: 0.5rem;\r\n  padding-bottom: 0.5rem;\r\n}\r\n\r\n.ck.ck-content h2 {\r\n  font-size: 1.5rem;\r\n  line-height: 1.25;\r\n}\r\n\r\n.ck.ck-content h3 {\r\n  font-size: 1.5rem;\r\n  line-height: 2rem;\r\n}\r\n\r\n@media (min-width: 640px) {\r\n  .ck.ck-content h2 {\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n  }\r\n\r\n  .ck.ck-content h3 {\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n  }\r\n}\r\n\r\n@media (min-width: 1536px) {\r\n  .ck.ck-content h2 {\r\n    font-size: 2.25rem;\r\n    line-height: 1.25;\r\n  }\r\n}"
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+js: "return {\r\n  heading: {\r\n    options: [\r\n      {\r\n        model: 'heading2',\r\n        view: 'h2',\r\n        title: 'Heading 2',\r\n        class: 'ck-heading'\r\n      },\r\n      {\r\n        model: 'heading3',\r\n        view: 'h3',\r\n        title: 'Heading 3',\r\n        class: 'ck-heading'\r\n      },\r\n      {\r\n        model: 'paragraph',\r\n        title: 'Paragraph',\r\n        class: 'ck-paragraph'\r\n      }\r\n    ]\r\n  },\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'Large Title',\r\n        element: 'h2',\r\n        classes: [\r\n          'uppercase'\r\n        ]\r\n      },\r\n      {\r\n        name: 'Title',\r\n        element: 'h3',\r\n        classes: [\r\n          'uppercase'\r\n        ]\r\n      },\r\n      {\r\n        name: 'Normal Text',\r\n        element: 'p',\r\n        classes: [\r\n          'text-base'\r\n        ]\r\n      },\r\n      {\r\n        name: 'Uppercase Text',\r\n        element: 'p',\r\n        classes: [\r\n          'text-base',\r\n          'uppercase'\r\n        ]\r\n      },\r\n      {\r\n        name: \"List Item\",\r\n        element: 'li',\r\n        classes: [\r\n          'py-2'\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}"
+name: 'Hub Builder RTF'
+toolbar:
+  - heading
+  - style
+  - '|'
+  - bold
+  - italic
+  - link
+  - alignment
+  - '|'
+  - numberedList
+  - bulletedList

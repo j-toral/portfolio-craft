@@ -1,0 +1,50 @@
+field: 474093c5-0f29-4312-92eb-6daba63f461c # Store Builder
+fieldLayouts:
+  d1eeaa67-cd60-4c0d-9f7f-dad8e5f03987:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 31771faf-d37d-4f7a-af5a-2e53bd331945 # Rich Text Field
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2a10da77-29ba-4076-9d85-42d2bab30b54
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3445d133-949e-4861-a29a-12f02d76cf5b
+        userCondition: null
+fields:
+  31771faf-d37d-4f7a-af5a-2e53bd331945: # Rich Text Field
+    columnSuffix: dulegrkl
+    contentColumnType: text
+    fieldGroup: null
+    handle: findUsRTF
+    instructions: null
+    name: 'Rich Text Field'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+handle: findUsMainContent
+name: 'Main Content'
+sortOrder: 2

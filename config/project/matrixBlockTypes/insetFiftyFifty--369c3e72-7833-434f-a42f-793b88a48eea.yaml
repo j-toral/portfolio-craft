@@ -1,0 +1,163 @@
+field: aec3f388-f651-4e63-aeff-ca02a1dc257d # Chapter Content Builder
+fieldLayouts:
+  d32107dc-63c8-44a4-9ee5-db59016e5bc3:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 8f7681a8-0124-45ee-b4e6-249b9ceab008 # Desktop Order
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0ea66d9-a242-428e-99ec-a8bcd394292b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 1533c2dc-793e-4117-a052-1018dcc7d559 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3672bca7-3a06-4a6a-b4db-e711a812dc0c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f68b9d08-bae5-4f0a-9934-e9575962dead # Intro text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 28f763d9-0459-455c-98fd-1368bbcbd096
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: dfcc0964-f078-48a1-82fe-8130e7daafee # Body Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a137ca52-fa41-4be4-a4fb-b6a54d91549a
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 5ebe8250-d9a6-4e36-8148-67a38da012a0
+        userCondition: null
+fields:
+  8f7681a8-0124-45ee-b4e6-249b9ceab008: # Desktop Order
+    columnSuffix: kqzxjvqj
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: desktopOrder
+    instructions: null
+    name: 'Desktop Order'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'Image Left'
+      onLabel: 'Image Right'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  1533c2dc-793e-4117-a052-1018dcc7d559: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  dfcc0964-f078-48a1-82fe-8130e7daafee: # Body Text
+    columnSuffix: fcuauwin
+    contentColumnType: text
+    fieldGroup: null
+    handle: bodyText
+    instructions: null
+    name: 'Body Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  f68b9d08-bae5-4f0a-9934-e9575962dead: # Intro text
+    columnSuffix: xmgmhyth
+    contentColumnType: text
+    fieldGroup: null
+    handle: introText
+    instructions: null
+    name: 'Intro text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+handle: insetFiftyFifty
+name: 'Inset 50-50'
+sortOrder: 3

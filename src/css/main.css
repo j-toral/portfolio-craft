@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    #menu-drawer,
+    #menu-drawer-summary[aria-expanded='true']::before {
+        height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
+    }
+
+    summary::-webkit-details-marker,
+    details::-webkit-details-marker {
+        display: none;
+    }
+}
+
+@layer components {
+
+    .overflow-hidden-tablet {
+        @apply overflow-hidden lg:overflow-auto
+    }
+
+    .btn {
+        @apply text-center inline-flex items-center justify-center px-4 py-3 text-base tracking-wide border transition-all duration-300 uppercase rounded-sm no-underline
+    }
+
+    .btn-outline-dark {
+        @apply border-black text-black hover:border-black hover:bg-black hover:text-white
+    }
+
+    .btn-solid-dark {
+        @apply border-black bg-black text-white hover:bg-transparent hover:text-black
+    }
+
+    .btn-outline-light {
+        @apply border-black text-black hover:border-white hover:bg-white hover:text-black
+    }
+
+    .btn-solid-light {
+        @apply border-white bg-white text-black hover:bg-transparent hover:text-white
+    }
+
+    a {
+        @apply underline decoration-black transition-all duration-300 underline-offset-4 hover:decoration-transparent
+    }
+
+    .max-w-x-narrow {
+        @apply max-w-sm
+    }
+
+    .max-w-narrow {
+        @apply max-w-screen-md
+    }
+
+    .max-w-medium {
+        @apply max-w-screen-lg
+    }
+
+    h1,
+    .h1 {
+        @apply normal-case;
+    }
+
+    h2,
+    h3,
+    .h2,
+    .h3,
+    .intro {
+        @apply  normal-case;
+    }
+
+    h4,
+    .h4 {
+        @apply font-sans font-semibold uppercase;
+    }
+
+    h1,
+    .h1 {
+        @apply text-4xl leading-[1.1] md:text-[2.5rem] md:leading-[1.125];
+    }
+
+    h2,
+    .h2 {
+        @apply text-[1.4rem] leading-tight md:text-[1.6rem];
+    }
+
+    h3,
+    .h3 {
+        @apply text-xl leading-7 md:text-[1.4rem] md:leading-8;
+    }
+
+    h4,
+    .h4 {
+        @apply text-base 2xl:text-lg;
+    }
+
+    .intro {
+        @apply text-xl sm:text-2xl 2xl:text-3xl;
+    }
+
+    p {
+        @apply text-sm leading-6 md:text-base md:leading-7;
+    }
+}

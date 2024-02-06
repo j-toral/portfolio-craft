@@ -1,0 +1,19 @@
+columnSuffix: aavdssbl
+contentColumnType: text
+fieldGroup: 6091a114-c249-44fa-9a4a-66baa92bfd3b # Regional Sign-Up
+handle: emailSubmit
+instructions: 'Text for the submit button'
+name: 'Email Submit Field Value'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,140 @@
+field: 474093c5-0f29-4312-92eb-6daba63f461c # Store Builder
+fieldLayouts:
+  7908ceac-39e8-405d-b86f-48937002260f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6ce486c9-edfb-400e-ba38-1571a29e2b89 # Facilities Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a8550ee0-4a5f-4b1e-9346-1efd764e40d3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 24e68050-74d6-499d-8806-3b9d2cd4ada4 # Facilities
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef751af1-7b8b-461f-b66c-b1df61ca9179
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 28c5e205-bd47-4172-ba18-634b37d3aeba # Bullet List Facilities
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c45fda4f-e9c1-4d48-a5c4-90948d7e60a1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5cf0d6ac-88b8-4be9-8117-a6a8c8044a84
+        userCondition: null
+fields:
+  6ce486c9-edfb-400e-ba38-1571a29e2b89: # Facilities Title
+    columnSuffix: oaosmorf
+    contentColumnType: text
+    fieldGroup: null
+    handle: facilitiesTitle
+    instructions: null
+    name: 'Facilities Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  24e68050-74d6-499d-8806-3b9d2cd4ada4: # Facilities
+    columnSuffix: hpflfset
+    contentColumnType: string
+    fieldGroup: null
+    handle: facilitiesCheckboxes
+    instructions: null
+    name: Facilities
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Parking
+            -
+              - value
+              - parking
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Wifi
+            -
+              - value
+              - wifi
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Disability Support'
+            -
+              - value
+              - disabilitySupport
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\MultiSelect
+  28c5e205-bd47-4172-ba18-634b37d3aeba: # Bullet List Facilities
+    columnSuffix: fhyxjfue
+    contentColumnType: text
+    fieldGroup: null
+    handle: bulletListFacilities
+    instructions: null
+    name: 'Bullet List Facilities'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      ckeConfig: 2bd3327a-697c-4a50-93f5-dc71e4650821 # Bullet List
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+handle: findUsFacilities
+name: Facilities
+sortOrder: 4

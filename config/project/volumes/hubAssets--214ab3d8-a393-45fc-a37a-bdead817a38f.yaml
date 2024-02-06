@@ -1,0 +1,67 @@
+fieldLayouts:
+  0e547e1e-ef4a-4e1c-9fc9-21b7f78a644d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: f44a43c7-8417-4ab5-9360-54cfab5497dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: 17ed492d-41be-4f2d-b1eb-96e204e8b698
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 22c8125f-2428-4d60-91ba-34689706e1e2
+        userCondition: null
+fs: hubAssets
+handle: hubAssets
+name: 'Hub Assets'
+sortOrder: 10
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: hubAssets
+transformSubpath: ''

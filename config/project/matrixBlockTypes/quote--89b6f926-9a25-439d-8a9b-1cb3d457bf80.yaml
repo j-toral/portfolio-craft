@@ -1,0 +1,320 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  f8d17364-2bda-4882-a833-f5b15082e5c5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2d04499f-985a-464e-a8a6-4303148ed2b1 # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c25a0636-b085-4aec-aff3-fbf495582b68
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 586306dd-c031-4c5b-b3f9-8078cfa8fd9e # Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6d873c3-8ec9-4141-80fe-859849d97015
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 1e4684e2-106f-46f7-8a09-10378ea5f9de # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 98fcc878-4e79-4812-b699-c4aaff0aeac4
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: bd1853b4-fb4b-4fd8-ac9c-cdae94e05a76 # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10022111-ab0f-4b0e-bf38-201b09ddb030
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 0ca58434-744e-4292-8f77-2328a797a8d7 # Quote Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1106cf66-1b33-40dd-a86b-fc5e3e09d5c7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 20b44775-3f47-4150-9c8c-5aabeeaadaa5 # Quotee Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5191830f-6cfa-4a77-8f7f-4f095e4696bd
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: b8dc5ab4-6815-46f9-b304-299bac13e30c
+        userCondition: null
+fields:
+  0ca58434-744e-4292-8f77-2328a797a8d7: # Quote Text
+    columnSuffix: mmfpqowc
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteText
+    instructions: 'This is the text for the quote'
+    name: 'Quote Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1e4684e2-106f-46f7-8a09-10378ea5f9de: # Top Margin
+    columnSuffix: okcxxhus
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  2d04499f-985a-464e-a8a6-4303148ed2b1: # Anchor ID
+    columnSuffix: xtkgpghp
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  20b44775-3f47-4150-9c8c-5aabeeaadaa5: # Quotee Text
+    columnSuffix: tvprsywv
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteeText
+    instructions: 'This is the text for the quotee'
+    name: 'Quotee Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  586306dd-c031-4c5b-b3f9-8078cfa8fd9e: # Container Width
+    columnSuffix: vrtlouwf
+    contentColumnType: string
+    fieldGroup: null
+    handle: containerWidth
+    instructions: 'This sets the maximum width that the 50/50 will be contained at.'
+    name: 'Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bd1853b4-fb4b-4fd8-ac9c-cdae94e05a76: # Bottom Margin
+    columnSuffix: ixyhvurb
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: quote
+name: Quote
+sortOrder: 8

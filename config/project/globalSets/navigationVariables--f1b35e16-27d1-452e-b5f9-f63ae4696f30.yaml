@@ -1,0 +1,218 @@
+fieldLayouts:
+  ef5d9804-3205-453d-865a-ed6a80b1b64c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: Newsletter
+            type: craft\fieldlayoutelements\Heading
+            uid: c932cb73-c2ca-496e-a271-2f4a297ca900
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 7fb53f86-5845-4c7b-b224-cfeb7a4ccb69 # Newsletter Sign Up Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4fef6b9d-473c-4583-b45c-5170cb5d1381
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 1353e060-18db-494a-ab95-433852a30ae6 # Newsletter Sign Up Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9eba22d7-19c9-43e0-9915-d2d5eeb543aa
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 13f95c4d-8f3c-455f-b522-421154875948 # Subscribe Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b2350be-590e-4b80-ad10-ca3a91fe3b77
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 2f40e228-0028-4122-ba30-57efc8f624fe # Email Field Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a3a1c2b2-bc2e-4f00-835b-29b1b45426eb
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a9659155-2f78-41e8-82a4-724dbc20575e # Email Error Message
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b43306f3-d755-4eda-9a15-14f2ba6b7d1a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 6743baf6-356c-43b2-aa93-1fe41a668040 # Newsletter Success Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fc60152b-e296-4df0-a4bf-f420b40919d2
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 3b8deb06-70f8-48de-b8ff-ea802f66ce16
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a99ff920-9027-4052-afba-b9a271b248df
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 71991888-08bd-4666-ba48-6232cab12743
+            userCondition: null
+          -
+            elementCondition: null
+            heading: 'Navigation Menu'
+            type: craft\fieldlayoutelements\Heading
+            uid: e72c5d85-1616-468a-b115-153f490af25b
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: e1bc3c00-0f97-4e4a-9137-5da69ae75e7b # Navigation Handle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1d797dd-ff02-44df-ba16-843b19e6b400
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 07d0a87f-f9c4-4e72-8646-eeca63add41b
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Socials
+            type: craft\fieldlayoutelements\Heading
+            uid: f09f47aa-be96-456a-a5f0-ddf1ca01ef2e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: b6099bd4-2985-430a-8c4a-7f973ab4816f # Phone Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6074e158-66f6-43c1-931a-a83cf74b687d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: d7ccfece-1aec-4911-ab60-cd3b61294157 # Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce9341ac-67b3-4868-85e1-e2cec5d5d221
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: d052ecb4-3250-4888-ace4-c55f119cbfc9 # Social Icons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 112c18c5-4938-469e-bb10-89a1407d94da
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: e9c6fa18-b54d-44d4-8191-45841eb226f4
+            userCondition: null
+          -
+            elementCondition: null
+            heading: 'SVG Assets'
+            type: craft\fieldlayoutelements\Heading
+            uid: 7115f087-ef2f-4f37-87b8-1948eac1a0fc
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 0c9a39c6-0e30-4471-87a1-d5bff365284f # SVG Assets
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b446244f-12d6-4b1e-bbe9-b3f789edf6cd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 17dafeb8-1725-4495-b5d1-04d0b0356f84
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Copyright
+            type: craft\fieldlayoutelements\Heading
+            uid: 6da6d429-fa06-4a27-b0db-184e0ca3c056
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 2ca4aa47-6863-4c8e-9fc0-ad1146a40b0d # Copyright
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b8602e8-c599-41da-8d51-df3c93f35924
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: 4c6b4c73-9e43-424b-a294-46b23e8dfb66
+        userCondition: null
+handle: navigationVariables
+name: 'Navigation Variables'
+sortOrder: 3

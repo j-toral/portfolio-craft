@@ -1,0 +1,105 @@
+{# Transform sizes for the different breakpoints #}
+{% set smMobileTransform = { width: 640, height: 1280 } %}
+{% set mdDesktopTransform = { width: 752, height: 423 } %}
+{% set lgDesktopTransform = { width: 1008, height: 567 } %}
+{% set twoXLDesktopTransform = { width: 1600, height: 900 } %}
+
+{# Setting the height of the transforms to double if the hero is double height #}
+{% if not heroBlock.heroHeight %}
+  {% set smMobileTransform = smMobileTransform | merge({ "height": smMobileTransform.height * 2 })  %}
+  {% set mdDesktopTransform = mdDesktopTransform | merge({ "height": mdDesktopTransform.height * 2 })  %}
+  {% set lgDesktopTransform = lgDesktopTransform | merge({ "height": lgDesktopTransform.height * 2 })  %}
+  {% set twoXLDesktopTransform = twoXLDesktopTransform | merge({ "height": twoXLDesktopTransform.height * 2 })  %}
+{% endif %}
+
+{# Block that contains the code for the hero #}
+{% block hero %}
+  {# Container div for hero image #}
+  {# Setting the id lower case and replacing any spaces with hyphens #}
+  {# Calling the hero image vertical margin directly as it brings in a tailwind class #}
+  {# Adding top padding if the nav is not transparent #}
+  {# Adding mx-auto and container tailwind classes depending of the value of the widthOptions dropdown #}
+  <div{% if heroBlock.anchorId %} id="{{ heroBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %}>
+    <div  class="relative overflow-hidden">
+      <div class="relative max-w-full{% if heroBlock.heroHeight %} h-max min-h-screen{% else %} h-[200vh]{% endif %}">
+
+        {# Hero Background Image #}
+        <div class="absolute inset-0{% if heroBlock.heroHeight %} h-max min-h-screen{% else %} h-[200vh]{% endif %}">
+          {# Getting the image and mobile image from the block #}
+          {% set image = heroBlock.image.one() %}
+          {% set mobileImage = heroBlock.mobileImage.one() %}
+
+          <picture>
+            {# Setting the source srcsets for the picture tags for breakpoints if a mobile image is added to the entry #}
+            {% if mobileImage %}
+              <source media="(max-width: 639px)" srcset="/images/{{ mobileImage.getUrl() }}" />
+              <source media="(max-width: 767px)" srcset="/images/{{ mobileImage.url }}" />
+              {# Setting the source srcset if there is no mobile image #}
+            {% else %}
+              <source media="(max-width: 767px)" srcset="/images/{{ image.getUrl() }}" />
+            {% endif %}
+            <source media="(max-width: 1023px)" srcset="/images/{{ image.getUrl() }}" />
+            <source media="(max-width: 1535px)" srcset="/images/{{ image.getUrl() }}" />
+            <img class="h-full w-full object-cover" src="/images/{{ image.url }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}">
+          </picture>
+
+        </div>
+
+        <div class="relative flex sm:overflow-hidden justify-center items-center h-max min-h-screen">
+          {# Hero Content Block #}
+          <div class="relative">
+            <div class="p-4 text-center text-white">
+              {# Setting the color of the text using inline styles from the hexidecimal variables on the admin side #}
+              {% if heroBlock.heroSupertitle %}
+                <h2 class="uppercase text-xs md:text-base tracking-widest pb-3">{{ heroBlock.heroSupertitle }}</h2>
+              {% endif %}
+              {% if heroBlock.heroTitle %}
+                <h1 class="uppercase tracking-widest{% if entry.section.handle == "ourWorld" %} text-3xl md:text-6xl{% else %} text-xl md:text-3xl{% endif %}">{{ heroBlock.heroTitle }}</h1>
+              {% endif %}
+              {% if heroBlock.linksTable | length %}
+                <div class="flex flex-col mt-6 md:mt-10 space-y-3 md:space-y-8">
+                  {% for link in heroBlock.linksTable %}
+                    <a href="{{ link.linkUrl }}" class="decoration-white uppercase tracking-widest">{{ link.linkTitle }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        {# If the hero is double height #}
+        {% if not heroBlock.heroHeight %}
+          <div class="flex items-center justify-center h-max min-h-screen w-full z-10 relative text-white">
+            {# Determining whether to render nothing, rtf, quote and quotee, or a video #}
+            {% switch heroBlock.secondScreenDisplay %}
+              {% case "rtf" %}
+                <div class="px-4 max-w-xs sm:max-w-xl md:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl">
+                  {# Rendering the rtf with the heading #}
+                  {% if heroBlock.secondScreenTitle %}<h2 class="text-2xl">{{ heroBlock.secondScreenTitle }}</h2>{% endif %}
+                  {% if heroBlock.secondScreenBody %}
+                    {{ heroBlock.secondScreenBody }}
+                  {% endif %}
+                </div>
+              {% case "quoteAndQuotee" %}
+              {# Rendering the quote and quotee #}
+                <div class="text-center max-w-xs sm:max-w-xl md:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl px-4">
+                  {% if heroBlock.secondScreenQuote %}<p class="text-xl md:text-3xl">{{ heroBlock.secondScreenQuote }}</p>{% endif %}
+                  {% if heroBlock.secondScreenQuotee %}<p class="text-base">{{ heroBlock.secondScreenQuotee }}</p>{% endif %}
+                </div>
+              {% case "videoLink" %}
+              {# Rendering the video #}
+                <div class="container mx-auto px-4">
+                  <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/{{ heroBlock.videoID }}?h=d8b0d8f55d&amp;badge=0{% if heroBlock.videoOptions.contains('autoplay') %}&amp;autoplay=1{% endif %}{% if not heroBlock.videoOptions.contains('controls') %}&amp;controls=0{% endif %}{% if heroBlock.videoOptions.contains('loop') %}&amp;loop=1{% endif %}&amp;byline=0&amp;portrait=0&amp;title=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{% if heroBlock.videoTitle %}{{ heroBlock.videoTitle }}{% else %}Alt Text{% endif %}"></iframe>
+                  </div>
+                  <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>d
+            {% endswitch %}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

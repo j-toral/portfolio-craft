@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CraftCMS Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/portfolio.css?v=1" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+
+    <script defer src="assets/js/alpine.validate@1.7.15.min.js"></script>
+    <script defer src="assets/js/alpinejs-intersect@3.10.3.min.js"></script>
+    <script defer src="assets/js/alpinejs@3.10.3.min.js"></script>
+    <script defer src="assets/js/global.js"></script>
+  </head>
+  <body class="bg-white text-black">
+    <script src="assets/js/sticky-header.js" defer="defer"></script>
+    <script src="assets/js/details-disclosure.js" defer="defer"></script>
+
+    <div class="section-header relative z-30">
+      <sticky-header class="header-wrapper relative z-0 block text-black">
+        <header
+          class="grid h-full w-full grid-cols-3 justify-center border-b bg-gray-200 px-5 py-3.5 sm:px-7 md:py-6 lg:flex lg:flex-col lg:gap-y-5 lg:pb-3 lg:pt-0"
+        >
+          <header-drawer
+            id="mobile-nav-icons"
+            data-breakpoint="tablet"
+            class="flex w-1/5 sm:w-auto lg:hidden"
+          >
+            <div class="flex items-center">
+              <details
+                x-data="{ mobileMenuIcons: false }"
+                id="mobile-menu"
+                class="inline-flex list-none items-center overflow-hidden"
+                role="list"
+              >
+                <summary
+                  id="menu-drawer-summary"
+                  class="static z-0 inline-block list-none underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50 aria-expanded:before:absolute aria-expanded:before:left-0 aria-expanded:before:top-full aria-expanded:before:z-0 aria-expanded:before:block aria-expanded:before:w-full aria-expanded:before:bg-black aria-expanded:before:opacity-50"
+                  aria-label="sections.header.menu"
+                  @click="mobileMenuIcons = ! mobileMenuIcons"
+                  aria-expanded="false"
+                >
+                  <div class="h-5 w-5 sm:h-6 sm:w-6">
+                    <div x-show="!mobileMenuIcons">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23.5"
+                        height="15.5"
+                        viewBox="0 0 23.5 15.5"
+                        class="h-4 w-4 sm:h-5 sm:w-5"
+                      >
+                        <path
+                          id="icon-hamburger"
+                          data-name="Path 101"
+                          d="M3.75,6.75h22m-22,7h22m-22,7h22"
+                          transform="translate(-3 -6)"
+                          fill="none"
+                          stroke="#726869"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </div>
+                    <div x-cloak x-show="mobileMenuIcons">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16.121"
+                        height="16.121"
+                        viewBox="0 0 16.121 16.121"
+                        class="h-4 w-4 sm:h-5 sm:w-5"
+                      >
+                        <path
+                          id="icon-close"
+                          data-name="Path 105"
+                          d="M6,20,20,6M6,6,20,20"
+                          transform="translate(-4.939 -4.939)"
+                          fill="none"
+                          stroke="#726869"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </summary>
+                <div
+                  id="menu-drawer"
+                  class="menu-drawer absolute left-0 top-full z-30 block w-[80vw] -translate-x-full overflow-hidden bg-gray-200 transition-all md:w-[60vw]"
+                >
+                  <nav
+                    class="relative z-30 flex h-full flex-col justify-between"
+                  >
+                    <div>
+                      <ul>
+                        <li>
+                          <details class="list-none">
+                            <summary
+                              class="static z-0 flex cursor-pointer list-none items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                            >
+                              <span class="text-sm text-black"> Blogs </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="7.811"
+                                height="14.121"
+                                viewBox="0 0 7.811 14.121"
+                                class=""
+                              >
+                                <path
+                                  id="icon-caret-right"
+                                  data-name="Path 107"
+                                  d="M8.25,4.5l6,6-6,6"
+                                  transform="translate(-7.189 -3.439)"
+                                  fill="none"
+                                  stroke="#726869"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </svg>
+                            </summary>
+                            <div class="h-full w-full">
+                              <div
+                                class="menu-drawer absolute bottom-0 left-0 z-10 h-full w-[80vw] -translate-x-full bg-gray-200 transition-all md:w-[60vw]"
+                              >
+                                <button
+                                  aria-expanded="true"
+                                  class="flex w-full list-none items-center space-x-2.5 bg-gray-200 py-5 pl-7 pr-5 text-sm uppercase leading-none text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="6.811"
+                                    height="12.121"
+                                    viewBox="0 0 6.811 12.121"
+                                    class=""
+                                  >
+                                    <path
+                                      id="icon-caret-left"
+                                      data-name="Path 107"
+                                      d="M13.25,4.5l-5,5,5,5"
+                                      transform="translate(-7.5 -3.439)"
+                                      fill="none"
+                                      stroke="#9c9595"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="1.5"
+                                    />
+                                  </svg>
+                                  <span class="text-sm text-black">
+                                    Blogs
+                                  </span>
+                                </button>
+                                <ul role="list" tabindex="-1">
+                                  <a
+                                    href="our-story/example-blog-1.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Example Blog 1 </a
+                                  ><a
+                                    href="our-story/example-blog-2.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Example Blog 2 </a
+                                  ><a
+                                    href="our-story/example-blog-3.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Example Blog 3 </a
+                                  ><a
+                                    href="our-story.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Explore All
+                                  </a>
+                                </ul>
+                              </div>
+                            </div>
+                          </details>
+                        </li>
+                        <li>
+                          <details class="list-none">
+                            <summary
+                              class="static z-0 flex cursor-pointer list-none items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                            >
+                              <span class="text-sm text-black"> Hub </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="7.811"
+                                height="14.121"
+                                viewBox="0 0 7.811 14.121"
+                                class=""
+                              >
+                                <path
+                                  id="icon-caret-right"
+                                  data-name="Path 107"
+                                  d="M8.25,4.5l6,6-6,6"
+                                  transform="translate(-7.189 -3.439)"
+                                  fill="none"
+                                  stroke="#726869"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </svg>
+                            </summary>
+                            <div class="h-full w-full">
+                              <div
+                                class="menu-drawer absolute bottom-0 left-0 z-10 h-full w-[80vw] -translate-x-full bg-gray-200 transition-all md:w-[60vw]"
+                              >
+                                <button
+                                  aria-expanded="true"
+                                  class="flex w-full list-none items-center space-x-2.5 bg-gray-200 py-5 pl-7 pr-5 text-sm uppercase leading-none text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="6.811"
+                                    height="12.121"
+                                    viewBox="0 0 6.811 12.121"
+                                    class=""
+                                  >
+                                    <path
+                                      id="icon-caret-left"
+                                      data-name="Path 107"
+                                      d="M13.25,4.5l-5,5,5,5"
+                                      transform="translate(-7.5 -3.439)"
+                                      fill="none"
+                                      stroke="#9c9595"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="1.5"
+                                    />
+                                  </svg>
+                                  <span class="text-sm text-black"> Hub </span>
+                                </button>
+                                <ul role="list" tabindex="-1">
+                                  <a
+                                    href="hub/hub-example-1.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Hub Example 1 </a
+                                  ><a
+                                    href="hub/hub-example-2.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Hub Example 2 </a
+                                  ><a
+                                    href="hub.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Discover All
+                                  </a>
+                                </ul>
+                              </div>
+                            </div>
+                          </details>
+                        </li>
+                        <li>
+                          <details class="list-none">
+                            <summary
+                              class="static z-0 flex cursor-pointer list-none items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                            >
+                              <span class="text-sm text-black">
+                                Stockist Locator
+                              </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="7.811"
+                                height="14.121"
+                                viewBox="0 0 7.811 14.121"
+                                class=""
+                              >
+                                <path
+                                  id="icon-caret-right"
+                                  data-name="Path 107"
+                                  d="M8.25,4.5l6,6-6,6"
+                                  transform="translate(-7.189 -3.439)"
+                                  fill="none"
+                                  stroke="#726869"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="1.5"
+                                />
+                              </svg>
+                            </summary>
+                            <div class="h-full w-full">
+                              <div
+                                class="menu-drawer absolute bottom-0 left-0 z-10 h-full w-[80vw] -translate-x-full bg-gray-200 transition-all md:w-[60vw]"
+                              >
+                                <button
+                                  aria-expanded="true"
+                                  class="flex w-full list-none items-center space-x-2.5 bg-gray-200 py-5 pl-7 pr-5 text-sm uppercase leading-none text-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="6.811"
+                                    height="12.121"
+                                    viewBox="0 0 6.811 12.121"
+                                    class=""
+                                  >
+                                    <path
+                                      id="icon-caret-left"
+                                      data-name="Path 107"
+                                      d="M13.25,4.5l-5,5,5,5"
+                                      transform="translate(-7.5 -3.439)"
+                                      fill="none"
+                                      stroke="#9c9595"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="1.5"
+                                    />
+                                  </svg>
+                                  <span class="text-sm text-black">
+                                    Stockist Locator
+                                  </span>
+                                </button>
+                                <ul role="list" tabindex="-1">
+                                  <a
+                                    href="visit-us/paris.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Paris </a
+                                  ><a
+                                    href="visit-us/new-york.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    New York </a
+                                  ><a
+                                    href="visit-us.html"
+                                    class="flex items-center justify-between py-5 pl-7 pr-5 text-sm uppercase leading-none text-black no-underline focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-slate-950/50"
+                                  >
+                                    Stockist Locator
+                                  </a>
+                                </ul>
+                              </div>
+                            </div>
+                          </details>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="w-full bg-gray-200 px-7 py-8">
+                      <div id="mobile-social-links">
+                        <ul class="flex flex-wrap justify-start" role="list">
+                          <!--
+  Renders the social media icons
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+
+                          <ul class="flex space-x-3.5 ty:space-x-5">
+                            <li class="h-5 w-5">
+                              <a
+                                href="#"
+                                class="flex h-full w-full items-center justify-center"
+                                ><!--
+  Renders the twitter svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 18 16.847"
+                                  class="h-full w-full fill-black"
+                                >
+                                  <g
+                                    id="layer1"
+                                    transform="translate(-572.5 -676.31)"
+                                  >
+                                    <path
+                                      id="path1009"
+                                      d="M281.544,167.31l6.95,9.292-6.993,7.555h1.574l6.123-6.615,4.947,6.615H299.5l-7.341-9.815,6.509-7.032h-1.574l-5.639,6.092L286.9,167.31Zm2.315,1.159h2.461L297.185,183h-2.461Z"
+                                      transform="translate(291 509)"
+                                      fill="currentFill"
+                                    />
+                                  </g>
+                                </svg>
+                                <span class="sr-only">Twitter</span>
+                              </a>
+                            </li>
+                            <li class="h-5 w-5">
+                              <a
+                                href="#"
+                                class="flex h-full w-full items-center justify-center"
+                                ><!--
+  Renders the facebook svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  id="facebook"
+                                  viewBox="76.7 0 156.6 310"
+                                  class="h-full w-full fill-black"
+                                >
+                                  <g id="facebook-g">
+                                    <path
+                                      id="facebook-path"
+                                      d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064   c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996   V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545   C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703   c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"
+                                    />
+                                  </g>
+                                </svg>
+                                <span class="sr-only">Facebook</span>
+                              </a>
+                            </li>
+                            <li class="h-5 w-5">
+                              <a
+                                href="#"
+                                class="flex h-full w-full items-center justify-center"
+                                ><!--
+  Renders the instagram svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                                <svg
+                                  id="icon-instagram"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  viewBox="0 0 18 18"
+                                  class="h-full w-full fill-black"
+                                >
+                                  <path
+                                    fill="currentColor"
+                                    d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z"
+                                  />
+                                  <path
+                                    fill="currentColor"
+                                    d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z"
+                                  />
+                                </svg>
+                                <span class="sr-only">Instagram</span>
+                              </a>
+                            </li>
+                            <li class="h-5 w-5">
+                              <a
+                                href="#"
+                                class="flex h-full w-full items-center justify-center"
+                                ><!--
+  Renders the pinterest svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                                <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  viewBox="0 0 17 18"
+                                  class="h-full w-full fill-black"
+                                >
+                                  <path
+                                    id="icon-pinterest"
+                                    fill="currentColor"
+                                    d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z"
+                                  />
+                                </svg>
+                                <span class="sr-only">Pinterest</span>
+                              </a>
+                            </li>
+                            <li class="h-5 w-5">
+                              <a
+                                href="#"
+                                class="flex h-full w-full items-center justify-center"
+                                ><!--
+  Renders the youtube svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                                <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  viewBox="0 0 100 70"
+                                  class="h-full w-full fill-black"
+                                >
+                                  <path
+                                    id="icon-youtube"
+                                    d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span class="sr-only">Youtube</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </details>
+            </div>
+          </header-drawer>
+          <div id="nav-logo" class="flex justify-center lg:pt-6">
+            <a href="index.html" class="flex items-center lg:mt-2">
+              <!--
+  Renders the logo svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+              <svg
+                id="header-logo"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="h-7 fill-black md:h-11 lg:h-14"
+                viewBox="0 0 437.744 437.744"
+                xml:space="preserve"
+              >
+                <path
+                  d="M405.852,100.879h-3.358c-3.859-7.12-11.399-11.967-20.051-11.967h-61.567V78.594c0-13.245-10.775-24.021-24.02-24.021
+          h-155.96c-13.25,0-24.03,10.775-24.03,24.021v10.318H55.301c-8.652,0-16.192,4.847-20.051,11.967h-3.358
+          C14.307,100.879,0,115.186,0,132.771v218.507c0,17.586,14.307,31.893,31.892,31.893h373.96c17.585,0,31.892-14.307,31.892-31.893
+          V132.771C437.744,115.186,423.437,100.879,405.852,100.879z M130.865,78.594c0-5.525,4.5-10.021,10.03-10.021h155.96
+          c5.525,0,10.02,4.495,10.02,10.021v10.318h-176.01V78.594z M46.511,111.702c0-4.847,3.943-8.79,8.79-8.79h327.141
+          c4.847,0,8.79,3.943,8.79,8.79v166.245c0,23.104-18.797,41.901-41.901,41.901h-82.668l4.417-25.396H166.658l4.417,25.396H88.413
+          c-23.104,0-41.901-18.797-41.901-41.901V111.702z M254.435,308.453l-5.358,30.808h-60.415l-5.358-30.808H254.435z M423.744,351.278
+          c0,9.866-8.026,17.893-17.892,17.893H31.892c-9.865,0-17.892-8.026-17.892-17.893V132.771c0-9.865,8.026-17.892,17.892-17.892h0.62
+          v163.068c0,30.824,25.077,55.901,55.901,55.901h85.097l3.376,19.412h83.966l3.376-19.412h85.103
+          c30.824,0,55.901-25.077,55.901-55.901V114.879h0.62c9.865,0,17.892,8.026,17.892,17.892V351.278z"
+                />
+              </svg>
+            </a>
+          </div>
+          <div
+            id="desktop-nav"
+            class="hidden lg:col-span-3 lg:flex lg:items-center lg:justify-center"
+          >
+            <nav class="">
+              <ul
+                class="m-0 inline-flex list-none flex-wrap items-center justify-center p-0"
+                role="list"
+              >
+                <li>
+                  <header-menu>
+                    <details
+                      id="Details-HeaderMenu-1"
+                      class="group static z-0 list-none"
+                    >
+                      <summary
+                        class="relative z-0 flex cursor-pointer list-none items-center px-3 pb-2 pt-3 uppercase text-black/75 no-underline hover:text-black"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="MegaMenu-Content-1"
+                      >
+                        <span
+                          class="text-sm underline-offset-4 transition-all hover:underline group-open:text-black group-open:underline group-open:hover:decoration-2"
+                          >Blogs</span
+                        >
+                      </summary>
+                      <div
+                        id="MegaMenu-Content-1"
+                        class="absolute left-0 right-0 top-full z-0 -translate-y-4 overflow-y-auto border-b bg-gray-200 py-6 opacity-0 transition-all group-open:translate-y-0 group-open:opacity-100"
+                        tabindex="-1"
+                      >
+                        <ul
+                          class="mx-auto grid max-w-screen-2xl list-none grid-cols-4 gap-x-10 gap-y-6 lg:px-12"
+                          role="list"
+                        >
+                          <li>
+                            <div class="mb-3 text-sm uppercase">Blogs</div>
+                            <ul class="m-0 list-none p-0" role="list">
+                              <li>
+                                <a
+                                  href="our-story/example-blog-1.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Example Blog 1
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="our-story/example-blog-2.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Example Blog 2
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="our-story/example-blog-3.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Example Blog 3
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="our-story.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Explore All
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="col-start-3 block">
+                            <div class="mb-3 text-sm uppercase">
+                              Example Blog 1
+                            </div>
+                            <div class="mb-3">
+                              <a
+                                href="our-story/example-blog-1.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/blog-1-preview.jpg"
+                                  alt="Alt Text"
+                                  width="1200"
+                                  height="675"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="our-story/example-blog-1.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Example Blog 1</a
+                              >
+                            </div>
+                          </li>
+                          <li class="col-start-4 block">
+                            <div class="mb-3 text-sm uppercase">
+                              Example Blog 2
+                            </div>
+                            <div class="mb-3">
+                              <a
+                                href="our-story/example-blog-2.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/blog-2-preview_2024-02-02-164544_mvdo.jpg"
+                                  alt="Alt Text"
+                                  width="1200"
+                                  height="675"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="our-story/example-blog-2.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Example Blog 1</a
+                              >
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </details>
+                  </header-menu>
+                </li>
+                <li>
+                  <header-menu>
+                    <details
+                      id="Details-HeaderMenu-2"
+                      class="group static z-0 list-none"
+                    >
+                      <summary
+                        class="relative z-0 flex cursor-pointer list-none items-center px-3 pb-2 pt-3 uppercase text-black/75 no-underline hover:text-black"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="MegaMenu-Content-2"
+                      >
+                        <span
+                          class="text-sm underline-offset-4 transition-all hover:underline group-open:text-black group-open:underline group-open:hover:decoration-2"
+                          >Hub</span
+                        >
+                      </summary>
+                      <div
+                        id="MegaMenu-Content-2"
+                        class="absolute left-0 right-0 top-full z-0 -translate-y-4 overflow-y-auto border-b bg-gray-200 py-6 opacity-0 transition-all group-open:translate-y-0 group-open:opacity-100"
+                        tabindex="-1"
+                      >
+                        <ul
+                          class="mx-auto grid max-w-screen-2xl list-none grid-cols-4 gap-x-10 gap-y-6 lg:px-12"
+                          role="list"
+                        >
+                          <li>
+                            <div class="mb-3 text-sm uppercase">Hub</div>
+                            <ul class="m-0 list-none p-0" role="list">
+                              <li>
+                                <a
+                                  href="hub/hub-example-1.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Hub Example 1
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="hub/hub-example-2.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Hub Example 2
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="hub.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Discover All
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="col-start-3 block">
+                            <div class="mb-3 text-sm uppercase">
+                              Hub Example 1
+                            </div>
+                            <div class="mb-3">
+                              <a
+                                href="hub/hub-example-1.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/scotland-preview.jpg"
+                                  alt="Alt Text"
+                                  width="1200"
+                                  height="675"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="hub/hub-example-1.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Hub Example 1</a
+                              >
+                            </div>
+                          </li>
+                          <li class="col-start-4 block">
+                            <div class="mb-3 text-sm uppercase">
+                              Hub Example 2
+                            </div>
+                            <div class="mb-3">
+                              <a
+                                href="hub/hub-example-2.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/preview_2024-02-02-161818_pmgc.jpg"
+                                  alt="Alt Text"
+                                  width="1200"
+                                  height="675"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="hub/hub-example-2.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Hub Example 1</a
+                              >
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </details>
+                  </header-menu>
+                </li>
+                <li>
+                  <header-menu>
+                    <details
+                      id="Details-HeaderMenu-3"
+                      class="group static z-0 list-none"
+                    >
+                      <summary
+                        class="relative z-0 flex cursor-pointer list-none items-center px-3 pb-2 pt-3 uppercase text-black/75 no-underline hover:text-black"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="MegaMenu-Content-3"
+                      >
+                        <span
+                          class="text-sm underline-offset-4 transition-all hover:underline group-open:text-black group-open:underline group-open:hover:decoration-2"
+                          >Stockist Locator</span
+                        >
+                      </summary>
+                      <div
+                        id="MegaMenu-Content-3"
+                        class="absolute left-0 right-0 top-full z-0 -translate-y-4 overflow-y-auto border-b bg-gray-200 py-6 opacity-0 transition-all group-open:translate-y-0 group-open:opacity-100"
+                        tabindex="-1"
+                      >
+                        <ul
+                          class="mx-auto grid max-w-screen-2xl list-none grid-cols-4 gap-x-10 gap-y-6 lg:px-12"
+                          role="list"
+                        >
+                          <li>
+                            <div class="mb-3 text-sm uppercase">
+                              Stockist Locator
+                            </div>
+                            <ul class="m-0 list-none p-0" role="list">
+                              <li>
+                                <a
+                                  href="visit-us/paris.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Paris
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="visit-us/new-york.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  New York
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="visit-us.html"
+                                  class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >
+                                  Stockist Locator
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="col-start-3 block">
+                            <div class="mb-3 text-sm uppercase">New York</div>
+                            <div class="mb-3">
+                              <a
+                                href="visit-us/new-york.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/pexels-whicdhemein-one-4577368.jpg"
+                                  alt="Alt Text"
+                                  width="2160"
+                                  height="2160"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="visit-us/new-york.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Explore</a
+                              >
+                            </div>
+                          </li>
+                          <li class="col-start-4 block">
+                            <div class="mb-3 text-sm uppercase">Paris</div>
+                            <div class="mb-3">
+                              <a
+                                href="visit-us/paris.html"
+                                class="overflow-hidden rounded-md"
+                              >
+                                <img
+                                  src="images/pexels-charlotte-may-5825359_2024-02-02-172808_lqne.jpg"
+                                  alt="Alt Text"
+                                  width="5827"
+                                  height="3885"
+                                  loading="eager"
+                                  class="overflow-hidden rounded-md"
+                                />
+                              </a>
+                            </div>
+                            <div>
+                              <a
+                                href="visit-us/paris.html"
+                                class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline hover:decoration-black"
+                                >Explore</a
+                              >
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </details>
+                  </header-menu>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </sticky-header>
+    </div>
+
+    <div id="hero" class="relative">
+      <div class="max-w-full text-center">
+        <div class="relative sm:overflow-hidden">
+          <div class="absolute inset-0">
+            <img
+              class="h-full w-full object-cover"
+              src="images/scotland-preview_2024-02-02-162554_bqpt.jpg"
+              alt="Alt Text"
+            />
+          </div>
+          <div class="relative pb-16 pt-32 md:pb-32 md:pt-48">
+            <div class="flex flex-col items-center p-4">
+              <h1 class="uppercase text-white">Scotland</h1>
+              <div class="max-w-narrow">
+                <p class="text-lg text-white md:text-xl lg:text-2xl">
+                  Some example images of Scotland
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <div class="flex justify-center px-4 pt-4 lg:px-8 lg:pt-12">
+        <ul class="hidden space-x-6 text-black md:flex">
+          <li>
+            <a href="our-story.html">ALL</a>
+          </li>
+          <li>
+            <a href="#" class="uppercase tracking-wider no-underline"
+              >Example 1</a
+            >
+          </li>
+          <li>
+            <a href="#" class="uppercase tracking-wider no-underline"
+              >Example 2</a
+            >
+          </li>
+          <li>
+            <a href="#" class="uppercase tracking-wider no-underline"
+              >Example 3</a
+            >
+          </li>
+        </ul>
+
+        <div
+          class="relative inline-block w-full text-left md:hidden"
+          x-data="{ open: false }"
+        >
+          <div class="w-full">
+            <button
+              @click="open = !open"
+              type="button"
+              class="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-neutral-300 px-3 py-2 text-sm font-semibold text-black shadow-sm ring-1 ring-inset ring-black"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
+              ALL
+              <!--
+  Renders the chevron down svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+              <svg
+                class="-mr-1 h-5 w-5 fill-neutral-900"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div
+            x-cloak
+            x-show="open"
+            x-transition:enter="ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100"
+            x-transition:leave="ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
+            class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-neutral-300 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="menu-button"
+            tabindex="-1"
+          >
+            <div class="flex flex-col" role="none">
+              <a
+                href="our-story.html"
+                class="bg-neutral-600 px-4 py-2 tracking-wider text-black no-underline"
+                >ALL</a
+              >
+              <a
+                href="our-story/example-1"
+                class="px-4 py-2 uppercase tracking-wider text-neutral-900 no-underline"
+                >Example 1</a
+              >
+              <a
+                href="our-story/example-2"
+                class="px-4 py-2 uppercase tracking-wider text-neutral-900 no-underline"
+                >Example 2</a
+              >
+              <a
+                href="our-story/example-3"
+                class="px-4 py-2 uppercase tracking-wider text-neutral-900 no-underline"
+                >Example 3</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-2 md:px-8 lg:grid-cols-3 lg:gap-x-8 lg:pb-16 lg:pt-10"
+      >
+        <div
+          class="flex flex-col rounded-md border p-4 md:col-span-2 md:grid md:grid-cols-2 md:gap-x-4 lg:col-span-1 lg:flex lg:flex-col"
+        >
+          <a
+            href="our-story/example-blog-3.html"
+            class="aspect-video w-full overflow-hidden rounded-md md:aspect-auto lg:aspect-video"
+          >
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/images/blog-3-preview.jpg"
+              />
+              <source
+                media="(max-width: 1023px)"
+                srcset="/images/blog-3-preview.jpg"
+              />
+              <img
+                src="images/blog-3-preview.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </a>
+
+          <div class="flex grow flex-col text-black">
+            <div class="grow pb-8 pt-3 md:pt-0.5 lg:pt-3">
+              <p class="uppercase">02 Feb 2024</p>
+              <h4 class="mt-1 uppercase">Example Blog 3</h4>
+              <p class="mt-2.5">
+                Phasellus eleifend ultrices augue, ut facilisis est ultrices
+                sed.
+              </p>
+            </div>
+            <div>
+              <a href="our-story/example-blog-3.html" class="uppercase"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-md border p-4">
+          <a
+            href="our-story/example-blog-2.html"
+            class="aspect-video w-full overflow-hidden rounded-md"
+          >
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/images/blog-2-preview.jpg"
+              />
+              <source
+                media="(max-width: 1023px)"
+                srcset="/images/blog-2-preview.jpg"
+              />
+              <img
+                src="images/blog-2-preview.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </a>
+
+          <div class="flex grow flex-col text-black">
+            <div class="grow pb-8 pt-3 md:pt-4 lg:pt-3">
+              <p class="uppercase">02 Feb 2024</p>
+              <h4 class="mt-1 uppercase">Example Blog 2</h4>
+              <p class="mt-2.5">
+                Proin non mi vitae est hendrerit dignissim et sed massa. Ut
+                accumsan tempus tincidunt.
+              </p>
+            </div>
+            <div>
+              <a href="our-story/example-blog-2.html" class="uppercase"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col rounded-md border p-4">
+          <a
+            href="our-story/example-blog-1.html"
+            class="aspect-video w-full overflow-hidden rounded-md"
+          >
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/images/pexels-kaique-rocha-65438.jpg"
+              />
+              <source
+                media="(max-width: 1023px)"
+                srcset="/images/pexels-kaique-rocha-65438.jpg"
+              />
+              <img
+                src="images/pexels-kaique-rocha-65438.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </picture>
+          </a>
+
+          <div class="flex grow flex-col text-black">
+            <div class="grow pb-8 pt-3 md:pt-4 lg:pt-3">
+              <p class="uppercase">02 Feb 2024</p>
+              <h4 class="mt-1 uppercase">Example Blog 1</h4>
+              <p class="mt-2.5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                mi sem, molestie sed neque et, iaculis convallis leo. Morbi
+                luctus ullamcorper ante a tempus.
+              </p>
+            </div>
+            <div>
+              <a href="our-story/example-blog-1.html" class="uppercase"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gray-200 text-sm text-black">
+      <div class="mx-auto flex flex-col items-center px-4 pb-4 pt-8 xl:px-20">
+        <div
+          class="flex w-full flex-col gap-x-4 lg:flex-row xl:gap-x-12 2xl:gap-x-24"
+        >
+          <div class="relative mb-2.5 lg:w-1/3 lg:self-start">
+            <p class="mb-3 font-sans text-base uppercase">Newsletter</p>
+            <div class="pb-4">
+              <p class="lg:text-xs xl:text-sm">Sign up below</p>
+            </div>
+            <form
+              id="ContactFooter"
+              x-data
+              x-validate
+              @submit="$validate.submit"
+              class="relative z-0 flex w-full flex-col"
+            >
+              <div class="w-full pb-3">
+                <div
+                  class="relative z-0 flex w-full flex-col before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:-z-10 after:pointer-events-none after:absolute after:bottom-px after:left-px after:right-px after:top-px after:z-10 sm:flex-row"
+                >
+                  <input
+                    id="NewsletterForm"
+                    type="email"
+                    class="peer/newsletter mb-4 h-11 min-h-[0.125rem] min-w-[0.625rem] grow appearance-none bg-transparent px-4 text-left text-black placeholder:text-transparent focus:border-black focus:pb-2 focus:pt-5 focus:outline-0 focus:ring-0 sm:mb-0 [&:not(:placeholder-shown)]:pb-2 [&:not(:placeholder-shown)]:pt-5"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    placeholder="Email"
+                    required
+                  />
+                  <label
+                    class="pointer-events-none absolute left-4 top-3 z-0 mb-0 text-black/75 transition-all peer-focus/newsletter:left-4 peer-focus/newsletter:top-1.5 peer-focus/newsletter:text-xs peer-[&:not(:placeholder-shown)]/newsletter:left-4 peer-[&:not(:placeholder-shown)]/newsletter:top-1.5 peer-[&:not(:placeholder-shown)]/newsletter:text-xs"
+                    for="NewsletterForm"
+                  >
+                    Email
+                  </label>
+                  <button
+                    type="submit"
+                    class="flex h-11 cursor-pointer items-center justify-center space-x-4 overflow-hidden bg-black px-8 text-gray-100 lg:space-x-2 lg:px-4 xl:space-x-4 xl:px-8"
+                    name="commit"
+                    id="Subscribe"
+                  >
+                    <span>
+                      <!--
+  Renders the email svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19.5"
+                        height="15.346"
+                        viewBox="0 0 19.5 15.346"
+                        class="fill-none stroke-gray-100"
+                      >
+                        <path
+                          id="icon-email"
+                          data-name="icon-email"
+                          d="M20.25,6.577v9.692a2.077,2.077,0,0,1-2.077,2.077H4.327A2.077,2.077,0,0,1,2.25,16.269V6.577m18,0A2.077,2.077,0,0,0,18.173,4.5H4.327A2.077,2.077,0,0,0,2.25,6.577m18,0V6.8a2.077,2.077,0,0,1-.988,1.769l-6.923,4.26a2.077,2.077,0,0,1-2.178,0L3.238,8.571A2.077,2.077,0,0,1,2.25,6.8V6.577"
+                          transform="translate(-1.5 -3.75)"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                    </span>
+                    <span class="uppercase">Subscribe</span>
+                  </button>
+                  <span
+                    class="error-msg absolute left-0 top-0 w-full translate-y-28 text-left text-red-500 sm:translate-y-12"
+                    >Please enter a valid email address.</span
+                  >
+                </div>
+              </div>
+            </form>
+            <div id="successDiv" class="max-w-narrow hidden w-full pt-5">
+              <h1 class="mb-2 uppercase">Thank you!</h1>
+            </div>
+          </div>
+
+          <div class="mb-2.5 flex w-full flex-col lg:-mt-4 lg:w-1/3">
+            <div x-data="{ footerList_51: false }">
+              <div
+                @click="footerList_51 = ! footerList_51"
+                class="flex cursor-pointer select-none items-center justify-between py-4"
+              >
+                <p class="font-sans text-sm uppercase">Menu 1</p>
+                <span class="flex h-3.5 w-3.5 items-center justify-center">
+                  <!--
+  Renders the down svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10.121"
+                    height="5.811"
+                    viewBox="0 0 10.121 5.811"
+                    class=""
+                  >
+                    <path
+                      id="icon-caret-down"
+                      data-name="Path 113"
+                      d="M12.5,8.25l-4,4-4-4"
+                      transform="translate(-3.439 -7.189)"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <ul
+                x-cloak
+                x-show="footerList_51"
+                x-transition:enter="transition-all ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition-all ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-10"
+              >
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 3</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div x-data="{ footerList_52: false }">
+              <div
+                @click="footerList_52 = ! footerList_52"
+                class="flex cursor-pointer select-none items-center justify-between py-4"
+              >
+                <p class="font-sans text-sm uppercase">Menu 2</p>
+                <span class="flex h-3.5 w-3.5 items-center justify-center">
+                  <!--
+  Renders the down svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10.121"
+                    height="5.811"
+                    viewBox="0 0 10.121 5.811"
+                    class=""
+                  >
+                    <path
+                      id="icon-caret-down"
+                      data-name="Path 113"
+                      d="M12.5,8.25l-4,4-4-4"
+                      transform="translate(-3.439 -7.189)"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <ul
+                x-cloak
+                x-show="footerList_52"
+                x-transition:enter="transition-all ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition-all ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-10"
+              >
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Item 3</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div x-data="{ footerList_53: false }">
+              <div
+                @click="footerList_53 = ! footerList_53"
+                class="flex cursor-pointer select-none items-center justify-between py-4"
+              >
+                <p class="font-sans text-sm uppercase">Visit Us</p>
+                <span class="flex h-3.5 w-3.5 items-center justify-center">
+                  <!--
+  Renders the down svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10.121"
+                    height="5.811"
+                    viewBox="0 0 10.121 5.811"
+                    class=""
+                  >
+                    <path
+                      id="icon-caret-down"
+                      data-name="Path 113"
+                      d="M12.5,8.25l-4,4-4-4"
+                      transform="translate(-3.439 -7.189)"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <ul
+                x-cloak
+                x-show="footerList_53"
+                x-transition:enter="transition-all ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition-all ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-10"
+              >
+                <li>
+                  <a
+                    href="visit-us/paris.html"
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >Paris</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="visit-us/new-york.html"
+                    class="block cursor-pointer py-1.5 text-sm text-black/75 no-underline underline-offset-4 transition-all hover:text-black hover:underline"
+                    >New York</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mb-2.5 grid w-full lg:-mt-4 lg:w-1/3 lg:self-start">
+            <div class="flex items-center justify-center lg:justify-start">
+              <div class="p-4">
+                <a
+                  href="tel:+44 (0) 1234 567890"
+                  class="flex items-center justify-center space-x-2.5"
+                >
+                  <span class="flex h-3.5 w-3.5 items-center justify-center">
+                    <!--
+  Renders the phone svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="11.786"
+                      height="19.5"
+                      viewBox="0 0 11.786 19.5"
+                      class=""
+                    >
+                      <path
+                        id="icon-phone"
+                        data-name="icon-phone"
+                        d="M9.857,1.5H7.929A1.929,1.929,0,0,0,6,3.429V17.571A1.929,1.929,0,0,0,7.929,19.5h6.429a1.929,1.929,0,0,0,1.929-1.929V3.429A1.929,1.929,0,0,0,14.357,1.5H12.429m-2.571,0V2.786h2.571V1.5m-2.571,0h2.571M9.857,17.571h2.571"
+                        transform="translate(-5.25 -0.75)"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </span>
+                  <span class="hidden ty:inline"> +44 (0) 1234 567890 </span>
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start">
+              <div class="p-4">
+                <a
+                  href="mailto:jhjuliao@gmail.com"
+                  class="flex items-center justify-center space-x-2.5"
+                >
+                  <span class="flex h-5 w-5 items-center justify-center">
+                    <!--
+  Renders the email svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19.5"
+                      height="15.346"
+                      viewBox="0 0 19.5 15.346"
+                      class=""
+                    >
+                      <path
+                        id="icon-email"
+                        data-name="icon-email"
+                        d="M20.25,6.577v9.692a2.077,2.077,0,0,1-2.077,2.077H4.327A2.077,2.077,0,0,1,2.25,16.269V6.577m18,0A2.077,2.077,0,0,0,18.173,4.5H4.327A2.077,2.077,0,0,0,2.25,6.577m18,0V6.8a2.077,2.077,0,0,1-.988,1.769l-6.923,4.26a2.077,2.077,0,0,1-2.178,0L3.238,8.571A2.077,2.077,0,0,1,2.25,6.8V6.577"
+                        transform="translate(-1.5 -3.75)"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                  </span>
+                  <span class="hidden ty:inline"> jhjuliao@gmail.com </span>
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start">
+              <div class="p-4">
+                <!--
+  Renders the social media icons
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+
+                <ul class="flex space-x-3.5 ty:space-x-5">
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the twitter svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 18 16.847"
+                        class="h-full w-full fill-black"
+                      >
+                        <g id="layer1" transform="translate(-572.5 -676.31)">
+                          <path
+                            id="path1009"
+                            d="M281.544,167.31l6.95,9.292-6.993,7.555h1.574l6.123-6.615,4.947,6.615H299.5l-7.341-9.815,6.509-7.032h-1.574l-5.639,6.092L286.9,167.31Zm2.315,1.159h2.461L297.185,183h-2.461Z"
+                            transform="translate(291 509)"
+                            fill="currentFill"
+                          />
+                        </g>
+                      </svg>
+                      <span class="sr-only">Twitter</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the facebook svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        id="facebook"
+                        viewBox="76.7 0 156.6 310"
+                        class="h-full w-full fill-black"
+                      >
+                        <g id="facebook-g">
+                          <path
+                            id="facebook-path"
+                            d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064   c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996   V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545   C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703   c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"
+                          />
+                        </g>
+                      </svg>
+                      <span class="sr-only">Facebook</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the instagram svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        id="icon-instagram"
+                        aria-hidden="true"
+                        focusable="false"
+                        viewBox="0 0 18 18"
+                        class="h-full w-full fill-black"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z"
+                        />
+                        <path
+                          fill="currentColor"
+                          d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z"
+                        />
+                      </svg>
+                      <span class="sr-only">Instagram</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the pinterest svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        viewBox="0 0 17 18"
+                        class="h-full w-full fill-black"
+                      >
+                        <path
+                          id="icon-pinterest"
+                          fill="currentColor"
+                          d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z"
+                        />
+                      </svg>
+                      <span class="sr-only">Pinterest</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the youtube svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        viewBox="0 0 100 70"
+                        class="h-full w-full fill-black"
+                      >
+                        <path
+                          id="icon-youtube"
+                          d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span class="sr-only">Youtube</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the weibo svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid meet"
+                        class="h-full w-full fill-black"
+                        viewBox="100.51 80.37 2199.34 1781.43"
+                      >
+                        <g
+                          transform="translate(0.000000,1942.000000) scale(0.100000,-0.100000)"
+                          stroke="none"
+                        >
+                          <path
+                            d="M16865 18614 c-396 -26 -872 -99 -1032 -159 -355 -134 -584 -513    -534 -887 42 -319 249 -578 547 -687 164 -60 316 -65 554 -17 394 78 831 94    1250 46 780 -89 1506 -393 2125 -888 162 -130 496 -466 629 -632 314 -394 550    -830 705 -1300 253 -770 272 -1620 55 -2395 -88 -315 -86 -304 -86 -425 -1    -226 74 -417 225 -577 83 -88 138 -129 232 -176 456 -228 1000 -13 1173 462    72 199 167 591 217 891 82 499 96 1071 39 1580 -202 1809 -1242 3417 -2818    4359 -733 437 -1573 707 -2471 791 -112 11 -702 21 -810 14z"
+                          />
+                          <path
+                            d="M10005 16100 c-1077 -66 -2473 -674 -3875 -1688 -1276 -923 -2576    -2225 -3486 -3492 -946 -1318 -1491 -2595 -1620 -3800 -23 -206 -25 -684 -6    -870 151 -1418 973 -2629 2464 -3629 43 -28 158 -100 255 -160 1349 -821 3078    -1373 4938 -1575 473 -52 844 -74 1355 -82 1279 -21 2564 128 3755 436 860    222 1628 508 2395 891 781 391 1454 838 2065 1369 179 156 585 565 732 737    726 850 1125 1698 1204 2557 14 157 6 488 -15 634 -140 937 -728 1694 -1741    2240 -267 144 -570 270 -920 381 -261 83 -333 126 -375 223 -31 72 -24 162 23    295 127 355 153 436 192 588 72 283 95 455 95 705 0 374 -81 658 -264 924    -294 431 -811 682 -1536 746 -258 22 -701 8 -1025 -35 -671 -88 -1402 -291    -2208 -614 -276 -111 -344 -131 -467 -137 -86 -5 -99 -3 -139 18 -70 36 -86    66 -85 156 0 62 10 109 48 237 239 803 255 1490 47 2005 -186 459 -561 768    -1076 888 -196 46 -489 67 -730 52z m860 -5300 c531 -28 1023 -93 1490 -196    1110 -246 2051 -681 2780 -1285 151 -125 459 -438 574 -582 453 -572 688    -1183 708 -1847 12 -411 -52 -789 -200 -1180 -720 -1893 -3190 -3363 -6077    -3615 -543 -47 -1227 -49 -1720 -5 -1757 158 -3255 768 -4206 1715 -880 876    -1200 1963 -899 3060 271 988 1045 1918 2195 2637 582 363 1270 671 1980 885    804 242 1553 368 2470 416 141 8 744 6 905 -3z"
+                          />
+                          <path
+                            d="M9425 9034 c-157 -12 -367 -38 -485 -60 -1163 -215 -2172 -904 -2698    -1845 -470 -839 -504 -1777 -96 -2577 476 -932 1510 -1537 2719 -1591 984 -44    1959 276 2734 897 130 105 363 333 476 467 372 442 617 949 715 1481 63 344    50 759 -35 1094 -64 252 -204 570 -344 780 -495 743 -1313 1213 -2326 1336    -123 15 -551 26 -660 18z m818 -2044 c67 -21 145 -72 186 -122 13 -17 35 -57    49 -91 21 -53 24 -72 20 -151 -6 -125 -42 -202 -135 -295 -110 -108 -235 -161    -380 -161 -164 0 -297 80 -358 213 -68 149 -31 317 101 457 138 145 341 204    517 150z m-1676 -501 c299 -40 546 -177 709 -392 59 -78 128 -221 155 -323 27    -98 32 -321 10 -429 -68 -343 -299 -656 -627 -851 -562 -333 -1258 -243 -1588    206 -122 165 -176 336 -176 553 0 321 130 603 393 854 300 286 738 435 1124    382z"
+                          />
+                          <path
+                            d="M16925 15620 c-382 -39 -543 -97 -696 -249 -95 -95 -146 -177 -187    -299 -23 -68 -26 -94 -26 -217 -1 -132 1 -145 31 -228 43 -123 86 -189 180    -284 66 -66 99 -90 175 -127 172 -85 287 -100 483 -65 178 32 413 32 562 1    529 -113 933 -495 1066 -1007 66 -254 62 -451 -14 -754 -62 -243 -52 -382 38    -571 39 -81 59 -107 137 -185 100 -100 176 -146 306 -187 98 -30 289 -32 390    -4 206 57 375 198 466 391 56 118 115 348 151 590 27 185 24 591 -6 784 -116    751 -508 1408 -1106 1855 -387 289 -808 464 -1290 536 -161 24 -514 34 -660    20z"
+                          />
+                        </g>
+                      </svg>
+                      <span class="sr-only">Weibo</span>
+                    </a>
+                  </li>
+                  <li class="h-5 w-5">
+                    <a
+                      href="#"
+                      class="flex h-full w-full items-center justify-center"
+                      ><!--
+  Renders the wechat svg
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 343 277"
+                        class="h-full w-full fill-black"
+                      >
+                        <g fill-rule="evenodd">
+                          <path
+                            d="M274 167c-7.778 0-14-6.222-14-14s6.222-14 14-14 14 6.222 14 14c0 7.389-6.222 14-14 14m-69 0c-7.778 0-14-6.222-14-14s6.222-14 14-14 14 6.222 14 14c0 7.389-6.222 14-14 14m102.39 78.581C329.216 229.871 343 206.5 343 180.827 343 133.316 297.052 95 240 95s-103 38.316-103 85.827c0 47.512 45.948 85.828 103 85.828 11.87 0 22.974-1.533 33.695-4.598.766-.383 1.915-.383 3.063-.383 1.915 0 3.83.766 5.361 1.532l22.591 13.028c.766.383 1.149.766 1.915.766a3.433 3.433 0 003.446-3.448c0-.767-.383-1.533-.383-2.683 0-.383-3.063-10.728-4.595-17.242-.383-.766-.383-1.532-.383-2.299-.383-2.682.766-4.597 2.68-5.747"
+                          />
+                          <path
+                            d="M164 86c-8.93 0-16-7.07-16-16s7.07-16 16-16 16 7.07 16 16c0 8.558-7.07 16-16 16m-82 0c-8.93 0-16-7.07-16-16s7.07-16 16-16 16 7.07 16 16c0 8.558-7.07 16-16 16m41.96-86C55.646 0 0 45.895 0 102.88c0 30.98 16.502 58.899 42.983 77.64 1.919 1.53 3.454 3.824 3.454 6.884 0 .764-.384 1.912-.384 2.677-1.919 7.649-5.373 20.27-5.757 20.652-.383 1.148-.767 1.913-.767 3.06 0 2.295 1.919 4.207 4.221 4.207.768 0 1.535-.382 2.303-.765l27.248-15.68c1.919-1.148 4.222-1.913 6.524-1.913 1.152 0 2.303 0 3.454.383 12.665 3.442 26.48 5.736 40.297 5.736h6.908c-2.687-8.031-4.222-16.445-4.222-25.242 0-51.631 50.658-93.701 112.83-93.701H246C237.173 37.48 185.747 0 123.96 0"
+                          />
+                        </g>
+                      </svg>
+                      <span class="sr-only">Wechat</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex w-full flex-col-reverse items-center justify-center border-t pt-4 lg:flex-row"
+        >
+          <div id="footer-copyright" class="flex items-center">
+            <small class="text-center">© 2023-2024 Free Use</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{# Block that contains the code for the rich text field #}
+{% block rtf %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if rtfBlock.anchorId %} id="{{ rtfBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%} class="px-4 flex items-center justify-center">
+    {# Setting the text allignment as well as the container width and the top and bottom margins #}
+    <div class="{{ rtfBlock.containerWidth }}{{ ' ' ~ rtfBlock.topMargin }}{{ ' ' ~ rtfBlock.bottomMargin }} w-full">
+      <div class="prose max-w-none text-black">
+        {# Setting the headline to a h1 is no h1 exists, otherwise, setting it to an h2 #}
+        {{ rtfBlock.richTextField | retconAttr('*', { 'class': 'text-black' }, false) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

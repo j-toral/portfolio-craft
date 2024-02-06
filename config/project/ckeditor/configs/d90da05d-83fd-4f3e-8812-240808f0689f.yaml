@@ -1,0 +1,21 @@
+css: ".ck.ck-content .uppercase {\r\n  text-transform: uppercase;\r\n}\r\n\r\n.ck.ck-content .text-xl {\r\n  font-size: 1.25rem;\r\n  line-height: 1.75rem;\r\n}\r\n\r\n.ck.ck-content .mt-8 {\r\n  margin-top: 2rem;\r\n}\r\n\r\n.ck.ck-content .mb-4 {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\n.ck.ck-content .text-base {\r\n  font-size: 1rem;\r\n  line-height: 1.5rem;\r\n}\r\n\r\n@media (min-width: 640px) {\r\n  .ck.ck-content .sm\\:text-2xl {\r\n    font-size: 1.5rem;\r\n    line-height: 2rem;\r\n  }\r\n}\r\n\r\n@media (min-width: 1536px) {\r\n  .ck.ck-content .sm\\:text-3xl {\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n  }\r\n}"
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+js: "return {\r\n  heading: {\r\n    options: [\r\n      {\r\n        model: 'heading2',\r\n        view: 'h2',\r\n        title: 'Heading 2',\r\n        class: 'ck-heading'\r\n      },\r\n      {\r\n        model: 'heading3',\r\n        view: 'h3',\r\n        title: 'Heading 3',\r\n        class: 'ck-heading'\r\n      },\r\n      {\r\n        model: 'paragraph',\r\n        title: 'Paragraph',\r\n        class: 'ck-paragraph'\r\n      }\r\n    ]\r\n  },\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'Heading',\r\n        element: 'h3',\r\n        classes: [\r\n          'uppercase',\r\n          'mt-8',\r\n          'mb-4'\r\n        ]\r\n      },\r\n      {\r\n        name: 'Intro',\r\n        element: 'p',\r\n        classes: [\r\n          'text-xl',\r\n          'sm:text-2xl',\r\n          '2xl:text-3xl'\r\n        ]\r\n      },\r\n      {\r\n        name: 'Normal Text',\r\n        element: 'p',\r\n        classes: [\r\n          'text-base'\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}"
+name: 'Story Builder RTF'
+toolbar:
+  - heading
+  - style
+  - '|'
+  - bold
+  - italic
+  - link
+  - alignment
+  - '|'
+  - bulletedList
+  - numberedList

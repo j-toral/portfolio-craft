@@ -1,0 +1,24 @@
+columnSuffix: kmkshfmn
+contentColumnType: text
+fieldGroup: 6091a114-c249-44fa-9a4a-66baa92bfd3b # Regional Sign-Up
+handle: newsletterSuccessBody
+instructions: 'Body for the newsletter success page.'
+name: 'Newsletter Success Body'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+  columnType: text
+  defaultTransform: null
+  purifierConfig: null
+  purifyHtml: true
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

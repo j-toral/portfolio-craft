@@ -1,0 +1,116 @@
+fieldLayouts:
+  64aa5f0e-0f4d-4303-9db6-7bb973a88e45:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9d31f9a9-4991-41d9-887a-f57e79db02a5
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Primary Nav Type'
+            type: craft\fieldlayoutelements\Heading
+            uid: 4a9098d9-c492-4cb6-8682-4ee1b85674b0
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d91154f-8478-4c59-8534-52d2f56b56e1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+                  uid: f43dda56-0f90-40a7-a36e-75d36285f023
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: b78d2848-3680-4f07-8f04-4b69e65001d4 # Navigation Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a8e6992-bf1e-458f-b10f-a167ff086585
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Hero Block'
+            type: craft\fieldlayoutelements\Heading
+            uid: 8ec73b1a-d182-4537-9e13-1018cd758c80
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: bf4cbff0-5195-4ed6-866a-5d332970add1 # Hero Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 839ff8d8-8666-4ece-8b2b-9b516591cc0b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 21cffb54-7377-4668-bdd1-4c522663a155 # Hero Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bc91c26-11e8-44a5-98fb-62704334e771
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Homepage Content'
+        uid: ca9f11b6-7dda-43c6-b2d5-a6ea98d45557
+        userCondition: null
+handle: homepage
+hasTitleField: false
+name: Homepage
+section: 307fc856-663e-4f7d-8be7-24912e5ba8d7 # Homepage
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

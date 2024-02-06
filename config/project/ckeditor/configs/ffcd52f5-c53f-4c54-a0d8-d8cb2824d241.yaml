@@ -1,0 +1,61 @@
+css: ".ck.ck-content .uppercase {\r\n  text-transform: uppercase;\r\n}\r\n\r\n.ck.ck-content .text-base {\r\n  font-size: 1rem;\r\n  line-height: 1.5rem;\r\n}\r\n\r\n.ck.ck-content h2 {\r\n  font-size: 1.5rem;\r\n  line-height: 1.25;\r\n}\r\n\r\n.ck.ck-content h3 {\r\n  font-size: 1.5rem;\r\n  line-height: 2rem;\r\n}\r\n\r\n@media (min-width: 640px) {\r\n  .ck.ck-content h2 {\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n  }\r\n\r\n  .ck.ck-content h3 {\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n  }\r\n}\r\n\r\n@media (min-width: 1536px) {\r\n  .ck.ck-content h2 {\r\n    font-size: 2.25rem;\r\n    line-height: 1.25;\r\n  }\r\n}"
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+name: 'Hub Index Config'
+options:
+  alignment:
+    options:
+      - left
+      - right
+  heading:
+    options:
+      -
+        class: ck-heading
+        model: heading2
+        title: 'Heading 2'
+        view: h2
+      -
+        class: ck-heading
+        model: heading3
+        title: 'Heading 3'
+        view: h3
+      -
+        class: ck-paragraph
+        model: paragraph
+        title: Paragraph
+  style:
+    definitions:
+      -
+        classes:
+          - uppercase
+        element: h2
+        name: 'Large Title'
+      -
+        classes:
+          - uppercase
+        element: h3
+        name: Title
+      -
+        classes:
+          - text-base
+        element: p
+        name: 'Normal Text'
+      -
+        classes:
+          - text-base
+          - uppercase
+        element: p
+        name: 'Uppercase Text'
+toolbar:
+  - heading
+  - style
+  - '|'
+  - bold
+  - italic
+  - link
+  - alignment

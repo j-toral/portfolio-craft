@@ -1,0 +1,44 @@
+{# Setting the navigation color and primary nav depending on whether there is an entry object #}
+{% if entry is defined %}
+    {% set transparentPrimaryNav = entry.transparentPrimaryNav %}
+    {% set navigationColor = entry.navigationColor %}
+{% else %}
+    {# Getting the entry in the meta info section that matches the first segment of the url #}
+    {% set metaFields = craft.entries().section('sectionMetaInfo').slug(metaField).one() %}
+    {% set transparentPrimaryNav = metaFields.transparentPrimaryNav %}
+    {% set navigationColor = metaFields.navigationColor %}
+{% endif %}
+
+{# Database Call to find all the nodes #}
+{% set nodes = craft.navigation.nodes()
+    .handle('primaryNavigation')
+    .all() %}
+
+{# Filter to find all the nodes that are a level 1 Nodes | There can only be 2 levels #}
+{% set parentNodes = nodes|filter(node => node.level == 1) %}
+
+{# Filter to find all the nodes that are a level 2 Nodes | There can only be 2 levels #}
+{% set childNodes = nodes|filter(node => node.level == 2) %}
+
+{% block primaryNav %}
+    <script src="/assets/js/sticky-header.js" defer="defer"></script>
+    <script src="/assets/js/details-disclosure.js" defer="defer"></script>
+
+    <div class="section-header relative z-30">
+        <sticky-header class="header-wrapper text-black block relative z-0">
+            <header class="h-full w-full grid grid-cols-3 lg:flex lg:flex-col justify-center py-3.5 md:py-6 lg:pt-0 lg:pb-3 px-5 sm:px-7 bg-gray-200 border-b lg:gap-y-5">
+                {% if nodes is defined %}
+                    {% include '_partials/_header-drawer' with { 'parentNodes': parentNodes, 'childNodes': childNodes } %}
+                {% endif %}
+                <div id="nav-logo" class="flex justify-center lg:pt-6">
+                    <a href="/" class="flex items-center lg:mt-2">
+                        {% include '_misc/logoSVG' with { 'classes': 'h-7 md:h-11 lg:h-14 fill-black' } %}
+                    </a>
+                </div>
+                <div id="desktop-nav" class="hidden lg:flex lg:items-center lg:justify-center lg:col-span-3">
+                    {% include '_partials/_header-mega-menu' with { 'parentNodes': parentNodes, 'childNodes': childNodes } %}
+                </div>
+            </header>
+        </sticky-header>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{# Block that contains the code for the rich text field #}
+{% block vimeoBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if vimeoBlock.anchorId %} id="{{ vimeoBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%} class="px-4">
+    {# Setting the text allignment as well as the container width and the top and bottom margins #}
+    <div class="{{ vimeoBlock.containerWidth }}{{ ' ' ~ vimeoBlock.topMargin }}{{ ' ' ~ vimeoBlock.bottomMargin }} mx-auto">
+      <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/{{ vimeoBlock.videoID }}?h=d8b0d8f55d&amp;badge=0{% if vimeoBlock.videoOptions.contains('autoplay') %}&amp;autoplay=1{% endif %}{% if not vimeoBlock.videoOptions.contains('controls') %}&amp;controls=0{% endif %}{% if vimeoBlock.videoOptions.contains('loop') %}&amp;loop=1{% endif %}&amp;byline=0&amp;portrait=0&amp;title=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{% if vimeoBlock.videoTitle %}{{ vimeoBlock.videoTitle }}{% else %}Video{% endif %}"></iframe>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+  </div>
+{% endblock %}

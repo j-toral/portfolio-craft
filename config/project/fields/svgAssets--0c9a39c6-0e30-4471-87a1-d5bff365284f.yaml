@@ -1,0 +1,39 @@
+columnSuffix: onnqhqov
+contentColumnType: text
+fieldGroup: a7520f9b-411b-4a62-9508-90b54dd1217c # Navigation
+handle: svgAssets
+instructions: null
+name: 'SVG Assets'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'SVG Url'
+            -
+              - handle
+              - svgUrl
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+  maxRows: null
+  minRows: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -1,0 +1,15 @@
+/.idea
+/vendor
+.DS_Store
+
+# Logs
+*.log
+
+node_modules
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+
+# REMOVING STATIC ASSETS
+/web/assets/css/portfolio.css

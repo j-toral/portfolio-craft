@@ -1,0 +1,14 @@
+columnSuffix: ampxfimo
+contentColumnType: boolean
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: navigationColor
+instructions: null
+name: 'Navigation Color'
+searchable: false
+settings:
+  default: false
+  offLabel: Dark
+  onLabel: Light
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

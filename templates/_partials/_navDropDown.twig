@@ -1,0 +1,46 @@
+
+{% block navDropDown %}
+    {# Drop Down Navigation Block #}
+    <div class="normal-case">
+        <div class="grid gap-y-6 px-4 py-6 grid-cols-2 gap-8 sm:px-6 sm:py-6 lg:grid-cols-4 lg:px-8 lg:py-8">
+            {# Looping through all the children of the drop down menu #}
+            {% for node in childNodes %}
+            {# Start of Nav Card #}
+            <a href="{{ node.url }}" class="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-neutral-600 transition ease-in-out duration-150 no-underline">
+                <div class="flex flex-col h-full">
+                    {# Start of Card Image #}
+                    <div class="flex-shrink-0">
+                        {# Setting the image from the entry for the section #}
+                        {% set image = node.navigationAssets.one() %}
+                        {% if image %}<img src="{{ image.url }}" alt="{{- node.title -}}" class="rounded-md aspect-video min-w-full justify-center items-center inline-flex">{% endif %}
+                    </div>
+                    {# END Start of Card Image #}
+                    {# Start of Card Text #}
+                    <div class="mx-1 mt-4 md:flex-1 md:flex md:flex-col md:justify-between">
+                        <div>
+                            {# Printing the the text for each section #}
+                            {# Printing the text if it is on desktop #}
+                            <p class="font-medium text-black uppercase">{{- node.title -}}</p>
+                            {% if desktop %}
+                                <p class="text-neutral-800">{{ node.primaryNavDescription }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {# END Start of Card Text #}
+                </div>
+            </a>
+            {% endfor %}
+            {# END of Nav Card #}
+        </div>
+    </div>
+    {# Start of Buttons in Drop Down for SM Breakpoint #}
+    <div class="hidden sm:flex">
+        {# Looping through the drop down nodes from the navigation #}
+        {% for node in ddNodes %}
+            <div class="pb-4 px-4">
+                <a href="{{ node.url }}" class="border-transparent text-neutral-900 hover:bg-neutral-600 hover:border-slate-700 hover:text-black block pl-3 pr-4 py-4 border-l-4 text-base font-medium no-underline">{{- node.title -}}</a>
+            </div>
+        {% endfor %}
+    </div>
+    {# END Drop Down Navigation Block #}
+{% endblock %}

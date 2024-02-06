@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: sectionMetaInfo
+name: 'Section Meta Info'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  30a8fd08-2242-4239-8d98-6f56c65592a4: # Craft Portfolio
+    enabledByDefault: false
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 5a8ae02e-c1f1-4cd1-9db2-ad2c2bb431cf
+type: structure

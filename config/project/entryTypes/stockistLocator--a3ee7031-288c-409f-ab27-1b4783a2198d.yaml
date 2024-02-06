@@ -1,0 +1,197 @@
+fieldLayouts:
+  1fb96312-67c2-4ce4-a85f-d40be2c02c62:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5c415d41-06d4-4eed-ba99-966d254efdf6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e409a0d6-eeee-4658-80de-7cf388590afe # Preview Card Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e6fee8a-c1fe-4304-bad3-4fdde2c7d9e6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: ee7a0a74-18d3-4237-b62a-892bab72b166
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Navigation
+            type: craft\fieldlayoutelements\Heading
+            uid: 6faea4b3-cd08-4377-a273-9537943a1fc9
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6697f7d4-86de-42e7-912e-6fb17d0c0fa7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+                  uid: 16632979-7f0e-477f-adda-5850b9240e2f
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: b78d2848-3680-4f07-8f04-4b69e65001d4 # Navigation Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84bfe8c7-77c7-4cfe-833d-17bdfd0d72c1
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 38992ed3-1b34-4f5f-af51-42d8016f2878
+            userCondition: null
+          -
+            elementCondition: null
+            heading: 'Search Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: 95bffbb9-304f-4840-8a9d-176dc57b912f
+            userCondition: null
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 203065b0-b077-4879-9f0a-1c3cc6c5b314
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: aa2468fc-4de3-43f5-b86e-f967ca04b890 # Search Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a4fe0d3-73a5-441c-96a1-9c69fb37d889
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: f862ba5b-b4b0-4ecd-a7a3-b7ed2684a41a # Search Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e925308f-430d-446d-9406-d4d8c0d176b5
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 01ec988d-1c1f-4a22-a0ab-71e24a0fba8d # No Results Found Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2c270940-eaf8-4740-8e3d-c2d49d9ce35a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: cab5c64e-3e09-4b80-9423-d029f84c59c1 # No Results Found Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a04df03-a3ee-4e27-a4f5-2dee62804dff
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Main Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: 706f4520-a130-4166-90fe-53ccf7e69119
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 3481f8dc-e963-4f4d-a0a4-ad8417f6e461 # Available Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e64d6e7d-2e58-451d-bdd0-f472be75eeca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2313d2e6-9c35-4082-9578-d4f0bf197786 # Stockist Locations
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10ff7f15-4564-410a-8a4a-9c8d9b18a50c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9d631fc3-b386-4f97-9bd6-97abd2780120
+        userCondition: null
+handle: stockistLocator
+hasTitleField: true
+name: 'Stockist Locator'
+section: 6566fdc0-6ee3-4353-81c1-a50d61f04635 # Stockist Locator
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,79 @@
+{# Block that contains the code for the top content #}
+{% block topBlock %}
+  <div class="mb-10 text-center md:text-left">
+    <h1>{{ entry.title }}</h1>
+    <p>{{ entry.storeSubHeader }}</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 mb-4 md:mb-16 md:gap-y-0 md:gap-x-10">
+    <div>
+      <div class="flex flex-col items-center md:items-start mb-10">
+        <h3 class="mb-4">{{ topBlock.openingHoursTitle }}</h3>
+        <ul class="grid grid-cols-2 max-w-xs">
+          {% for day in topBlock.openingHours %}
+            {% if not day.closed %}
+              <li>{{ day.day }}:</li>
+              <li>{{ day.openingTime | time('short', locale='en-US') }} - {{ day.closingTime | time('short', locale='en-US') }}</li>
+            {% else %}
+              <li>{{ day.day }}:</li>
+              <li>Closed</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% if topBlock.specialOpeningHours | length > 0 %}
+      <div>
+        <div class="flex flex-col items-center md:items-start mb-10">
+          <h3 class="mb-4">{{ topBlock.sohTitle }}</h3>
+          <div>
+            <ul class="grid grid-cols-2 max-w-xs mb-2">
+              {% for day in topBlock.specialOpeningHours %}
+                {% if not day.closed %}
+                  <li>{{ day.day }}:</li>
+                  <li>{{ day.openingTime | time('short', locale='en-US') }} - {{ day.closingTime | time('short', locale='en-US') }}</li>
+                {% else %}
+                  <li>{{ day.day }}:</li>
+                  <li>Closed</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <p>{{ topBlock.sohContext }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="text-center md:text-left">
+      <h3 class="mb-4">{{ topBlock.findUsTitle }}</h3>
+      <p class="uppercase">Store Name</p>
+      <p>{{ topBlock.storeMainAddress }}</p>
+      {% if topBlock.storeCity | length > 0 %}
+        <p>{{ topBlock.storeCity }}</p>
+      {% endif %}
+      <p>{{ topBlock.storePostcode }}</p>
+
+      <div class="mt-4 text-center md:text-left">
+        <p class="mb-4">
+          <a href="tel:{{ topBlock.storePhoneNumber }}">{{ topBlock.storePhoneNumber }}</a>
+        </p>
+
+
+        {% if topBlock.storeEmail %}
+          <p>
+            <a href="mailto:{{ topBlock.storeEmail }}">{{ topBlock.storeEmail }}</a>
+          </p>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <div class="{% if topBlock.specialOpeningHours | length < 1 %}md:row-start-1 md:col-start-2 md:row-span-2{% endif %}">
+      <div id="map" class="{% if topBlock.specialOpeningHours | length > 0 %}h-96{% else %}h-96 md:h-full{% endif %}"></div>
+    </div>
+
+  </div>
+
+  <script src="/assets/js/map.js" data-latitude="{{ entry.storeLatitude }}" data-longitude="{{ entry.storeLongitude }}"></script>
+{% endblock %}

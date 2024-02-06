@@ -1,0 +1,70 @@
+{% extends '_layouts/layout' %}
+
+{# Getting the blocks from the story builder #}
+{% set blocks = entry.storyBuilder.all() %}
+{# Setting whether a h1 element is used or not #}
+{% set h1Used = false %}
+
+{% block main %}
+
+  {# Story Content #}
+  {% if blocks|length %}
+    {% for block in blocks %}
+      {% switch block.type %}
+        {# Rendering the hero block #}
+        {% case "hero" %}
+          {# Including the partial and passing the hero block into the partial #}
+          {% include "_partials/storybuilder/hero" with { 'heroBlock': block } %}
+          {# Setting the h1 to used if there is not h1Used, a hero title exists, and there is no svg overlay #}
+          {% if not h1Used and block.heroTitle and not block.svgOverlay.one() %}
+            {% set h1Used = 1 %}
+          {% endif %}
+        {# Rendering the heading block #}
+        {% case "heading" %}
+          {# Including the partial and passing the hero block and the h1Used into the partial #}
+          {% include "_partials/storybuilder/heading" with { 'headingBlock': block, 'h1Used': h1Used } %}
+          {# Setting the h1 to used if h1Used is false and there is no heading #}
+          {% if not h1Used and block.heading %}
+            {% set h1Used = 1 %}
+          {% endif %}
+        {# Rendering the RTF block #}
+        {% case "rtf" %}
+          {# Including the partial and passing the hero block into the partial #}
+          {% include "_partials/storybuilder/rtf" with { 'rtfBlock': block } %}
+        {# Rendering the Image block #}
+        {% case "imageBlock" %}
+          {# Including the partial and passing the image block into the partial #}
+          {% include "_partials/storybuilder/imageBlock" with { 'imageBlock': block } %}
+        {# Rendering the Image 50/50 block #}
+        {% case "image5050" %}
+          {# Including the partial and passing the image 50/50 block into the partial #}
+          {% include "_partials/storybuilder/image5050Block" with { 'image5050Block': block } %}
+        {# Rendering the Image 50/50 Text block #}
+        {% case "imageText5050" %}
+          {# Including the partial and passing the image text 50/50 block into the partial #}
+          {% include "_partials/storybuilder/image5050TextBlock" with { 'imageText5050Block': block } %}
+        {# Rendering the Image 50/50 Quote block #}
+        {% case "imageQuote5050" %}
+          {# Including the partial and passing the Image 50/50 Quote block into the partial #}
+          {% include "_partials/storybuilder/image5050Quote" with { 'imageQuote5050Block': block } %}
+        {# Rendering the quote block #}
+        {% case "quote" %}
+          {# Including the partial and passing the quote block into the partial #}
+          {% include "_partials/storybuilder/quoteBlock" with { 'quoteBlock': block } %}
+        {# Rendering the CTA-Buttons block #}
+        {% case "ctaButtons" %}
+          {# Including the partial and passing the CTA buttons block into the partial #}
+          {% include "_partials/storybuilder/CTAButtonsBlock" with { 'ctaButtonsBlock': block } %}
+        {# Rendering the Vimeo block #}
+        {% case "vimeo" %}
+          {# Including the partial and passing the vimeo block into the partial #}
+          {% include "_partials/storybuilder/vimeo" with { 'vimeoBlock': block } %}
+      {% endswitch %}
+    {% endfor %}
+  {% endif %}
+  {# END of Story Content #}
+
+  {# Entry Pagination #}
+  {% include '_partials/storybuilder/_storyNavigation' with { 'sectionHandle': entry.section.handle } %}
+
+{% endblock %}

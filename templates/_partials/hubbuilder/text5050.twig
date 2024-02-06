@@ -1,0 +1,26 @@
+{# Block that contains the code for the 50/50 Text Block #}
+{% block textList5050Block %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if textList5050Block.anchorId %} id="{{ textList5050Block.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %} class="px-4">
+    {# Adding the container width as well as the top and borrom margins #}
+    <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8{{ ' ' ~ textList5050Block.topMargin }}{{ ' ' ~ textList5050Block.bottomMargin }}">
+      {# RTF 1 #}
+      <div class="flex flex-col items-center px-4 lg:px-12 lg:py-20">
+        {# Pasting in the rich text body text into the div #}
+        <div class="prose text-black max-w-none">
+          {# Making the bullet points black #}
+          {{ textList5050Block.rtf1 | retconAttr('*', { 'class': 'text-black' }, false) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+        </div>
+      </div>
+      {# RTF 2 #}
+      {# Setting order-first to the text if RTF 1 is set to being on the right #}
+      <div class="flex flex-col items-center px-4 lg:px-12 lg:py-20{% if textList5050Block.mobileStack and textList5050Block.sequenceSelection %} order-first md:order-first{% elseif textList5050Block.mobileStack %} order-first md:order-none{% elseif textList5050Block.sequenceSelection %} order-none md:order-first{% endif %}">
+        {# Pasting in the rich text body text into the div #}
+        <div class="prose text-black max-w-none w-full">
+          {# Making the bullet points black #}
+          {{ textList5050Block.rtf2 | retconAttr('*', { 'class': 'text-black' }, false) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{#
+    Renders a megamenu for the header.
+
+    Usage:
+{% include 'header-mega-menu' %}
+#}
+
+{# Creating the transform #}
+{% set transform = { mode: 'fit', width: 330 } %}
+
+{% block headerMegaMenu %}
+    <nav class="">
+        <ul class="list-none p-0 m-0 inline-flex flex-wrap justify-center items-center" role="list">
+            {%- for link in parentNodes -%}
+                <li>
+                    {%- if link.hasDescendants -%}
+                        <header-menu>
+                            <details id="Details-HeaderMenu-{{ loop.index }}" class="group list-none static z-0">
+                                <summary class="flex items-center px-3 pt-3 pb-2 no-underline list-none uppercase text-black/75 hover:text-black cursor-pointer relative z-0" role="button" aria-expanded="false" aria-controls="MegaMenu-Content-{{ loop.index }}">
+                                    <span class="transition-all underline-offset-4 text-sm group-open:underline group-open:text-black group-open:hover:decoration-2 hover:underline">{{ link.title | escape }}</span>
+                                </summary>
+                                <div id="MegaMenu-Content-{{ loop.index }}" class="transition-all opacity-0 -translate-y-4 border-b left-0 overflow-y-auto py-6 absolute z-0 right-0 top-full bg-gray-200 group-open:opacity-100 group-open:translate-y-0" tabindex="-1">
+                                    <ul class="grid grid-cols-4 gap-y-6 gap-x-10 list-none lg:px-12 mx-auto max-w-screen-2xl" role="list">
+
+                                        <li>
+                                            <div class="uppercase text-sm mb-3">
+                                                {{ link.title | escape }}
+                                            </div>
+                                            <ul class="list-none m-0 p-0" role="list">
+                                                {% if link.isBlog %}
+                                                    {# Querying blog section #}
+                                                    {% set query = craft.entries().section(link.navigationHandle).limit(4) %}
+
+                                                    {% set query = { 'index': { "url": link.url, "title": link.primaryNavDescription } } | merge(query) %}
+
+                                                    {% for entry in query %}
+                                                        <li>
+                                                            <a href="{{ entry.url }}" class="block text-sm py-1.5 transition-all cursor-pointer underline-offset-4 text-black/75 no-underline hover:underline hover:decoration-black hover:text-black">
+                                                                {{ entry.title | escape }}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                {% else %}
+                                                    {%- for childLink in link.children -%}
+                                                        <li>
+                                                            <a href="{{ childLink.url }}" class="block text-sm py-1.5 transition-all cursor-pointer underline-offset-4 text-black/75 no-underline hover:underline hover:decoration-black hover:text-black">
+                                                                {{ childLink.title | escape }}
+                                                            </a>
+                                                        </li>
+                                                    {%- endfor -%}
+                                                {% endif %}
+                                            </ul>
+                                        </li>
+
+                                        {% set images = link.navigationAssets.all() %}
+
+                                        {% for image in link.imageInfo %}
+                                            <li class="block col-start-{{ loop.index + 2 }}">
+                                                <div class="uppercase text-sm mb-3">
+                                                    {{ image.imageTitle | escape }}
+                                                </div>
+                                                <div class="mb-3">
+                                                    <a href="{{ image.imageUrl }}" class="rounded-md overflow-hidden">
+                                                        <img src="/images/{{ images[loop.index - 1].getUrl() }}"
+                                                             alt="{% if not images[loop.index - 1].alt %}Alt Text{% else %}{{ images[loop.index - 1].alt }}{% endif %}"
+                                                             {% if images[loop.index - 1].width %}width="{{ images[loop.index - 1].width }}"{% endif %}
+                                                             {% if images[loop.index - 1].height %}height="{{ images[loop.index - 1].height }}"{% endif %}
+                                                             loading="eager"
+                                                             class="rounded-md overflow-hidden"
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ image.imageUrl }}" class="block text-sm py-1.5 transition-all cursor-pointer underline-offset-4 text-black/75 no-underline hover:underline hover:decoration-black hover:text-black">{{ image.imageDescription }}</a>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </details>
+                        </header-menu>
+                    {%- else -%}
+                        <a href="{{ link.url }}" class="flex text-sm items-center text-black/75 hover:text-black px-3 pt-3 pb-2 cursor-pointer no-underline uppercase hover:underline hover:decoration-black hover:text-black">
+                            <span class="transition-all underline-offset-4 hover:underline">{{ link.title | escape }}</span>
+                        </a>
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+        </ul>
+    </nav>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% set transform = { mode: 'fit', width: 1536 } %}
+{% set transformVideo = { mode: 'fit', width: 762 } %}
+
+{# Getting the latest posts from our story  #}
+{% set posts = craft.entries().section(
+  [
+    'ourStory'
+  ]
+).limit(6).orderBy('postDate DESC') %}
+
+{% block postsGrid %}
+
+  {# Our Story Block #}
+  <div class="w-full bg-white">
+    <div class="container mx-auto">
+
+      <div class="flex justify-center items-center pt-16 pb-14">
+        <h3 class="uppercase">Our Story</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-x-8 px-4 md:px-8">
+        {# For loop to create the cards for the entries #}
+        {% for post in posts %}
+          {# Making the first card take up two columns if in medium screens only, reverting to single column on large #}
+          <div class="flex flex-col border rounded-md p-4">
+            {% set previewCardImage = post.previewCardImage.one() %}
+            {# Single Card #}
+            {# Setting the aspect ration to auto on medium if it's the first card #}
+            <a href="{{ post.url }}" class="rounded-md overflow-hidden aspect-video w-full{% if loop.index == 1 %} md:aspect-auto lg:aspect-video{% endif %}">
+              <picture>
+                {# Setting the transform on the image from md to lg #}
+                <source media="(max-width: 767px)" srcset="{{ previewCardImage.getUrl(transformVideo) }}" />
+                <source media="(max-width: 1023px)" srcset="{{ previewCardImage.getUrl(transform) }}" />
+                <img src="{{ previewCardImage.getUrl(transformVideo) }}" alt="" class="w-full h-full object-cover">
+              </picture>
+            </a>
+
+            <div class="flex flex-col grow text-black">
+              <div class="grow pt-3{% if loop.index == 1 %} md:pt-0.5{% else %} md:pt-4{% endif %} lg:pt-3 pb-8">
+                <p class="text-sm uppercase">{{ post.postDate | date("d M Y") }}</p>
+                <h4 class="uppercase mt-1">{{ post.title }}</h4>
+                <p class="lg:text-lg mt-2.5">
+                  {% if post.previewCardExcerpt %}{{ post.previewCardExcerpt }}{% endif %}
+                </p>
+              </div>
+              <div>
+                <a href="{{ post.url }}" class="uppercase">Read More</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center py-16">
+      <a href="{{ ourWorldGlobal.readMoreUrl }}" class="uppercase">{{ ourWorldGlobal.readMoreText }}</a>
+    </div>
+
+  </div>
+  {# END Our Story Block #}
+
+{% endblock %}

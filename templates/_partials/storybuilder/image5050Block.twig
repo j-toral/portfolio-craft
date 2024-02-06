@@ -1,0 +1,90 @@
+{# Creating a lookup table that contains the paddings and width's for each container size #}
+{% set breakpointStyles = {
+  'max-w-x-narrow': {
+    'width': 192,
+    "padding": 'p-8'
+  },
+  'max-w-narrow': {
+    'width': 384,
+    'padding': 'p-8 md:p-12'
+  },
+  'max-w-medium': {
+    'width': 512,
+    'padding': 'p-8 sm:p-10 md:p-12 lg:p-14 xl:p-16'
+  },
+  'container': {
+    'width': 768,
+    'padding': 'p-8 sm:p-12 lg:p-20 xl:p-24'
+  }
+} %}
+
+{# Setting the values when there are no inset images for the tranforms and insetImage boolean #}
+{% set mode1 = "crop" %}
+{% set mode2 = "crop" %}
+{% set insetImage = false %}
+
+{# Creating a container width variable #}
+{% set containerWidth = image5050Block.containerWidth %}
+
+{# Switch statement that changes the transform type and insetImage to the correct value #}
+{% switch (image5050Block.sequenceSelection) %}
+{% case 'left' %}
+  {# If the left image is inset setting the image to 1 and the transform mode of 1 #}
+  {% set mode1 = "fit" %}
+  {% set insetImage = 1 %}
+{% case 'right' %}
+  {# If the right image is inset setting the image to 2 and the transform mode of 2 #}
+  {% set mode2 = "fit" %}
+  {% set insetImage = 2 %}
+{% endswitch %}
+
+{# Creating the image transform variables for the two images #}
+{% set imageTransform1 = { mode: mode1, width: breakpointStyles[containerWidth | t].width } %}
+{% set imageTransform2 = { mode: mode2, width: breakpointStyles[containerWidth | t].width } %}
+
+{# Creating an insetPadding bariable from the lookup table #}
+{% set insetPadding = breakpointStyles[containerWidth | t].padding %}
+
+{# Get all images from the matrix block #}
+{% set images = image5050Block.images.all() %}
+
+
+{# Block that contains the code for the Image 50/50 Block #}
+{% block image5050Block %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if image5050Block.anchorId %} id="{{ image5050Block.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %} class="px-4">
+    {# Adding the container width as well as the top and borrom margins #}
+    <div class="{{ image5050Block.containerWidth ~ ' ' }}mx-auto flex flex-col md:flex-row{{ ' ' ~ image5050Block.topMargin }}{{ ' ' ~ image5050Block.bottomMargin }}">
+      {# For loop that creates the two divs holding the images #}
+      {% for image in images %}
+        {# Parent div for the full image, setting it to flex and injecting the insetPadding if the image is inset, otherwise setting overflow to hidden  #}
+        {# If the image is inset, creating inline styles that give the inset image a background color #}
+        <div class="w-full md:w-1/2 md:aspect-square{% if image5050Block.mobileStack and loop.index == 2 %} order-first md:order-none{% endif %}{% if insetImage == loop.index %} flex {{ insetPadding }}{% else %} overflow-hidden{% endif %}"{% if insetImage == loop.index %} style="background-color: {{ image5050Block.insetImageBG }}"{% endif %}>
+          {# Creating another div with m-auto if this image is inset #}
+          {% if insetImage == loop.index %}<div class="{{ image5050Block.captionAlignment ~ ' ' }}m-auto">{% endif %}
+            {# If the imageUrlsandCaption table has a row and this specific image has an image url, wrapping the img in an anchor tag #}
+            {% if image5050Block.imageUrlsAndCaption | length and attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) %}<a href="{{ attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) }}">{% endif %}
+              {# Setting the image url transform depending on which image it is #}
+              <img src="{% if loop.index == 1 %}/images/{{ image.getUrl() }}{% else %}/images/{{ image.getUrl() }}{% endif %}"
+                   alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}"
+                   {# Setting classes to the image if it is not inset #}
+                   {% if insetImage != loop.index %}class="object-cover w-full h-full"{% endif%}
+              />
+            {# Closing the anchor tag #}
+            {% if image5050Block.imageUrlsAndCaption | length and attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) %}</a>{% endif %}
+
+            {# If the image is inset, the table has a row, and there is a caption #}
+            {% if insetImage == loop.index and image5050Block.imageUrlsAndCaption | length and image5050Block.imageUrlsAndCaption[0].insetImageCaption %}
+              {# If the caption has a url creating an anchor tag #}
+              {% if attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) %}<a href="{{ attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) }}">{% endif %}
+                {# Caption for the inset image #}
+                <p class="text-sm uppercase mt-2">{{ image5050Block.imageUrlsAndCaption[0].insetImageCaption }}</p>
+              {# Cloding the anchor tag #}
+              {% if attribute(image5050Block.imageUrlsAndCaption[0], 'imageUrl' ~ loop.index ) %}</a>{% endif %}
+            {% endif %}
+          {% if insetImage == loop.index %}</div>{% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

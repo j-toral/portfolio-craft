@@ -1,0 +1,535 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  f98b2b6f-78b6-4a46-a3b4-631867f8cbf3:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 59eeba0c-9dec-4445-a276-cbaa251ad560 # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 59b1d4f5-61f2-4f65-ab96-8cf372f8778e
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: b3b13110-da32-4c55-aa91-f68d0d548c96 # Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 81471896-02e7-41e2-9340-96f78a1c661f
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 1285ee37-1b16-4b73-9cfd-aff3efc6eb70 # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3946c28c-9f57-4f5e-be54-394ed0798ab5
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 19f2bfe7-aac6-47f3-8257-4264507e63ab # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d583422-cb3d-41bb-b1be-4c4ed91ba600
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 2d5a7f24-e28b-45b5-a351-bcf501a27b46 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4348cce-ab1e-4895-bf1a-d750f624ed31
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5ba4c3e6-9d87-4ae4-86c5-bf20e74c2e75 # Image Url
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: effc1872-cf3c-4da2-ab5f-83e3ab7c05c2
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 2da7d0e5-f6b9-45b5-ae5b-412b043dda8d # Body Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1aa2378b-e327-4a53-a5de-97ca3bfe4b9e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: a30a86da-69e9-47f6-abb6-b82b567cb5c6 # Text Alignment
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7296fa23-af67-4e3c-8b69-dbac4c7e355b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 235e1d23-2b4f-42e4-858e-9b93e7f6860f # Sequence Selection
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84446cb0-fa66-4df8-a4e3-e1469a4be029
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: c25cc899-7c44-4696-afc1-978b694aa466 # Top Block on Mobile
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e47db1a-d81c-4505-9b8e-3d540a4e7b3c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: ce36fd90-2c42-4149-9069-8efacff1864c # CTA
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96a5542a-ab9b-4116-aea3-544070f3911f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 06c97d02-f5e3-492e-ba13-cd18ac29b43a
+        userCondition: null
+fields:
+  2d5a7f24-e28b-45b5-a351-bcf501a27b46: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: "This is the image for the 50/50 image text.\r\nDimensions: width 800px"
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  2da7d0e5-f6b9-45b5-ae5b-412b043dda8d: # Body Text
+    columnSuffix: dljhcgsj
+    contentColumnType: text
+    fieldGroup: null
+    handle: bodyText
+    instructions: 'This is the text for the 50/50'
+    name: 'Body Text'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      ckeConfig: d90da05d-83fd-4f3e-8812-240808f0689f # Story Builder RTF
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  5ba4c3e6-9d87-4ae4-86c5-bf20e74c2e75: # Image Url
+    columnSuffix: xecnkuno
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: imageUrl
+    instructions: 'This is the url for the image link'
+    name: 'Image Url'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  19f2bfe7-aac6-47f3-8257-4264507e63ab: # Bottom Margin
+    columnSuffix: rtmrvgru
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  59eeba0c-9dec-4445-a276-cbaa251ad560: # Anchor ID
+    columnSuffix: jfzrqrxz
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  235e1d23-2b4f-42e4-858e-9b93e7f6860f: # Sequence Selection
+    columnSuffix: wgvmvocc
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: sequenceSelection
+    instructions: 'This determines whether the image is on the left or right'
+    name: 'Sequence Selection'
+    searchable: false
+    settings:
+      default: false
+      offLabel: Left
+      onLabel: Right
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  1285ee37-1b16-4b73-9cfd-aff3efc6eb70: # Top Margin
+    columnSuffix: lpsvrpqv
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a30a86da-69e9-47f6-abb6-b82b567cb5c6: # Text Alignment
+    columnSuffix: adcolulx
+    contentColumnType: string
+    fieldGroup: null
+    handle: textAlignment
+    instructions: 'This dropdown determines the text alignment for the text.'
+    name: 'Text Alignment'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  b3b13110-da32-4c55-aa91-f68d0d548c96: # Container Width
+    columnSuffix: bmcsotir
+    contentColumnType: string
+    fieldGroup: null
+    handle: containerWidth
+    instructions: 'This sets the maximum width that the 50/50 will be contained at.'
+    name: 'Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - 1
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c25cc899-7c44-4696-afc1-978b694aa466: # Top Block on Mobile
+    columnSuffix: ryeyjami
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: mobileStack
+    instructions: 'This determines whether the text or the image is on top on mobile.'
+    name: 'Top Block on Mobile'
+    searchable: false
+    settings:
+      default: false
+      offLabel: Image
+      onLabel: Text
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  ce36fd90-2c42-4149-9069-8efacff1864c: # CTA
+    columnSuffix: jrpsglvf
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: 'This creates a CTA at the bottom of the body text.'
+    name: CTA
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'CTA Text'
+                -
+                  - handle
+                  - ctaText
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'CTA Url'
+                -
+                  - handle
+                  - ctaUrl
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+      defaults: null
+      maxRows: 1
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: imageText5050
+name: '50/50 Image-Text'
+sortOrder: 6

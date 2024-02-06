@@ -1,0 +1,129 @@
+{% extends '_layouts/layout' %}
+
+{% set blocks = entry.chapterContentBuilder.all() %}
+
+{% block main %}
+  <main class="bg-neutral-300 pt-20">
+
+    <div id="chapter-heading" class="container mx-auto text-center px-4 pt-4 lg:pt-12">
+      <h2 class="uppercase mb-3 lg:mb-5">{{ entry.title }}</h2>
+      <h1 class="uppercase">{{ entry.chapterTitle }}</h1>
+    </div>
+
+    <div id="hubVideo" class="mt-12">
+      <div class="container mx-auto">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe src="https://player.vimeo.com/video/{{ entry.videoID }}?h=d8b0d8f55d&amp;badge=0{% if entry.videoOptions.contains('autoplay') %}&amp;autoplay=1{% endif %}{% if not entry.videoOptions.contains('controls') %}&amp;controls=0{% endif %}{% if entry.videoOptions.contains('loop') %}&amp;loop=1{% endif %}&amp;byline=0&amp;portrait=0&amp;title=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Video"></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+    </div>
+
+    {# Page Content #}
+    {% if blocks|length %}
+      {% for block in blocks %}
+        {% if block.image %}
+          {% set blImage = block.image.one() %}
+        {% endif %}
+        {% switch block.type %}
+        {% case "chapter1Block1" %}
+          {% set imagePrimary = block.imagePrimary.one() %}
+          {% set imageSecondary = block.imageSecondary.one() %}
+          <div>
+            <div class="container mx-auto py-20">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 md:p-8 flex md:items-end">
+                  <div class="px-4 xl:px-20">
+                    {% if block.introText %}
+                      <div class="text-xl md:text-2xl mb-6 prose text-black max-w-none">
+                        {{ block.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                      </div>
+                    {% endif %}
+                    {% if block.bodyText1 %}
+                      <div class="prose text-black max-w-none">
+                        {{ block.bodyText1 | retconAttr('*', { 'class': 'text-black' }, false) }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="md:row-span-2 md:order-first px-4 lg:px-10 md:py-10">
+                  <img class="mx-auto" src="/images/{{ imagePrimary.url }}" alt="{% if imagePrimary.alt %}{{ imagePrimary.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                  <div class="px-4 xl:px-20 pt-10 lg:pt-20">
+                    {% if block.bodyText2 %}
+                      <div class="prose text-black max-w-none">
+                        {{ block.bodyText2 | retconAttr('*', { 'class': 'text-black' }, false) }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="px-10">
+                  <img src="/images/{{ imageSecondary.url }}" alt="{% if imageSecondary.alt %}{{ imageSecondary.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        {% case "fullWidthImage" %}
+          {% if blImage %}
+            <div class="hidden lg:block">
+              <div{% if block.displayWidth %} class="container mx-auto"{% endif %}>
+                <img src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% endif %}">
+              </div>
+            </div>
+          {% endif %}
+        {% case "chapter1Block3" %}
+          {% set imagePrimary = block.imagePrimary.one() %}
+          {% set imageSecondary = block.imageSecondary.one() %}
+          <div>
+            <div class="container mx-auto py-20">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 md:p-8 flex md:items-end">
+                  <div class="px-4 xl:px-20">
+                    {% if block.bodyText %}
+                      <div class="prose text-black max-w-none">
+                        {{ block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="md:row-span-2 md:order-first px-10 md:py-10">
+                  <img class="mx-auto" src="/images/{{ imagePrimary.url }}" alt="{% if imagePrimary.alt %}{{ imagePrimary.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                </div>
+                <div class="px-10 md:py-10">
+                  <img src="/images/{{ imageSecondary.url }}" alt="{% if imageSecondary.alt %}{{ imageSecondary.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        {% case "fiftyfifty" %}
+          <div>
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
+              {% if block.image %}
+                <div class="relative aspect-video lg:aspect-auto">
+                  <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover" src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                  </div>
+                </div>
+              {% endif %}
+              <div class="flex flex-col justify-center items-center {% if block.desktopOrder %}lg:order-first{% endif %}">
+                <div class="p-8 lg:p-16 xl:p-24">
+                  {% if block.introText %}
+                    <div class="text-xl md:text-2xl mb-6 prose text-black max-w-none">
+                      {{ block.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                  {% if block.bodyText %}
+                    <div class="prose text-black max-w-none">
+                      {{ block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endswitch %}
+      {% endfor %}
+    {% endif %}
+    {# END of Page Content #}
+  </main>
+
+{% endblock %}

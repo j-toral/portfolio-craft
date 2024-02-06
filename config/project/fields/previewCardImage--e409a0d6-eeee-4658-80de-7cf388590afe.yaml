@@ -1,0 +1,48 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: previewCardImage
+instructions: "This image is used to represent this entry on preview cards displayed on the homepage, section summary page, and on any feature navigation elements elsewhere on the Discover website. \r\nDimensions 1200 x 675"
+name: 'Preview Card Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:37be1f70-5bb8-45b8-bba3-c668dbd1ae57' # Preview Card
+  defaultUploadLocationSubpath: null
+  localizeRelations: false
+  maxRelations: 1
+  minRelations: 1
+  previewMode: full
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:37be1f70-5bb8-45b8-bba3-c668dbd1ae57' # Preview Card
+  restrictedLocationSubpath: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Asset
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\assets\AssetCondition
+  selectionLabel: 'Select an image to use for the Preview Card'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  source: null
+  sources:
+    - 'volume:075f6b10-9812-4ba1-8b0e-4401e0c5a557'
+    - 'volume:37be1f70-5bb8-45b8-bba3-c668dbd1ae57' # Preview Card
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

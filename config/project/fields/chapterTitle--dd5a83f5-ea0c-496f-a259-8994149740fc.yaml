@@ -1,0 +1,19 @@
+columnSuffix: ivudjtdn
+contentColumnType: text
+fieldGroup: a219b171-fbe0-4a10-8c2a-2f21391f6455 # Hub
+handle: chapterTitle
+instructions: null
+name: 'Chapter Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

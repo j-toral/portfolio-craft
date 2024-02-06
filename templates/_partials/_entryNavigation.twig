@@ -1,0 +1,138 @@
+{# Decreasing the size of the image then cropping it #}
+{% set transform = { mode: 'fit', width: 768 } %}
+{% set transformNav = { mode: 'crop', width: 768, height: 432 } %}
+
+{# Getting all the items #}
+{% set itemsQuery = craft.entries.section(sectionHandle) %}
+{% set items = itemsQuery.all() %}
+
+{# Initialising the nav array #}
+{% set nav = [] %}
+
+{# Initialising the previous and next blog #}
+{% set prevItem = '' %}
+{% set nextItem = '' %}
+
+{% set currentEntry = entry %}
+
+{# Looping through the items array to find the current item #}
+{% for item in items %}
+  {# Getting the current item #}
+  {% if item.title == currentEntry.title %}
+
+    {# Setting the previous and next items #}
+    {% set prevItem = item.getPrev(itemsQuery) %}
+    {% set nextItem = item.getNext(itemsQuery) %}
+
+    {# Creating variables for the last and penultimate items of the array #}
+    {% set last = items | length %}
+    {% set penultimate = items | length - 1 %}
+
+    {# Switch statement to determine the cards for the navigation #}
+    {% switch loop.index %}
+      {# First page of the section #}
+      {% case 1 %}
+        {# Setting the three nav items as the next three pages #}
+        {% set nav1 = item.getNext(itemsQuery) %}
+        {% set nav2 = nav1.getNext(itemsQuery) %}
+        {% set nav3 = nav2.getNext(itemsQuery) %}
+        {# Creating the nav array using the nav items #}
+        {% set nav = nav | merge([nav1, nav2, nav3]) %}
+      {# Last page of the section #}
+      {% case last %}
+        {# Getting the last nav page and working backwards #}
+        {% set nav3 = item.getPrev(itemsQuery) %}
+        {% set nav2 = nav3.getPrev(itemsQuery) %}
+        {% set nav1 = nav2.getPrev(itemsQuery) %}
+        {# Creating the nav array using the nav items #}
+        {% set nav = nav | merge([nav1, nav2, nav3]) %}
+      {# Penultimate page of section #}
+      {% case penultimate %}
+        {# Setting the last nav page and working backwards #}
+        {% set nav3 = item.getNext(itemsQuery) %}
+        {% set nav2 = item.getPrev(itemsQuery) %}
+        {% set nav1 = nav2.getPrev(itemsQuery) %}
+        {# Creating the nav array using the nav items #}
+        {% set nav = nav | merge([nav1, nav2, nav3]) %}
+      {# All other pages #}
+      {% default %}
+        {# Setting the three nav items as one item before and two items after the current item #}
+        {% set nav1 = item.getPrev(itemsQuery) %}
+        {% set nav2 = item.getNext(itemsQuery) %}
+        {% set nav3 = nav2.getNext(itemsQuery) %}
+        {# Creating the nav array using the nav items #}
+        {% set nav = nav | merge([nav1, nav2, nav3]) %}
+    {% endswitch %}
+    {# Break out of the for loop #}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% block entryNavigation %}
+
+  {# Rendering the navigation if there are more than one item in the section #}
+  {% if items | length > 1 %}
+
+    <div class="pt-14 container mx-auto">
+      <div class="flex justify-center items-center">
+        <h3 class="uppercase">Explore More</h3>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <div class="pt-10 md:pt-14 md:pb-4">
+        {# Changing the position depending on whether this is the first, last, or anyother post #}
+        <div class="flex{% if currentEntry.title == items|first.title %} justify-end{% elseif currentEntry.title == items|last.title %} justify-start{% else %} justify-between{% endif %} mx-6 mb-6 relative">
+          {# Hiding this button if this is the first post #}
+          <div class="w-1/2 pr-2{% if currentEntry.title == items|first.title %} hidden{% endif %}">
+            <a href="{% if prevItem != '' %}{{ prevItem.url() }}{% endif %}" class="no-underline font-sans flex flex-col items-start">
+              {# Rendering arrow svg #}
+              {% include '_misc/arrowLeftSVG' with { 'classes': 'w-6 h-6 mb-4 stroke-black' } %}
+              <span class="text-lg mb-2 uppercase text-black">Previous</span>
+              <span class="uppercase text-black">{% if prevItem != '' %}{{ prevItem.title }}{% endif %}</span>
+            </a>
+          </div>
+          <span class="absolute bg-black left-1/2 h-full w-px"></span>
+          {# Hiding this button if this is the last post #}
+          <div class="{% if currentEntry.title == items|last.title %}hidden{% endif %} w-1/2 pl-2">
+            <a href="{% if nextItem != '' %}{{ nextItem.url() }}{% endif %}" class="no-underline font-sans flex flex-col items-end">
+              {# Rendering arrow svg #}
+              {% include '_misc/arrowRightSVG' with { 'classes': 'w-6 h-6 mb-4 stroke-black' } %}
+              <span class="text-lg mb-2 uppercase text-black">Next</span>
+              <span class="uppercase text-black text-right">{% if nextItem != '' %}{{ nextItem.title }}{% endif %}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Rendering the nav cards #}
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {# For loops to render the nav cards #}
+        {% for item in nav %}
+          <div class="relative aspect-video rounded-md overflow-hidden">
+            <div class="absolute inset-0">
+              {% set img = item.previewCardImage.one() %}
+              <img src="/images/{{ img.getUrl() }}" alt="{% if not img.alt %}Alt Text{% else %}{{ img.alt }}{% endif %}" class="w-full h-full object-cover">
+            </div>
+            <div class="relative text-white p-6 sm:p-8 lg:p-6 bg-gradient-to-t from-black/40 w-full h-full flex justify-end items-start flex-col">
+              <h3 class="uppercase">{{ item.title }}</h3>
+              <a href="{{ item.url }}" class="decoration-white uppercase text-sm">Explore</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# Rendering the button to return the user to the index page #}
+    {% if craft.app.request.getSegment(2) %}
+      <div class="my-8 container mx-auto">
+        <div class="flex justify-center items-center">
+          <a href="/{{ craft.app.request.getSegment(1) }}" class="uppercase">View All</a>
+        </div>
+      </div>
+    {% endif %}
+
+  {% endif %}
+{% endblock %}

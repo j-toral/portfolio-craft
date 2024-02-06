@@ -1,0 +1,201 @@
+{% extends '_layouts/layout' %}
+
+{% set blocks = entry.chapterContentBuilder.all() %}
+{% set timeline = craft.entries.section('timeline').orderBy('postDate ASC').all() %}
+
+{% block main %}
+  <main class="bg-white" x-data="{ slug: '1799', year: '1799', timelineDD: false, activeAnchor: '1799', timelineDDAnchor: document.getElementById('timeline1799'), timelineContainerInit: false }">
+    {# Hero Section #}
+    <div id="hero" class="relative h-[100vh]">
+      <div class="max-w-full text-center h-full">
+        <div class="relative flex justify-center items-center sm:overflow-hidden pt-20 h-full">
+          {# Block Background Image #}
+          <div class="absolute inset-0">
+            {% set bgImage = entry.heroBackground.one() %}
+            <img class="h-full w-full object-cover" src="/images/{{ bgImage.url }}" alt="Alt Text">
+          </div>
+          {# Hero Content Block #}
+          <div class="relative py-16 md:py-32">
+            <div class="p-4">
+              <h3 class="uppercase text-white mb-4">{{ entry.title }}</h3>
+              <h1 class="uppercase text-white">{{ entry.chapterTitle }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {# END of Hero Section #}
+
+    {# Included Timeline Section #}
+    <div class="min-h-screen lg:min-h-fit bg-neutral-300 py-8" x-intersect:leave.threshold.1="timelineDD = false">
+
+      {# Start of TimelineDD Container #}
+      <div class="container mx-auto relative">
+        {# Start of Timeline DropDown Menu #}
+        <div id="timelineDD" class="absolute z-10 right-4 top-7">
+          <div class="relative inline-block text-left">
+            <div>
+              <button type="button" class="inline-flex w-full justify-center rounded-md border border-black px-4 py-3 text-sm font-medium bg-neutral-300 text-black shadow-sm hover:bg-neutral-400 focus:outline-none" id="timeline-menu-button" aria-expanded="true" aria-haspopup="true" @click.outside="timelineDD = false;"
+                      @click="timelineDD = !timelineDD; $nextTick(() => $refs.anchorParent.scrollTo({top: timelineDDAnchor.offsetTop, left: timelineDDAnchor.offsetLeft, behavior: 'smooth'}))">
+                <span class="flex items-center justify-between">
+                    <span class="mr-2">Date</span>
+                    <span class="mr-2" x-text="year"></span>
+                    {# Rendering chevron down svg #}
+                    {% include '_misc/chevronDownSVG' with { 'classes': 'h-5 w-5 fill-black' } %}
+                </span>
+              </button>
+            </div>
+
+            <div class="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-neutral-300 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button"
+                 x-show="timelineDD"
+                 x-cloak
+                 x-transition:enter="ease-out duration-100"
+                 x-transition:enter-start="transform opacity-0 scale-95"
+                 x-transition:enter-end="transform opacity-100 scale-100"
+                 x-transition:leave="ease-in duration-75"
+                 x-transition:leave-start="transform opacity-100 scale-100"
+                 x-transition:leave-end="transform opacity-0 scale-95">
+              <div class="flex flex-col max-h-[10.5rem] overflow-y-scroll scrollbar-hide rounded-md" x-init="$watch('slug', value => $el.scrollTo({top: timelineDDAnchor.offsetTop, left: timelineDDAnchor.offsetLeft, behavior: 'smooth'}));" x-ref="anchorParent">
+                {% for anchor in timeline %}
+                  <a id="timeline{{ anchor.slug }}" href="#{{ anchor.slug }}" class="px-4 inline-flex no-underline font-sans pt-2 pb-1" :class="activeAnchor == '{{ anchor.slug }}' ? 'bg-neutral-600' : ''">
+                    {{ anchor.title }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {# END of Timeline DropDown Menu #}
+      </div>
+      {# END of TimelineDD Container #}
+
+      <div id="timelineContainer" class="container mx-auto relative flex min-h-full snap-mandatory snap-x overflow-x-scroll scrollbar-hide bg-inherit" x-ref="timelineContainer">
+        {# Timeline Slides #}
+        {% if timeline|length %}
+          {% for yearslide in timeline %}
+            {% set pImage = yearslide.primaryImage.one() %}
+            {% set params = craft.entries.section('timeline').orderBy('postDate ASC') %}
+            {% set prevEntry = yearslide.getPrev(params) %}
+            {% set nextEntry = yearslide.getNext(params) %}
+            <div id="{{ yearslide.slug }}" class="lg:relative min-w-full min-h-full lg:min-h-[70vh] flex flex-col lg:flex-row mx-4 px-4 my-8 snap-center snap-always scroll-mt-16 scroll-smooth bg-inherit"
+                 x-intersect:leave="
+                   if (timelineContainerInit) {
+                     if ($el.getBoundingClientRect().x < 0 && '{{ nextEntry }}') {
+                       year = '{% if nextEntry %}{{ nextEntry.title }}{% endif %}'; slug = '{% if nextEntry %}{{ nextEntry.slug }}{% endif %}'; activeAnchor = '{% if nextEntry %}{{ nextEntry.slug }}{% endif %}'; timelineDDAnchor = document.getElementById('timeline{% if nextEntry %}{{ nextEntry.slug }}{% endif %}');
+                     } else if ($el.getBoundingClientRect().x > 0 && '{{ prevEntry }}') {
+                       year = '{% if prevEntry %}{{ prevEntry.title }}{% endif %}'; slug = '{% if prevEntry %}{{ prevEntry.slug }}{% endif %}'; activeAnchor = '{% if prevEntry %}{{ prevEntry.slug }}{% endif %}'; timelineDDAnchor = document.getElementById('timeline{% if prevEntry %}{{ prevEntry.slug }}{% endif %}');
+                     }
+                   }
+
+                   {% if yearslide == timeline|last %}timelineContainerInit = true;{% endif %}
+                 "
+                 x-intersect:enter.margin.0.(window.getComputerStyle(refs.timelineContainer).marginRight)="$nextTick(() => { year = '{{ yearslide.title }}'; slug = '{{ yearslide.slug }}'; activeAnchor = '{{ yearslide.slug }}'; timelineDDAnchor = document.getElementById('timeline{{ yearslide.slug }}'); })">
+              <div class="flex justify-between w-full lg:absolute lg:top-0 lg:left-0 lg:z-10 lg:px-4">
+                <div class="lg:hidden mb-4">
+                  <h2>{{ yearslide.title }}</h2>
+                </div>
+              </div>
+              {# Top/Left #}
+              <div class="flex flex-col justify-between lg:w-1/2">
+                {# Slide year title - desktop #}
+                <div class="hidden lg:block">
+                  <h2 class="text-7xl xl:text-9xl">{{ yearslide.title }}</h2>
+                </div>
+                {# Text Content #}
+                <div class="lg:w-10/12 mb-8">
+                  {% if yearslide.introText %}
+                    <div class="prose text-black max-w-none text-xl md:text-2xl mb-4">
+                      {{ yearslide.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                  {% if yearslide.bodyText %}
+                    <div class="prose text-black max-w-none">
+                      {{ yearslide.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                </div>
+                {# Slide Pagination Desktop #}
+                <div class="hidden lg:block py-8">
+                  {% if prevEntry %}<a class="btn btn-outline-dark" href="#{{ prevEntry.slug }}">Previous</a>{% endif %}
+                  {% if nextEntry %}<a class="btn btn-outline-dark" href="#{{ nextEntry.slug }}">Next</a>{% endif %}
+                </div>
+              </div>
+              {# Bottom/Right #}
+              <div class="relative flex lg:w-1/2 lg:mb-0 lg:overflow-hidden">
+                {% switch yearslide.imageSetting.value %}
+                {% case "singleImage" %}
+                  <div class="place-self-center">
+                    <img class="{% if yearslide.mixBlendModeMultiply %}mix-blend-multiply{% endif %}" src="/images/{{ pImage.url }}" alt="{% if pImage.alt %}{{ pImage.alt }}{% else %}Alt Text {{ entry.title }}{% endif %}">
+                  </div>
+                {% case "5050" %}
+                  <div class="w-full aspect-square lg:hidden"></div>
+                  <div class="absolute inset-0 aspect-square lg:aspect-auto">
+                    <img class="h-full w-full object-cover" src="/images/{{ pImage.url }}" alt="{% if pImage.alt %}{{ pImage.alt }}{% else %}Alt Text {{ entry.title }}{% endif %}">
+                  </div>
+                {% endswitch %}
+              </div>
+              {# Nav Footer - mobile only #}
+              <div class="relative lg:hidden py-8 ml-auto ">
+                {% if prevEntry %}<a class="btn btn-outline-dark" href="#{{ prevEntry.slug }}">Previous</a>{% endif %}
+                {% if nextEntry %}<a class="btn btn-outline-dark" href="#{{ nextEntry.slug }}">Next</a>{% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+    </div>
+    {# END of Timeline Section #}
+
+    {# Page Content #}
+    {% if blocks|length %}
+      {% for block in blocks %}
+        {% if block.image %}
+          {% set blImage = block.image.one() %}
+        {% endif %}
+        {% switch block.type %}
+        {% case "fullWidthImage" %}
+          {% if blImage %}
+            <div class="hidden lg:block">
+              <div{% if block.displayWidth %} class="container mx-auto"{% endif %}>
+                <img src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% endif %}">
+              </div>
+            </div>
+          {% endif %}
+        {% case "fiftyfifty" %}
+          <div>
+            <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
+              {% if block.image %}
+                <div class="relative aspect-video lg:aspect-auto">
+                  <div class="absolute inset-0">
+                    <img class="h-full w-full object-cover" src="/images/{{ blImage.url }}" alt="{% if blImage.alt %}{{ blImage.alt }}{% else %}Alt Text{% endif %}" loading="lazy">
+                  </div>
+                </div>
+              {% endif %}
+              <div class="flex flex-col justify-center items-center {% if block.desktopOrder %}lg:order-first{% endif %}">
+                <div class="p-8 lg:p-16 xl:p-24">
+                  {% if block.introText %}
+                    <div class="text-xl md:text-2xl mb-6 prose text-black max-w-none">
+                      {{ block.introText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                  {% if block.bodyText %}
+                    <div class="prose text-black max-w-none">
+                      {{ block.bodyText | retconAttr('*', { 'class': 'text-black' }, false) }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endswitch %}
+      {% endfor %}
+    {% endif %}
+    {# END of Page Content #}
+
+  </main>
+
+  {# Entry Pagination #}
+  {% include '_partials/_entryNavigation' with { 'sectionHandle': entry.section.handle } %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{# Creating the transforms for the different breakpoints #}
+{% set xlTransform = { mode: 'crop', width: 1200, height: 675 } %}
+{% set mdTransform = { mode: 'crop', width: 1024, height: 576 } %}
+{% set smallestTransform = { mode: 'crop', width: 774, height: 1376 } %}
+
+{# Getting the image #}
+{% set image = fullWidthTextBlock.image.one() %}
+
+{# Block that contains the code for the heading #}
+{% block fullWidthText %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div {% if fullWidthTextBlock.anchorId %}id="{{ fullWidthTextBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%}>
+    {# Setting the w-full #}
+    {# Adding styles if there is an image #}
+    <div class="relative flex items-center justify-center px-4 w-full{% if image %} h-[100vmax] text-white overflow-hidden lg:h-max lg:min-h-screen{% endif %}">
+      {# Rendering the image if it exists #}
+      {% if image %}
+        <div class="absolute inset-0">
+          <picture>
+            <source media="(min-width: 1536px)" srcset="/images/{{ image.url }}">
+            <source media="(min-width: 1280px)" srcset="/images/{{ image.getUrl() }}">
+            <source media="(min-width: 768px)" srcset="/images/{{ image.getUrl() }}">
+            <img src="/images/{{ image.getUrl() }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="object-cover w-full h-full">
+          </picture>
+        </div>
+      {% endif %}
+      <div class="relative py-24 lg:py-32 max-w-xs sm:max-w-xl md:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl font-sans flex flex-col items-center space-y-5">
+        {# Changing the decoration of the anchor tags if there is an image #}
+        {% if image %}
+          {{ fullWidthTextBlock.richTextField | retconAttr('a', { 'class': 'decoration-white font-sans' }) }}
+        {% else %}
+          {{ fullWidthTextBlock.richTextField }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+

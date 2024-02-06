@@ -1,0 +1,19 @@
+columnSuffix: rwfwvijf
+contentColumnType: text
+fieldGroup: a7520f9b-411b-4a62-9508-90b54dd1217c # Navigation
+handle: subscribeButton
+instructions: null
+name: 'Subscribe Button Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

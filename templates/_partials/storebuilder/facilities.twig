@@ -1,0 +1,48 @@
+{# Block that contains the code for the facilities content #}
+{% block facilities %}
+  <div class="my-4 md:my-16">
+    <h2 class="mb-4">{{ facilities.facilitiesTitle }}</h2>
+
+    {% for option in facilities.facilitiesCheckboxes %}
+      {% switch option %}
+        {# Rendering the parking content #}
+        {% case "parking" %}
+          <div class="mb-8">
+            <div class="flex space-x-3.5 items-center mb-2">
+              {% include "_misc/parkingSVG" with { "classes": "h-8 w-8 fill-black" } %}
+              <p class="uppercase leading-none">{{ option.label }}</p>
+            </div>
+            <p>
+              {{ entry.parkingText }}
+            </p>
+          </div>
+        {# Rendering the wifi content #}
+        {% case "wifi" %}
+          <div class="mb-8">
+            <div class="flex space-x-3.5 items-center mb-2">
+              {% include "_misc/wifiSVG" with { "classes": "w-6 fill-none", "mask": "w-6 h-2", "maskPath": "bg-white", "path": "fill-black" } %}
+              <p class="uppercase leading-none">{{ option.label }}</p>
+            </div>
+            <p>
+              {{ entry.wifiText }}
+            </p>
+          </div>
+        {# Rendering the disabilitySupport content #}
+        {% case "disabilitySupport" %}
+          <div class="mb-8">
+            <div class="flex space-x-3.5 items-center mb-2">
+              {% include "_misc/disabilitySVG" with { "classes": "h-7 fill-none", "path": "fill-black" } %}
+              <p class="uppercase leading-none">{{ option.label }}</p>
+            </div>
+            <p>
+              {{ entry.disabilityText }}
+            </p>
+          </div>
+      {% endswitch %}
+    {% endfor %}
+
+    <div class="mb-8">
+      {{ facilities.bulletListFacilities | retconAttr('ul', { 'class': 'marker:text-black list-disc list-inside' }, false) }}
+    </div>
+  </div>
+{% endblock %}

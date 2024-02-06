@@ -1,0 +1,39 @@
+{# Creating the transforms for the different breakpoints #}
+{% set xlTransform = { mode: 'fit', width: 1200 } %}
+{% set mdTransform = { mode: 'fit', width: 1024 } %}
+{% set smallestTransform = { mode: 'fit', width: 774 } %}
+
+{# Get all images from the matrix block #}
+{% set image = imageText6040Block.image.one() %}
+
+{# Block that contains the code for the Image 60/40 Text Block #}
+{% block image6040TextBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if imageText6040Block.anchorId %} id="{{ imageText6040Block.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %}>
+    {# Adding the container width as well as the top and borrom margins #}
+    <div class="mx-auto flex flex-col lg:flex-row">
+      <div class="w-full lg:w-3/5">
+        <picture>
+          <source media="(min-width: 1536px)" srcset="/images/{{ image.url }}">
+          <source media="(min-width: 1280px)" srcset="/images/{{ image.getUrl() }}">
+          <source media="(min-width: 768px)" srcset="/images/{{ image.getUrl() }}">
+          <img src="/images/{{ image.getUrl() }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="w-full h-full object-cover">
+        </picture>
+      </div>
+      {# Setting order-first to the text if the image is set to being on the right #}
+      <div class="w-full p-14 lg:px-20 lg:max-w-[40%] flex items-center{% if imageText6040Block.mobileStack and imageText6040Block.sequenceSelection %} order-first lg:order-first{% elseif imageText6040Block.mobileStack %} order-first lg:order-none{% elseif imageText6040Block.sequenceSelection %} order-none lg:order-first{% endif %}">
+        {# Setting the text align and pasting in the rich text body text into the div #}
+        <div class="prose text-black max-w-none">
+          {# Determining text color based on background color #}
+          {% if entry.bgColor != '#ffffff' %}
+            {# Making the text white as well as making the bullet points black #}
+            {{ imageText6040Block.richTextField | retconAttr('*', { 'class': 'text-white' }, false ) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+          {% else %}
+            {# Making unordered list bullet points black #}
+            {{ imageText6040Block.richTextField | retconAttr('*', { 'class': 'text-black' }, false) | retconAttr('ul', { 'class': 'marker:text-black' }, false) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

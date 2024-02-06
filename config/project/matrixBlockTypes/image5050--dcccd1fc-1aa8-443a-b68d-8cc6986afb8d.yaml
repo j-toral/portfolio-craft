@@ -1,0 +1,556 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  83074c27-8fcc-4633-abc9-71f2ed8726f2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2a52e323-dfc9-4c4a-9003-9119d009995b # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b3f50e5a-9a9c-4a3c-8abe-2fe8d3a45d96
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 17f2a9b3-2207-43f0-91ae-185841727fea # Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cb0e9429-5fa6-43c4-85f1-f58b8c238169
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: fbc4b678-453c-4c86-b36f-ed22d187d257 # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 76fb77c5-03e6-4a0f-8089-68ab2b9253d0
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 98ed1ce0-f35a-4bbe-8a13-0ae31c08dc1e # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7320b10b-966b-4773-a2b9-446c413c35c0
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 124ac630-d17c-440f-8b69-3ef90a11004b # Images
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 82fdbcfc-d1a8-4b9d-91e7-1f1abfca6010
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 004cad73-0c5c-4ad6-b9ab-1c497b9f16d2 # Caption Alignment
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f411d981-5889-4329-b168-eb03223ea69d
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 3b233d5f-4952-42ab-8f00-eb5466bc034c # Sequence Selection
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5793a80-b6c5-4b47-9032-d5a0231a678b
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: a1b87e87-0941-41ae-9860-76441e889be3 # Image Urls and Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 15840151-1f99-4da3-bca9-d0943c921251
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 44ff2073-1ab8-4fe1-8ff7-6f0097284198 # Inset Image Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75de189c-f196-4d53-9b74-a7683600b8c3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2b762b9c-906c-49d7-9b35-da22cef9714b # Top Image on Mobile
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a8b1c217-6a92-49e9-a0d4-7863a5f9f2b6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a6abb48e-5426-42de-a0a3-2832528fa301
+        userCondition: null
+fields:
+  2a52e323-dfc9-4c4a-9003-9119d009995b: # Anchor ID
+    columnSuffix: jlhypsta
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2b762b9c-906c-49d7-9b35-da22cef9714b: # Top Image on Mobile
+    columnSuffix: heaxydwg
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: mobileStack
+    instructions: 'This determines which image is on top on mobile'
+    name: 'Top Image on Mobile'
+    searchable: false
+    settings:
+      default: false
+      offLabel: Left
+      onLabel: Right
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  3b233d5f-4952-42ab-8f00-eb5466bc034c: # Sequence Selection
+    columnSuffix: jyjcaqqf
+    contentColumnType: string
+    fieldGroup: null
+    handle: sequenceSelection
+    instructions: 'This determines whether the inset image is on the left or right or if there is no inset image'
+    name: 'Sequence Selection'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  004cad73-0c5c-4ad6-b9ab-1c497b9f16d2: # Caption Alignment
+    columnSuffix: mwfstlcu
+    contentColumnType: string
+    fieldGroup: null
+    handle: captionAlignment
+    instructions: 'This dropdown determines the text alignment for the caption.'
+    name: 'Caption Alignment'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  17f2a9b3-2207-43f0-91ae-185841727fea: # Container Width
+    columnSuffix: cudjodcq
+    contentColumnType: string
+    fieldGroup: null
+    handle: containerWidth
+    instructions: 'This sets the maximum width that the 50/50 will be contained at.'
+    name: 'Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - 1
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  44ff2073-1ab8-4fe1-8ff7-6f0097284198: # Inset Image Background Color
+    columnSuffix: efitrxrd
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: insetImageBG
+    instructions: 'This is the colour of the background behind the inset image'
+    name: 'Inset Image Background Color'
+    searchable: false
+    settings:
+      defaultColor: '#ffffff'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  98ed1ce0-f35a-4bbe-8a13-0ae31c08dc1e: # Bottom Margin
+    columnSuffix: jipaccyn
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  124ac630-d17c-440f-8b69-3ef90a11004b: # Images
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: "These are the two images for the 50/50. Use the same aspect ratio.\r\nDimensions: width 800px"
+    name: Images
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 2
+      minRelations: 2
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  a1b87e87-0941-41ae-9860-76441e889be3: # Image Urls and Caption
+    columnSuffix: azxvzkgp
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageUrlsAndCaption
+    instructions: 'This table holds the urls that will be used for the images and for the caption as well as the caption for the inset image.'
+    name: 'Image Urls and Caption'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Url 1'
+                -
+                  - handle
+                  - imageUrl1
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Url 2'
+                -
+                  - handle
+                  - imageUrl2
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col4
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Inset Image Caption'
+                -
+                  - handle
+                  - insetImageCaption
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults: null
+      maxRows: 1
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  fbc4b678-453c-4c86-b36f-ed22d187d257: # Top Margin
+    columnSuffix: lalbtwfu
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: image5050
+name: '50/50 Image'
+sortOrder: 5

@@ -1,0 +1,314 @@
+fieldLayouts:
+  c7722737-344a-4544-8a36-755c198be40f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d1ac052d-f570-447e-87f7-979192e62915
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Primary Nav'
+            type: craft\fieldlayoutelements\Heading
+            uid: 9511896a-828d-4ce8-82af-c9aa2502be7e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed543d15-de9b-4c62-a1e8-50da3ec8bead
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+                  uid: d329557f-fdfb-448b-b656-cfb53a954c7c
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: b78d2848-3680-4f07-8f04-4b69e65001d4 # Navigation Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 70eba6cd-42f3-46e4-b157-9b8d626b0bb9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Hero Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: 6fd3d9b3-190e-4f07-b890-87bcdd656223
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: bf4cbff0-5195-4ed6-866a-5d332970add1 # Hero Background
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4bb918e-f53b-43f8-a1dd-5db418088c1f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6430c29f-e1bf-4ab8-8e7a-e37545a2d379
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5550c665-d896-4173-a001-6bb989266de5 # Supertitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 99043826-aee4-460d-9373-c5fda7853bc3
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 21cffb54-7377-4668-bdd1-4c522663a155 # Hero Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 131e4057-3e86-44f1-bab4-2834e13d3328
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b802a546-b9ab-4455-ad25-c13e85eeb760 # Hero Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40373698-6d1d-46a8-b5a6-9f2e17a0054d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: 0dfe6f90-0743-43c7-80b2-b87c6aad97bc
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 0ae8bc92-1277-4a9a-87ef-f3438ecec920 # Video ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d3bd2bf8-7227-4774-ae99-4e8c92374fa0
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: 9cafdf0e-4c62-4a8c-822e-31c55129dd41
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 02be1ef0-11d5-4156-9682-01b20c7aa7af # Video Options
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bafd951f-4a8c-43a3-9626-450c5ce3bccf
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: c4f66797-b582-4565-8893-9cc165fe2981
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            heading: 'Homepage Content'
+            type: craft\fieldlayoutelements\Heading
+            uid: 11ed66f4-e229-4565-bf25-b7be4d78456c
+            userCondition: null
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: efcfcede-c22d-4bb5-a517-f016dd2c4f38
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 852e1cd5-6111-444b-949e-8e24c0eebc12 # Featured Section
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a74660c4-a7e6-4be1-8830-4a47b1abd123
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: 0c66a979-7293-4ce9-a202-ae8ae8dbccd7
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 78e93f0b-65e5-4686-ab3c-1ee4016ea30a # Cards Displayed
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 846b91a6-5b1d-4962-a7eb-4f5dc8185633
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: fc973dfa-0fba-467a-a26f-336707d717b4
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 4836cf7a-dc13-4a1b-be5a-066c7cb9c694 # Hero Link Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 00ad658f-b309-4af7-b6b8-5b9bdaf5ad94
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: 04a50914-9cea-452f-a129-1d5686b63b9c
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: ffe3af0a-2498-4327-94e4-7080e684b88a # Read More Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0be6938-c517-4cda-b407-2efa524bf6ab
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 77683430-50df-41f6-9b35-77a2001e01d8 # Enable on Homepage
+                  uid: c110611e-fb7c-4978-af9b-c77f6902a5aa
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 9e13e553-8a35-47e5-91ad-70491e153b39 # Read More Url
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6fa7172b-dde7-4c79-bb07-92450cd3aa1c
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 9a26997b-70fe-472f-9560-58f7535c7c3f
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 633d19bb-4bbf-49f7-b1c5-07f857e16809 # Section Meta Info
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

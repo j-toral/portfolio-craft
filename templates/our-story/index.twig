@@ -1,0 +1,244 @@
+{# Extending the regular layout template #}
+{% extends '_layouts/layout' %}
+
+{# Creating a crop transform #}
+{% set transform = { width: 574, height: 574 } %}
+{% set transformVideo = { width: 574, height: 325 } %}
+
+{# Getting the correct meta field entry #}
+{% set metaFields = craft.entries().section('sectionMetaInfo').slug('our-story').one() %}
+{# Querying our story section #}
+{% set query = craft.entries().section('ourStory') %}
+
+{# Getting the categories query #}
+{% set categoriesQuery = craft.categories().group('ourStoryCategories') %}
+{# Getting all the categories #}
+{% set categories = categoriesQuery.all() %}
+
+{# Getting the second segment of the URI #}
+{% set uri = craft.app.request.getSegment(2) %}
+
+{# If it exists, which means that the user has not selected a specific category #}
+{% if uri %}
+  {# Getting the category and the entries assosiated to it #}
+  {% set category = categoriesQuery.slug(craft.app.request.getSegment(2)) %}
+  {% set entries = query.relatedTo(category).limit(9).orderBy('postDate DESC') %}
+{% else %}
+  {# Getting all entries #}
+  {% set entries = query.limit(9).orderBy('postDate DESC') %}
+{% endif %}
+
+{% block main %}
+
+  {# Hero Block #}
+  <div id="hero" class="relative">
+    <div class="max-w-full text-center">
+      <div class="relative sm:overflow-hidden">
+        {# Block Background Image #}
+        <div class="absolute inset-0">
+          {% set bgImage = metaFields.heroBackground.one() %}
+          <img class="h-full w-full object-cover" src="/images/{{ bgImage.url }}" alt="Alt Text">
+        </div>
+        {# Hero Content Block #}
+        <div class="relative{% if metaFields.transparentPrimaryNav %} pb-16 pt-32 md:pb-32 md:pt-48{% else %} py-16 md:py-32{% endif %}">
+          <div class="p-4 flex flex-col items-center">
+            <h1 class="uppercase text-white">{{ metaFields.heroTitle }}</h1>
+            <div class="max-w-narrow">
+              {{ metaFields.heroBody | retconAttr('p', { 'class': 'text-white text-lg md:text-xl lg:text-2xl' }) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {# END Hero Block #}
+
+  <div class="container mx-auto">
+    {# Category Navigation Start #}
+    <div class="flex justify-center px-4 lg:px-8 pt-4 lg:pt-12">
+      {# Tablet and browser categories #}
+      <ul class="hidden md:flex space-x-6 text-black">
+        <li>
+          {# Sending the user to the index template with no sub uri #}
+          <a href="/{{ craft.app.request.getSegment(1) }}" {% if uri %}class="no-underline uppercase tracking-wider"{% endif %}>ALL</a>
+        </li>
+        {# Setting up the category urls #}
+        {% for category in categories %}
+          <li>
+            <a href="{{ category.url }}" class="{% if uri != category.slug %}no-underline {% endif %}uppercase tracking-wider">{{ category.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {# Dropdown select for phones #}
+      {# Setting the alpine open variable to false #}
+      <div class="md:hidden relative inline-block text-left w-full" x-data="{ open: false }">
+        <div class="w-full">
+          {# Toggling the boolean on click #}
+          <button @click="open = !open" type="button" class="inline-flex w-full justify-between gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-black shadow-sm ring-1 ring-inset ring-black bg-neutral-300" id="menu-button" aria-expanded="true" aria-haspopup="true">
+            {# If uri exists then uppercasing it and placing it as the text in the button #}
+            {% if uri %}
+              {{ uri | upper }}
+            {# Setting all if there is no uri #}
+            {% else %}
+              ALL
+            {% endif %}
+            {# Rendering chevron down svg #}
+            {% include '_misc/chevronDownSVG' with { 'classes': "-mr-1 h-5 w-5 fill-neutral-900" } %}
+          </button>
+        </div>
+
+        {# Hiding the dropdown menu and showing it on open being true #}
+        {# Adding transitions to the dropdown menu #}
+        <div
+                x-cloak
+                x-show="open"
+                x-transition:enter="ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-neutral-300 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+          <div class="flex flex-col" role="none">
+            {# Sending the user to the index template with no sub uri #}
+            <a href="/{{ craft.app.request.getSegment(1) }}" class="py-2 px-4 no-underline tracking-wider{% if uri %} text-neutral-900{% else %} bg-neutral-600 text-black{% endif %}">ALL</a>
+            {# Setting up the category urls #}
+            {% for category in categories %}
+                <a href="{{ category.url }}" class="uppercase py-2 px-4 no-underline tracking-wider{% if uri != category.slug %} text-neutral-900{% else %} bg-neutral-600 text-black{% endif %}">{{ category.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Starting the pagination using the entries query #}
+    {% paginate entries as pageInfo, posts %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-x-8 px-4 md:px-8 py-4 lg:pb-16 lg:pt-10">
+      {# For loop to create the cards for the entries #}
+      {% for post in posts %}
+        {# Making the first card take up two columns if in medium screens only, reverting to single column on large #}
+        <div class="flex flex-col border rounded-md p-4{% if loop.index == 1 %} md:grid md:grid-cols-2 md:gap-x-4 lg:flex lg:flex-col md:col-span-2 lg:col-span-1{% endif %}">
+          {% set previewCardImage = post.previewCardImage.one() %}
+          {# Single Card #}
+          {# Setting the aspect ration to auto on medium if it's the first card #}
+          <a href="{{ post.url }}" class="rounded-md overflow-hidden aspect-video w-full{% if loop.index == 1 %} md:aspect-auto lg:aspect-video{% endif %}">
+            <picture>
+              {# Setting the transform on the image from md to lg #}
+              <source media="(max-width: 767px)" srcset="/images/{{ previewCardImage.getUrl() }}" />
+              <source media="(max-width: 1023px)" srcset="/images/{{ previewCardImage.getUrl() }}" />
+              <img src="/images/{{ previewCardImage.getUrl() }}" alt="" class="w-full h-full object-cover">
+            </picture>
+          </a>
+
+          <div class="flex flex-col grow text-black">
+            <div class="grow pt-3{% if loop.index == 1 %} md:pt-0.5{% else %} md:pt-4{% endif %} lg:pt-3 pb-8">
+              <p class="uppercase">{{ post.postDate | date("d M Y") }}</p>
+              <h4 class="uppercase mt-1">{{ post.title }}</h4>
+              <p class="mt-2.5">
+                {% if post.previewCardExcerpt %}{{ post.previewCardExcerpt }}{% endif %}
+              </p>
+            </div>
+            <div>
+              <a href="{{ post.url }}" class="uppercase">Read More</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# Not rendering the nav if there are less than 10 entries #}
+    {% if entries | length > 9 %}
+      {# Pagination Begin #}
+      <div class="container mx-auto px-4 md:px-8 mb-10 md:mb-4 lg:mb-5">
+        <nav class="flex items-center justify-between border-t border-neutral-700 px-4 sm:px-0">
+          <div class="-mt-px flex w-0 flex-1">
+            {# Changing disabling the anchor if there is no previous page #}
+            <a href="{{ pageInfo.prevUrl }}" class="no-underline inline-flex items-center border-t-2 border-transparent pt-4 pr-1 text-sm font-medium{% if pageInfo.prevUrl %} text-neutral-800 hover:border-black hover:text-black{% else %} text-neutral-500 pointer-events-none decoration-neutral-500{% endif %}">
+              {# Rendering small arrow left svg #}
+              {% set classes = '' %}
+              {% if pageInfo.prevUrl %}
+                {% set classes = 'mr-3 h-5 w-5 fill-neutral-800' %}
+              {% else %}
+                {% set classes = 'mr-3 h-5 w-5 fill-neutral-500' %}
+              {% endif %}
+              {% include '_misc/smallArrowLeftSVG' with { 'classes': classes } %}
+              Previous
+            </a>
+          </div>
+          <div class="hidden md:-mt-px md:flex">
+
+            {# Getting the total number of pages #}
+            {% set numberOfPages = pageInfo.totalPages %}
+
+            {# If there are greater than 6 pages #}
+            {% if numberOfPages > 6 %}
+
+              {# Determining whether the current page is in the last three pages of the pagination #}
+              {% if pageInfo.currentPage > numberOfPages - 3 %}
+                {% set pageInfoArray = pageInfo.getRangeUrls(1, 3) %}
+              {% else %}
+                {% set pageInfoArray = pageInfo.getRangeUrls(pageInfo.totalPages - 2, pageInfo.totalPages) %}
+              {% endif %}
+
+              {# Rendering the elements in reverse if the current page is in the last three pages #}
+              <div class="flex{% if pageInfo.currentPage > numberOfPages - 3 %} flex-row-reverse{% endif %}">
+                {# Redering three pages including the current page dynamicaly, with different styles if it's the current page #}
+                <div>
+                  {% if pageInfo.currentPage < 9 and pageInfo.currentPage > 5 %}
+                    {% set array = pageInfo.getRangeUrls(6, 8) %}
+                  {% else %}
+                    {% set array = pageInfo.getRangeUrls(pageInfo.totalPages - 2, pageInfo.totalPages) %}
+                  {% endif %}
+
+                  {% for page, url in array %}
+                    <a href="{{ url }}" class="no-underline inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium{% if pageInfo.currentPage == page %} border-black text-black" aria-current="page"{% else %} border-transparent text-neutral-800 hover:border-black hover:text-black"{% endif %}>{{ page }}</a>
+                  {% endfor %}
+
+                </div>
+                {# Rendering the elipsis #}
+                <span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-black">...</span>
+                {# Rendering the array of pages determined in the if statement above #}
+                <div>
+                  {% for page, url in pageInfoArray %}
+                    <a href="{{ url }}" class="no-underline inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-neutral-800 hover:border-black hover:text-black">{{ page }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+
+              {# Redering the pages if there are 6 or less pages #}
+            {% else %}
+              {# Rendering all previous pages #}
+              {% for page, url in pageInfo.getPrevUrls() %}
+                <a href="{{ url }}" class="no-underline inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium border-transparent text-neutral-800 hover:border-black hover:text-black">{{ page }}</a>
+              {% endfor %}
+              {# Rendering the current page #}
+              <a href="#" class="no-underline inline-flex items-center border-t-2 px-4 pt-4 text-sm font-medium border-black text-black" aria-current="page">{{ pageInfo.currentPage }}</a>
+              {# Rendering all next pages #}
+              {% for page, url in pageInfo.getNextUrls() %}
+                <a href="{{ url }}" class="no-underline inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-neutral-800 hover:border-black hover:text-black">{{ page }}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <div class="-mt-px flex w-0 flex-1 justify-end">
+            {# Changing disabling the anchor if there is no previous page #}
+            <a href="{{ pageInfo.nextUrl }}" class="no-underline inline-flex items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium{% if pageInfo.nextUrl %} text-neutral-800 hover:border-black hover:text-black{% else %} text-neutral-500 pointer-events-none decoration-neutral-500{% endif %}">
+              Next
+              {# Rendering small arrow svg #}
+              {% set classes = '' %}
+              {% if pageInfo.nextUrl %}
+                {% set classes = 'ml-3 h-5 w-5 fill-neutral-800' %}
+              {% else %}
+                {% set classes = 'ml-3 h-5 w-5 fill-neutral-500' %}
+              {% endif %}
+              {% include '_misc/smallArrowRightSVG' with { 'classes': classes } %}
+            </a>
+          </div>
+        </nav>
+      </div>
+    {% endif %}
+
+  </div>
+{% endblock %}

@@ -1,0 +1,88 @@
+columnSuffix: wqcijlgg
+contentColumnType: text
+fieldGroup: 6091a114-c249-44fa-9a4a-66baa92bfd3b # Regional Sign-Up
+handle: newsletterCtaTable
+instructions: 'Table that holds the CTA text and links for the newsletter'
+name: 'Newsletter CTA Table'
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'CTA Text'
+            -
+              - handle
+              - ctaText
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Light Text'
+            -
+              - handle
+              - lightText
+            -
+              - width
+              - ''
+            -
+              - type
+              - lightswitch
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'CTA Link'
+            -
+              - handle
+              - ctaLink
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col3
+          - ''
+        -
+          - col2
+          - ''
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col3
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: 2
+  minRows: 2
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

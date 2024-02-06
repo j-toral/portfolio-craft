@@ -1,0 +1,527 @@
+dateModified: 1706921359
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      disabled: false
+      key: singles
+      tableAttributes:
+        - link
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:ee3510ee-e4b2-4d41-b63a-dd61bc6ddbbb' # Our Story
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'section:892aa43b-fb91-4f15-8cc6-eaa661831cae' # Timeline
+      type: native
+    -
+      heading: Structures
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:5ba83fce-fdcb-4f60-b44c-850d08401c5a' # Hub
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:633d19bb-4bbf-49f7-b1c5-07f857e16809' # Section Meta Info
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'section:5a0a4720-336e-4516-9195-80080b36f783' # Store Locator
+      type: native
+    -
+      heading: ''
+      type: heading
+    -
+      heading: ''
+      type: heading
+email:
+  fromEmail: jhjuliao@gmail.com
+  fromName: 'Jonah Juliao Toral'
+  replyToEmail: jhjuliao@gmail.com
+  template: ''
+  transportSettings:
+    password: $CRAFT_PASSWORD
+    username: $CRAFT_EMAIL
+  transportType: craft\mail\transportadapters\Gmail
+fs:
+  blogPostsAssets:
+    hasUrls: false
+    name: 'Blog Posts Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  homepageAssets:
+    hasUrls: false
+    name: 'Homepage Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  hubAssets:
+    hasUrls: false
+    name: 'Hub Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  navigationAssets:
+    hasUrls: false
+    name: 'Navigation Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  newsletterAssets:
+    hasUrls: false
+    name: 'Newsletter Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  previewCardAssets:
+    hasUrls: false
+    name: 'Preview Card Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  storeAssets:
+    hasUrls: false
+    name: 'Store Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+  timelineAssets:
+    hasUrls: false
+    name: 'Timeline Assets'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: null
+meta:
+  __names__:
+    0a7fc46f-4b32-4039-a73d-56bc6b58e81d: 'Main Address' # Main Address
+    0a83301b-ad24-4b67-abb8-92e0bd34a79f: 'Top Margin' # Top Margin
+    0ae8bc92-1277-4a9a-87ef-f3438ecec920: 'Video ID' # Video ID
+    0c9a39c6-0e30-4471-87a1-d5bff365284f: 'SVG Assets' # SVG Assets
+    0ca58434-744e-4292-8f77-2328a797a8d7: 'Quote Text' # Quote Text
+    0d5fc4a2-2be7-4fe8-869e-8ab045b9cf40: 'Body Text' # Body Text
+    0dcbb06c-4454-4ebf-8e36-f9762badc184: 'Main Address' # Main Address
+    0e5cf473-8fda-456a-9a8e-fa28e6583769: 'Block Title' # Block Title
+    1a895cf3-569e-47a5-98b9-381777251c73: RTF # RTF
+    1b4ece35-6d5d-4eee-bccb-dbc196740b09: Quotee # Quotee
+    1b5b9554-82ff-476f-839e-26f2c2349d22: 'Top Block' # Top Block
+    1b7236ea-6b3f-49ea-b43c-533c3e458472: 'Left Image' # Left Image
+    1be69672-f2f1-4166-9db3-0a8db0efb654: 'Primary Nav Description' # Primary Nav Description
+    1c08c8a7-467e-4739-9fb9-1fa5ac94da17: 'Full Width Image' # Full Width Image
+    1c71f697-1336-40e9-84fc-c1e2412e5cb5: 'Image Info' # Image Info
+    01d2d01b-8510-43e7-929d-230ae0e18247: Strapline # Strapline
+    1e8a1846-d4f5-4525-afa0-5ac206590e2a: 'Intro Text' # Intro Text
+    1e4684e2-106f-46f7-8a09-10378ea5f9de: 'Top Margin' # Top Margin
+    01ec988d-1c1f-4a22-a0ab-71e24a0fba8d: 'No Results Found Header' # No Results Found Header
+    1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa: Common # Common
+    1f086a0c-5dd4-43c6-b475-c06da7552b33: 'Left Image' # Left Image
+    2a52e323-dfc9-4c4a-9003-9119d009995b: 'Anchor ID' # Anchor ID
+    2b762b9c-906c-49d7-9b35-da22cef9714b: 'Top Image on Mobile' # Top Image on Mobile
+    2bd3327a-697c-4a50-93f5-dc71e4650821: 'Bullet List' # Bullet List
+    02be1ef0-11d5-4156-9682-01b20c7aa7af: 'Video Options' # Video Options
+    2be6a176-d0d4-471f-bde4-b3ce87044d9a: 'Video Title' # Video Title
+    2c95d61a-c01b-4cda-b81c-3b82ab493bb4: 'Title and Body Horizontal Position' # Title and Body Horizontal Position
+    2ca4aa47-6863-4c8e-9fc0-ad1146a40b0d: Copyright # Copyright
+    2d04499f-985a-464e-a8a6-4303148ed2b1: 'Anchor ID' # Anchor ID
+    2d5a7f24-e28b-45b5-a351-bcf501a27b46: Image # Image
+    2d80ff2b-74ad-4c0a-97f6-dbb141150917: 'Public Schema' # Public Schema
+    2da7d0e5-f6b9-45b5-ae5b-412b043dda8d: 'Body Text' # Body Text
+    2e525334-2db7-4259-9474-eae83b3000d5: 'Chapter 5' # Chapter 5
+    2f8e03ea-040c-4b87-8eec-ee792e6e3987: Heading # Heading
+    2f9d9023-21d8-4b66-9b35-ae7bbb7f053c: 'Display Width' # Display Width
+    2f40e228-0028-4122-ba30-57efc8f624fe: 'Email Field Placeholder' # Email Field Placeholder
+    3a2b496c-291c-4fb6-883e-739ce7adb5d0: 'Block Intro' # Block Intro
+    3a66c473-adba-46af-8a77-9ff562eea982: 'Primary Image' # Primary Image
+    3b233d5f-4952-42ab-8f00-eb5466bc034c: 'Sequence Selection' # Sequence Selection
+    3bc00c8d-fc88-4b84-8a0c-be3a55e560c2: 'Image Block' # Image Block
+    3dd2a966-4bbb-4416-a526-f1b148f9a185: 'Top Margin' # Top Margin
+    3e2af911-7ec8-47ad-8c7c-90d1c38a26f8: Availability # Availability
+    3e76285f-1ad6-4274-8d5d-c0dd503dcf7e: Default # Default
+    3eb1a99b-ebe0-49d7-bd8c-fa6548fc6192: City # City
+    3f0a37c2-7006-42f8-bc31-3b4bb008a060: 'Image Primary' # Image Primary
+    4a0d1de2-826e-400f-998a-73e72d448fe0: 'Wifi Text' # Wifi Text
+    4ada747e-4657-4c72-8631-c16d1b81292a: 'Cards Displayed' # Cards Displayed
+    4b06473c-3b88-48b3-af83-ab4a681373bf: 'Link Only' # Link Only
+    4bc88fef-bc14-4959-94b7-2a3a3b36003b: 'Secondary Image' # Secondary Image
+    4c5e2986-7ec1-4cb3-ac20-2486461fa426: Simple # Simple
+    004cad73-0c5c-4ad6-b9ab-1c497b9f16d2: 'Caption Alignment' # Caption Alignment
+    4cda3fd3-960b-43ad-a65f-f95ce1795350: 'Chapter 1 Block 1' # Chapter 1 Block 1
+    4eee9827-8ff5-40bb-9cd0-0d1b5fe07531: 'Display Width' # Display Width
+    5a0a4720-336e-4516-9195-80080b36f783: 'Store Locator' # Store Locator
+    5ba4c3e6-9d87-4ae4-86c5-bf20e74c2e75: 'Image Url' # Image Url
+    5ba83fce-fdcb-4f60-b44c-850d08401c5a: Hub # Hub
+    5c059504-3934-4c58-9ebd-e70d62a9f563: Postcode # Postcode
+    5d5fb197-411b-401c-b4ea-4e8f9d5399fb: 'Special Opening Hours Title' # Special Opening Hours Title
+    5d8cc8ff-bbec-458b-9a6d-d1abc2657696: 'Footer Navigation' # Footer Navigation
+    5d913b95-736a-44a3-97be-05b758a98e93: City # City
+    05df358d-d670-48c9-8d7c-c221fd5468ed: Links # Links
+    5e6cba50-ed0a-4c2f-8f2b-3d9bb8ccd859: 'Parking Text' # Parking Text
+    5eb6e661-ea95-4fd7-91ae-6ffd6bad6e34: 'Mobile Image' # Mobile Image
+    5f120a1f-d3dd-4e3e-9287-88a337a20872: 'Container Width' # Container Width
+    5f873e75-55a1-42c2-b666-df08fb806bb2: 'Anchor ID' # Anchor ID
+    6ac5a5b4-d23a-45d3-96ee-a88d3695cacf: Homepage # Homepage
+    6affa850-c307-441a-9607-9ee8086a20bc: 'Bullet Text' # Bullet Text
+    6bb35e1e-c56f-43f3-9c33-1d1d4a8c6e3f: 'Special Opening Hours' # Special Opening Hours
+    6ce486c9-edfb-400e-ba38-1571a29e2b89: 'Facilities Title' # Facilities Title
+    6d6ee8f5-a402-47e8-b0f9-f1f91d320714: 'Body Text 1' # Body Text 1
+    6e9a27e5-f49c-4259-9366-9134675af68d: 'Display Width' # Display Width
+    6ff35013-5711-4397-80ed-9dc2e6d1455f: 'Chapter 3' # Chapter 3
+    7a40bccc-3b8a-4d69-aff3-9e6c233d1844: fullWidthText # fullWidthText
+    7aaeeed8-baa6-4eef-9613-3957ac520217: 'Top Margin' # Top Margin
+    7ba1a4c1-cf19-4715-9801-40e45e9718c8: Heading # Heading
+    07c372dc-9d86-4096-8307-39f751766ead: 'SVG Width' # SVG Width
+    7ca839a5-9e0c-4273-8bdb-3e09524409dc: Default # Default
+    07de9f75-707e-43d9-8ad4-818f6a130bc1: 'Mix Blend Primary' # Mix Blend Primary
+    7fb53f86-5845-4c7b-b224-cfeb7a4ccb69: 'Newsletter Sign Up Heading' # Newsletter Sign Up Heading
+    8b20e97d-ef32-45b5-ac8e-6fab8dd1ce68: Image # Image
+    8bca663d-d7f1-4f75-9f9f-191af28e5d90: '50/50 Image-Text' # 50/50 Image-Text
+    8bfccb96-33d6-48f2-bea7-201330e2507f: 'Right Image' # Right Image
+    8c99a7b5-ae42-4cae-aad1-37185eb9e95f: Timeline # Timeline
+    8caf6de2-9ba0-4a9c-80f0-2bc75606f803: 'Body Text' # Body Text
+    8cd34c54-e56e-4d0f-b7f3-714b08e692f2: 'Top Margin' # Top Margin
+    8e8677f4-0e7f-4976-9861-f6630813ed88: City # City
+    8f7d568d-0995-4008-ba37-1aa58a43ccbf: 'Store Longitude' # Store Longitude
+    8f7681a8-0124-45ee-b4e6-249b9ceab008: 'Desktop Order' # Desktop Order
+    9a143991-d8b7-4e75-a44e-9c01ac5b7f9f: Heading # Heading
+    9c7cba1c-9086-492a-a1a4-cdd843636742: 'Preview Card Excerpt' # Preview Card Excerpt
+    9c9559ff-6487-4a9f-98c2-195eec51b960: ImageLink # ImageLink
+    9d5b2fbd-103e-44d8-b773-6596a19974a6: CTA # CTA
+    9d517d4b-8758-4d08-8b80-d66dc8f42942: 'Hero Link Title' # Hero Link Title
+    9dd61af3-7ee2-493a-95c9-91351b27dab9: 'Container Width' # Container Width
+    9e0eb0f5-e82b-4993-9a12-124b35680fff: 'Vertical Margin' # Vertical Margin
+    9e13e553-8a35-47e5-91ad-70491e153b39: 'Read More Url' # Read More Url
+    9f585bea-52c2-4a1f-8571-408059133c3c: 'Stack Order' # Stack Order
+    9fd54791-71ae-46e9-885b-731daae13d77: 'Intro Text' # Intro Text
+    13f95c4d-8f3c-455f-b522-421154875948: 'Subscribe Button Text' # Subscribe Button Text
+    014f6ebf-7850-4cf6-ad76-967a93a7fd0a: 'Story Builder' # Story Builder
+    17f2a9b3-2207-43f0-91ae-185841727fea: 'Container Width' # Container Width
+    19f2bfe7-aac6-47f3-8257-4264507e63ab: 'Bottom Margin' # Bottom Margin
+    20b44775-3f47-4150-9c8c-5aabeeaadaa5: 'Quotee Text' # Quotee Text
+    21cffb54-7377-4668-bdd1-4c522663a155: 'Hero Title' # Hero Title
+    24e68050-74d6-499d-8806-3b9d2cd4ada4: Facilities # Facilities
+    25ec0f29-1bec-420a-b7a9-fdf330d81c9c: Postcode # Postcode
+    28c5e205-bd47-4172-ba18-634b37d3aeba: 'Bullet List Facilities' # Bullet List Facilities
+    30a8fd08-2242-4239-8d98-6f56c65592a4: 'Craft Portfolio' # Craft Portfolio
+    36e84900-df76-4b6d-acdd-76c115dce20a: 'Our World' # Our World
+    37be1f70-5bb8-45b8-bba3-c668dbd1ae57: 'Preview Card' # Preview Card
+    37c84801-5b23-4f65-8b3a-45bd751f52b5: 'Bottom Margin' # Bottom Margin
+    39dda1f7-d832-4cae-ad44-a2a1ce0b4101: Default # Default
+    40d5c6bf-b5ad-41a4-a361-c6af42b4ebee: 'Image 1 Link' # Image 1 Link
+    42d1fdc4-934e-4aec-8d5b-a73d09d60fb2: 'Inset Image' # Inset Image
+    43c88850-3b40-48f4-8bb0-778aa958f706: 'Phone Number' # Phone Number
+    44ab7489-71ee-4424-86d9-5aa711e81383: 'Primary Navigation' # Primary Navigation
+    44c08e23-d086-4187-8c6e-1d8f08fdeb5c: Homepage # Homepage
+    44ff2073-1ab8-4fe1-8ff7-6f0097284198: 'Inset Image Background Color' # Inset Image Background Color
+    48ff847d-a952-4d89-b9e6-e26a36e2e391: 'Image Caption Alignment' # Image Caption Alignment
+    54b01703-8cd9-43e2-815e-10950d4344e2: Image # Image
+    54f8b528-87cc-4780-9e76-f407cf5ff470: Default # Default
+    58adc603-5647-45fd-89c1-249280dc35c0: Default # Default
+    59eeba0c-9dec-4445-a276-cbaa251ad560: 'Anchor ID' # Anchor ID
+    60f6d621-5378-49ca-b0e7-98033cd6bd78: 'Newsletter Success Body' # Newsletter Success Body
+    61ee48a2-9711-4a23-896d-09ccddcba9cb: 'Chapter 2' # Chapter 2
+    64af2c1d-6e21-486d-a094-2fac3185d16b: 'Quote Text' # Quote Text
+    65acfefd-5719-4d29-9550-57b90b1be761: 'Rich Text Field' # Rich Text Field
+    66ccce15-c1dc-4a34-8e32-590a2173fc28: 'Chapter 1 Block 3' # Chapter 1 Block 3
+    070d2805-1bf4-402b-b249-cdfbfe4714e5: 'Blog Posts' # Blog Posts
+    71cff4c5-d0b9-4315-ba60-394651a5282c: 'Hero Title' # Hero Title
+    72dec14e-8c38-4aab-8d01-71d5adcc1423: 'Our Story Category' # Our Story Category
+    74c2f613-b47e-46c6-a920-a07b7e8e5dda: 'Chapter 1' # Chapter 1
+    76e1841d-473d-481e-898b-a2f56b435e96: 'Title Body Alignment' # Title Body Alignment
+    78e93f0b-65e5-4686-ab3c-1ee4016ea30a: 'Cards Displayed' # Cards Displayed
+    080cb232-c7e3-4939-a0a4-2ea15f7d8e51: 'Image 2 Link' # Image 2 Link
+    80d598e7-e0f5-47a7-b0d7-196913d807c2: '50/50 Image Quote' # 50/50 Image Quote
+    81ebdcfe-3ba4-402a-a0cb-2200cc362d65: 'Container Width' # Container Width
+    82a69453-6864-4218-9118-dc6b9a8493b9: 'Mix Blend Secondary' # Mix Blend Secondary
+    82d53a2d-afb3-4df5-8076-9054af892a9f: 'Top Block on Mobile' # Top Block on Mobile
+    83bc5521-552a-47c9-a738-80ef1c8d583a: 'Bottom Margin' # Bottom Margin
+    86cda4e1-28cc-4d84-8a29-8048d5e65de1: 'Image Caption URLs' # Image Caption URLs
+    88ccab2f-b7fa-4e69-9eae-eec93d612296: 'Body Text 1' # Body Text 1
+    89b6f926-9a25-439d-8a9b-1cb3d457bf80: Quote # Quote
+    90a6b69b-3888-4b92-b8e6-9cac85df8669: 'CTA Buttons' # CTA Buttons
+    98ed1ce0-f35a-4bbe-8a13-0ae31c08dc1e: 'Bottom Margin' # Bottom Margin
+    124a731a-2fc3-445c-9cbb-1f13c7439de8: Title # Title
+    124ac630-d17c-440f-8b69-3ef90a11004b: Images # Images
+    136c8ea5-d35b-469e-b90a-de8c40c54336: 'Intro Text' # Intro Text
+    210fb03d-b7ee-419f-8757-f800e610983d: Image # Image
+    0211bdba-4813-477a-9e80-356c54781ef1: 'Store Locator' # Store Locator
+    214ab3d8-a393-45fc-a37a-bdead817a38f: 'Hub Assets' # Hub Assets
+    235e1d23-2b4f-42e4-858e-9b93e7f6860f: 'Sequence Selection' # Sequence Selection
+    238b4131-db96-49dc-a3a4-0174c21defac: 'Anchor ID' # Anchor ID
+    258b9068-391d-4ce3-8bb2-b1d1e7376889: 'Read More URL' # Read More URL
+    275d27ab-de7c-4f71-b45b-2478cfc131ca: Store # Store
+    307fc856-663e-4f7d-8be7-24912e5ba8d7: Homepage # Homepage
+    0311c33f-299a-47e6-b9cb-82249d095e41: CTA # CTA
+    320c3607-27d2-4277-9187-2bbc0c7c1b7a: Image # Image
+    334dddee-5bb0-40de-a3f3-16e44504610c: 'Vimeo ID' # Vimeo ID
+    369c3e72-7833-434f-a42f-793b88a48eea: 'Inset 50-50' # Inset 50-50
+    475e9288-8c42-49a4-a232-0f25b7bd152a: anchorURL # anchorURL
+    0502b42a-28c7-4abf-85e7-022b2eb7518e: 'Hero Body' # Hero Body
+    541a9977-ef9f-4592-8c11-b946629b5cb8: 'Bottom Margin' # Bottom Margin
+    557a4951-b322-4511-acbc-f658925c82c1: 'Location Name' # Location Name
+    614c3540-7a2e-447c-b94d-cbc410a5542e: 'Store Images' # Store Images
+    633d19bb-4bbf-49f7-b1c5-07f857e16809: 'Section Meta Info' # Section Meta Info
+    659cd2bc-7c7d-48be-8a6c-33cb7cf5e72d: 'Image 50-50' # Image 50-50
+    683e8bc5-287f-43f5-bbde-cea43e376801: City # City
+    784fcb90-385b-4fb7-8473-b907c20ee371: Address # Address
+    852e1cd5-6111-444b-949e-8e24c0eebc12: 'Featured Section' # Featured Section
+    865f237d-a400-49a5-8881-a097257a3009: 'CTA Images' # CTA Images
+    892aa43b-fb91-4f15-8cc6-eaa661831cae: Timeline # Timeline
+    925d767b-d1d1-4090-a0e6-789486058c60: 'Body Text' # Body Text
+    981c40e4-ed0c-4f65-a2de-70a8b6c9cc63: Facilities # Facilities
+    1230c98e-139a-4490-93e8-fccc247668a7: 'CTA Title' # CTA Title
+    1285ee37-1b16-4b73-9cfd-aff3efc6eb70: 'Top Margin' # Top Margin
+    1346d3e6-6e80-4ba1-82bc-f69d0bf5afd1: 'Timeline Assets' # Timeline Assets
+    1353e060-18db-494a-ab95-433852a30ae6: 'Newsletter Sign Up Body' # Newsletter Sign Up Body
+    1533c2dc-793e-4117-a052-1018dcc7d559: Image # Image
+    2313d2e6-9c35-4082-9578-d4f0bf197786: 'Stockist Locations' # Stockist Locations
+    3481f8dc-e963-4f4d-a0a4-ad8417f6e461: 'Available Text' # Available Text
+    03539c83-f934-4725-99a9-af9461e774d7: 'Width Options' # Width Options
+    4041f7e0-6bc6-4506-a298-ac33c0c1a5de: 'Store Sub Header' # Store Sub Header
+    4044a603-09a5-4236-9ceb-ad91a8f7c371: 'Video ID' # Video ID
+    4472ad14-5bef-49a3-b862-9e67259065c2: Vimeo # Vimeo
+    4836cf7a-dc13-4a1b-be5a-066c7cb9c694: 'Hero Link Title' # Hero Link Title
+    5550c665-d896-4173-a001-6bb989266de5: Supertitle # Supertitle
+    6091a114-c249-44fa-9a4a-66baa92bfd3b: 'Regional Sign-Up' # Regional Sign-Up
+    6155d198-347a-4f92-a6f1-95d17fac1c00: 'Right Image' # Right Image
+    6566fdc0-6ee3-4353-81c1-a50d61f04635: 'Stockist Locator' # Stockist Locator
+    6743baf6-356c-43b2-aa93-1fe41a668040: 'Newsletter Success Heading' # Newsletter Success Heading
+    07461a48-987b-491a-88ea-9eef26f04a40: 'Body Text' # Body Text
+    7859f2ae-7e60-4d1b-9384-1b5d4c4a9487: 'Image Secondary' # Image Secondary
+    8184ba52-0687-44a7-85ad-1eabb842dab9: 'Heading and Strapline Alignment' # Heading and Strapline Alignment
+    8211a5c0-7eb2-4a8c-8cfd-40290bbdec5c: 'List Type' # List Type
+    8285f4de-483a-417a-8753-bb52558f3d53: CTA # CTA
+    8532cfde-67bd-4186-8380-fa789f6e8dfe: 'Main Content' # Main Content
+    8736ed42-d999-47e5-bbec-48c01e927f9e: Title # Title
+    8906e316-f334-40aa-bb40-734dfd6274e3: 'RTF Alignment' # RTF Alignment
+    23925bd6-1656-4009-a250-a367617a1d15: 'Store Assets' # Store Assets
+    27916aa3-ea5f-4fe1-9319-b0957d9b8e5e: 'Image URLs' # Image URLs
+    31771faf-d37d-4f7a-af5a-2e53bd331945: 'Rich Text Field' # Rich Text Field
+    41389d61-6fec-437a-b3c2-f56eebb1d84a: 'Desktop Order' # Desktop Order
+    41706c53-e274-422b-812a-e3f138e4f691: imageSecondary # imageSecondary
+    46355c78-58c6-4246-af17-67ccc52c511a: 'Container Width' # Container Width
+    48142dbb-4624-4bc4-adf9-0d20ac731937: 'SEO Keywords' # SEO Keywords
+    64640f48-ded0-4360-a314-6998b9b077a8: 'Heading Text Color' # Heading Text Color
+    82462dbf-0a00-46d5-b683-cfc45e26ee75: 'Mix Blend Secondary' # Mix Blend Secondary
+    146989b8-d3ac-4a7e-8ceb-d299d9f1d597: 'Anchor ID' # Anchor ID
+    0166109f-0f32-498c-89d1-5edc08542fa1: Postcode # Postcode
+    315162d7-575c-46df-9c04-5b4802087972: 'Mega Menu Handle' # Mega Menu Handle
+    323896fd-5863-4519-9c66-4b9f53d8aab7: 'Body Text 2' # Body Text 2
+    474093c5-0f29-4312-92eb-6daba63f461c: 'Store Builder' # Store Builder
+    586306dd-c031-4c5b-b3f9-8078cfa8fd9e: 'Container Width' # Container Width
+    668547f1-151e-4a53-967e-8424f70c2163: 'Body Text' # Body Text
+    849185c8-8667-41e8-926f-0012b531ebc0: 50-50 # 50-50
+    1174568e-1964-4387-893b-29fa7af85cfc: 'Anchor ID' # Anchor ID
+    3550947b-a8d2-47ce-ac53-bd77642cae86: 'Mix Blend Mode Multiply' # Mix Blend Mode Multiply
+    72444461-33a4-42fa-9d19-704f9d888f45: 'Mix Blend Primary' # Mix Blend Primary
+    77683430-50df-41f6-9b35-77a2001e01d8: 'Enable on Homepage' # Enable on Homepage
+    86480226-b160-4ca3-9a81-2160cd00952c: 'Transparent Primary Nav' # Transparent Primary Nav
+    a0d9b656-cda1-459e-ba24-3d1e13c7471f: 'Body and Title Color' # Body and Title Color
+    a1b87e87-0941-41ae-9860-76441e889be3: 'Image Urls and Caption' # Image Urls and Caption
+    a1f89e82-883a-49b0-ad77-05490c762aeb: 'Top Margin' # Top Margin
+    a3ee7031-288c-409f-ab27-1b4783a2198d: 'Stockist Locator' # Stockist Locator
+    a26e34a7-492d-41bc-9c60-2d8e6bd30584: Image # Image
+    a30a86da-69e9-47f6-abb6-b82b567cb5c6: 'Text Alignment' # Text Alignment
+    a146d795-daea-4647-928e-5d49262d76a9: 'Anchor ID' # Anchor ID
+    a219b171-fbe0-4a10-8c2a-2f21391f6455: Hub # Hub
+    a466e0e8-ba59-4132-8d40-73db9bcb34aa: 'Component Table' # Component Table
+    a480a8d5-3a8a-4c60-9d65-353ed92282fa: 'Container Width' # Container Width
+    a7520f9b-411b-4a62-9508-90b54dd1217c: Navigation # Navigation
+    a91544f5-3bb1-444d-99d8-5d008b3f839d: Title # Title
+    a9659155-2f78-41e8-82a4-724dbc20575e: 'Email Error Message' # Email Error Message
+    a9720823-f0a0-478c-848d-a599b8c4db5a: 'Newsletter Assets' # Newsletter Assets
+    aa2468fc-4de3-43f5-b86e-f967ca04b890: 'Search Label' # Search Label
+    aaef315c-fd20-4f2c-9ed4-8e53cff5afaa: imagePrimary # imagePrimary
+    abb8c52f-408f-4eed-bc0f-cf0e21564c88: 'Div ID' # Div ID
+    ac416c30-45ae-4d45-896d-bff7f86ffc43: 'Body Text' # Body Text
+    acd4849b-53d7-4cd7-a921-f59cd1ac5e5b: 'Read More Text' # Read More Text
+    ad0f6493-a149-48e5-9a34-ac5b61c7ff70: 'Email Submit Field Value' # Email Submit Field Value
+    ad3bd760-ae20-4f25-bf46-b98ab19cc2b2: 'Top Margin' # Top Margin
+    ae11c76a-e8f7-4e9f-8a17-b45dfe003d5e: 'Anchor ID' # Anchor ID
+    aec3f388-f651-4e63-aeff-ca02a1dc257d: 'Chapter Content Builder' # Chapter Content Builder
+    aeda56c8-0dfe-48c2-a8d4-e54a8d48906d: Homepage # Homepage
+    af32b788-44c0-4ef4-b5bf-539853d571f5: 'List Type' # List Type
+    b0d725c8-7014-4b78-92d8-43fb9159e5cb: 'Mix Blend Primary' # Mix Blend Primary
+    b0e6bfc1-8a01-4693-9767-ecd14d449147: 'Image Secondary' # Image Secondary
+    b3b13110-da32-4c55-aa91-f68d0d548c96: 'Container Width' # Container Width
+    b4a3639b-d0b6-40a1-b61b-bc74865e94bd: 'CTA Link' # CTA Link
+    b31b7c11-01c9-40f8-8eb0-905e390c60c3: 'Mix Blend Secondary' # Mix Blend Secondary
+    b78d2848-3680-4f07-8f04-4b69e65001d4: 'Navigation Color' # Navigation Color
+    b93f8a0a-6eb4-4cd8-9b13-7be628869d25: 'Sequence Selection' # Sequence Selection
+    b802a546-b9ab-4455-ad25-c13e85eeb760: 'Hero Body' # Hero Body
+    b6099bd4-2985-430a-8c4a-7f973ab4816f: 'Phone Number' # Phone Number
+    b39580e2-4ed1-48b8-9646-f863fab5d12c: 'Bottom Margin' # Bottom Margin
+    bb6e71a9-7046-496b-b952-215f3db1e92c: Title # Title
+    bd1853b4-fb4b-4fd8-ac9c-cdae94e05a76: 'Bottom Margin' # Bottom Margin
+    bdad8eca-eea5-499d-a98b-977c11195536: 'Image 1' # Image 1
+    bf4cbff0-5195-4ed6-866a-5d332970add1: 'Hero Background' # Hero Background
+    bf386f69-ee0d-4ad7-b0d7-d6f27b7e6e40: 'Navigation Assets' # Navigation Assets
+    c02c8abf-3d86-4496-84ac-a06287a04978: 'Image Url' # Image Url
+    c1c6c30c-a910-4ee3-a2a3-c512d99b55b9: 'Image Primary' # Image Primary
+    c2f315f1-b9b6-410c-bde3-ae211162bb50: 'Title and Body Vertical Position' # Title and Body Vertical Position
+    c5a9c69f-c9c5-4b8a-b217-3b955c88110c: 'Quotee Text' # Quotee Text
+    c5e112e4-4401-4bfc-bfe7-b72810ccb003: Latitude # Latitude
+    c6aa738c-d242-4392-91ae-12be2e2aa9ff: 'Featured Section' # Featured Section
+    c25cc899-7c44-4696-afc1-978b694aa466: 'Top Block on Mobile' # Top Block on Mobile
+    c56a955f-6c7b-4083-a66c-3410a13dde94: Image # Image
+    c83aa941-17c5-44d9-b7e3-22e2695facee: 'Hub Builder RTF' # Hub Builder RTF
+    c532afd8-2c89-4ca6-81d4-640fee9e6848: 'Background Color' # Background Color
+    c792b6ee-f07b-4884-ac3e-b34977268061: Hero # Hero
+    c648422e-2903-42a0-bb64-0d58e255b648: Title # Title
+    c6882203-0faa-4306-9789-f2c51e8d9baa: 'Body Text 2' # Body Text 2
+    ca9a1f00-dfb4-452e-a845-8ac8a3e51943: 'Image Captions' # Image Captions
+    cab5c64e-3e09-4b80-9423-d029f84c59c1: 'No Results Found Body' # No Results Found Body
+    cb6228a1-c73e-4f2b-9e7a-dd6747508787: 'Text Alignment' # Text Alignment
+    cd94d8fc-4779-44a4-b99c-61274600d161: 'Anchor ID' # Anchor ID
+    ce36fd90-2c42-4149-9069-8efacff1864c: CTA # CTA
+    cec20e9c-e453-4c33-b462-02c10f286193: 'Body Text' # Body Text
+    ceed43b6-2c2a-49e1-bb38-b3377b5e1d4d: 'Our Story Categories' # Our Story Categories
+    cf212ddf-bdbb-4ca5-a6df-6c392b47d4ad: 'Special Opening Hours Context' # Special Opening Hours Context
+    cfbd1ed0-230f-4687-b823-1579cd4b2bd1: 'Quote Text' # Quote Text
+    cfd74738-af19-42fb-8c3e-9fc23e144414: 'Image Setting' # Image Setting
+    d00be427-af0a-409d-b781-2ecd6768f3f5: Image # Image
+    d0163191-447d-4fbb-a346-16a7aed64b01: 'Hero Image' # Hero Image
+    d052ecb4-3250-4888-ace4-c55f119cbfc9: 'Social Icons' # Social Icons
+    d1bc604e-e445-47ed-9046-24d7574b9d61: List # List
+    d3efb4a6-1776-49a6-8264-8bd1620a96e5: 'Image 2' # Image 2
+    d7ccfece-1aec-4911-ab60-cd3b61294157: Email # Email
+    d7d78b5e-264f-4534-9084-50330511638c: imagePrimary # imagePrimary
+    d9ff42f5-0f1b-4e9f-a11a-8248dc9c4764: Email # Email
+    d90da05d-83fd-4f3e-8812-240808f0689f: 'Story Builder RTF' # Story Builder RTF
+    d289ad29-f1b5-42bc-b002-32246df47eda: 'Telephone Number' # Telephone Number
+    d418b984-3cca-433b-8644-f1f6763b9293: 'Opening Hours Title' # Opening Hours Title
+    d3372fd2-304a-41ea-93fa-d8427a52b7e1: 'Opening Hours' # Opening Hours
+    d7286dd6-902e-4abd-9c33-11c6dd4a8a76: 'Intro Text' # Intro Text
+    d6179036-bb08-4a4f-b0c9-62a5dd947147: Longitude # Longitude
+    da133668-3cc3-4bbb-a785-743488b0c71d: 'Craft Portfolio' # Craft Portfolio
+    daddfc12-0bb5-4eb8-ad74-472367d3e1c2: 'CTA Buttons' # CTA Buttons
+    dc3985ce-0f72-4644-b8f5-d57a2118552c: 'Video Options' # Video Options
+    dcccd1fc-1aa8-443a-b68d-8cc6986afb8d: '50/50 Image' # 50/50 Image
+    dd5a83f5-ea0c-496f-a259-8994149740fc: 'Chapter Title' # Chapter Title
+    de14e524-843d-45a7-9e8b-faf4e080ecfc: Email # Email
+    df9f5318-6c91-4e2f-9b2b-2d9aa8658901: 'Navigation Assets' # Navigation Assets
+    df62c93f-2dc5-4f5a-9f1e-8b6093858b10: isBlog # isBlog
+    dfcc0964-f078-48a1-82fe-8130e7daafee: 'Body Text' # Body Text
+    e1bc3c00-0f97-4e4a-9137-5da69ae75e7b: 'Navigation Handle' # Navigation Handle
+    e2bfded8-20a7-4ee2-8951-7f5c2e2727c7: 'Opening Hours' # Opening Hours
+    e8a7be28-6365-46a9-bc96-c49dac372e56: 'Store Latitude' # Store Latitude
+    e63c94a5-5cb5-4d9c-a8aa-519dcf887927: 'Special Opening Hours Context' # Special Opening Hours Context
+    e85d6911-6209-425a-9d61-8fd947aa6578: 'Opening Hours' # Opening Hours
+    e98fd005-c758-45a9-9003-59aef0a7e749: 'Chapter 4' # Chapter 4
+    e409a0d6-eeee-4658-80de-7cf388590afe: 'Preview Card Image' # Preview Card Image
+    e96748b9-4dfe-48be-a819-f09d40e86e0c: 'Intro Text' # Intro Text
+    e524654d-dfb0-49fb-83a1-314ab4958dde: 'Newsletter CTA Table' # Newsletter CTA Table
+    eb6872b1-4282-487a-96d6-b8402acda74d: 'Bottom Margin' # Bottom Margin
+    ed4519ef-9ee5-4642-95a2-693e7f00dd5c: 'Find Us Title' # Find Us Title
+    ee299e3e-0cef-4b40-905f-a70af6aa61dd: 'Phone Number' # Phone Number
+    ee3510ee-e4b2-4d41-b63a-dd61bc6ddbbb: 'Our Story' # Our Story
+    ef794e77-e9b4-42a6-9720-c8a79755ad35: 'Bottom Margin' # Bottom Margin
+    f1b35e16-27d1-452e-b5f9-f63ae4696f30: 'Navigation Variables' # Navigation Variables
+    f1d89faf-c50d-4904-909b-58e4c889522b: 'Override Container Width' # Override Container Width
+    f5e317c2-792b-4c86-aed5-e6a246941fe5: 'Bottom Margin' # Bottom Margin
+    f6a16c96-fac3-4064-8f7b-b30194ab2a6c: 'Top Margin' # Top Margin
+    f68b9d08-bae5-4f0a-9934-e9575962dead: 'Intro text' # Intro text
+    f328af62-8149-43e0-b740-2f5b3d7855f8: 'Disability Text' # Disability Text
+    f714f8dc-aa78-4c5a-9d43-940ff2cf1a26: 'Anchor ID' # Anchor ID
+    f802c62c-45c9-467d-92ff-d4cd96c85a67: 'SVG Overlay' # SVG Overlay
+    f862ba5b-b4b0-4ecd-a7a3-b7ed2684a41a: 'Search Placeholder' # Search Placeholder
+    f39617f8-c534-446b-95a7-a3bbba253289: 'Container Width' # Container Width
+    fa2019a4-2458-4e4c-8468-71e358822d05: 'Desktop Order' # Desktop Order
+    fab839df-d1fc-48f6-983a-aae11bce168f: List # List
+    face72ac-a16c-4a5d-a748-a55ed032f81a: 'Phone Number' # Phone Number
+    fbc4b678-453c-4c86-b36f-ed22d187d257: 'Top Margin' # Top Margin
+    fbe1837f-c3ea-4ea5-ab34-6e85acc4064b: imageSecondary # imageSecondary
+    fcbf1b0c-b0fb-4958-a49a-fa5a0bcf0080: Images # Images
+    feebf1c4-a6ea-4446-b099-d413a207c0f8: 'Hub Navigation Transforms' # Hub Navigation Transforms
+    ffcd52f5-c53f-4c54-a0d8-d8cb2824d241: 'Hub Index Config' # Hub Index Config
+    ffe3af0a-2498-4327-94e4-7080e684b88a: 'Read More Text' # Read More Text
+plugins:
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  geomate:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: LYNEJHK94K4Z5LAIP1O073MJ
+    schemaVersion: 2.0.7
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  twig-perversion:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: 'Craft Portfolio'
+  retryDuration: null
+  schemaVersion: 4.5.3.0
+  timeZone: Europe/London
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

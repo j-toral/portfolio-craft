@@ -1,0 +1,14 @@
+columnSuffix: cmexfenr
+contentColumnType: string(255)
+fieldGroup: 44c08e23-d086-4187-8c6e-1d8f08fdeb5c # Homepage
+handle: readMoreUrl
+instructions: 'This is the url of the read more button.'
+name: 'Read More Url'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

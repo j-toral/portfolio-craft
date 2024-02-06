@@ -1,0 +1,50 @@
+{# Getting all the posts #}
+{% set posts = craft.entries.section(sectionHandle).orderBy('postDate DESC').all() %}
+
+{# Initialising the previous and next blog #}
+{% set prevBlog = "" %}
+{% set nextBlog = "" %}
+
+{# Finding the current post and setting the next and previous buttons #}
+{% for post in posts %}
+  {% if post.title == entry.title %}
+    {% set params = craft.entries.section(sectionHandle).orderBy('postDate DESC') %}
+    {% set prevBlog = post.getPrev(params) %}
+    {% set nextBlog = post.getNext(params) %}
+
+    {% break %}
+
+  {% endif %}
+{% endfor %}
+
+
+{% block storyNavigation %}
+  {% if posts | length > 1 %}
+    <div>
+      <div class="max-w-narrow mx-auto pt-10 md:pt-14 md:pb-4">
+        {# Changing the position depending on whether this is the first, last, or anyother post #}
+        <div class="flex mx-6 mb-6 relative{% if entry.title == posts|first.title %} justify-end{% elseif entry.title == posts|last.title %} justify-start{% else %} justify-between{% endif %}">
+          {# Hiding this button if this is the first post #}
+          <div class="w-1/2 pr-2{% if entry.title == posts|first.title %} hidden{% endif %}">
+            <a href="{% if prevBlog != '' %}{{ prevBlog.url() }}{% endif %}" class="no-underline font-sans flex flex-col items-start">
+              {# Setting the svg of the arrow #}
+              {% include '_misc/arrowLeftSVG' with { 'classes': 'w-6 h-6 mb-4 stroke-black' } %}
+              <span class="text-lg mb-2 uppercase text-black">Previous</span>
+              <span class="uppercase text-black">{% if prevBlog != '' %}{{ prevBlog.title }}{% endif %}</span>
+            </a>
+          </div>
+          <span class="absolute bg-black left-1/2 h-full w-px"></span>
+          {# Hiding this button if this is the last post #}
+          <div class="w-1/2 pl-2{% if entry.title == posts|last.title %} hidden{% endif %}">
+            <a href="{% if nextBlog != '' %}{{ nextBlog.url() }}{% endif %}" class="no-underline font-sans flex flex-col items-end">
+              {# Setting the svg of the arrow #}
+              {% include '_misc/arrowRightSVG' with { 'classes': 'w-6 h-6 mb-4 stroke-black' } %}
+              <span class="text-lg mb-2 uppercase text-black">Next</span>
+              <span class="uppercase text-black text-right">{% if nextBlog != '' %}{{ nextBlog.title }}{% endif %}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

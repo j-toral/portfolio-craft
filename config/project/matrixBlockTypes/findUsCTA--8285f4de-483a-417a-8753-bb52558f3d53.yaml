@@ -1,0 +1,130 @@
+field: 474093c5-0f29-4312-92eb-6daba63f461c # Store Builder
+fieldLayouts:
+  7c093121-08b0-4a04-8f0c-b6af7ad65e3f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9d5b2fbd-103e-44d8-b773-6596a19974a6 # CTA
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51552f57-9b49-4069-b7ea-01956ffc6a5d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c50cc9d7-05e9-458c-bb68-463342e55ad9
+        userCondition: null
+fields:
+  9d5b2fbd-103e-44d8-b773-6596a19974a6: # CTA
+    columnSuffix: dgaabwtk
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: null
+    name: CTA
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Text'
+                -
+                  - handle
+                  - buttonText
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Url'
+                -
+                  - handle
+                  - buttonUrl
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Button Type'
+                -
+                  - handle
+                  - buttonType
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Solid
+                        -
+                          - value
+                          - btn-solid-dark
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Ghost
+                        -
+                          - value
+                          - btn-outline-dark
+                        -
+                          - default
+                          - false
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+            -
+              - col3
+              - btn-solid-dark
+      maxRows: 1
+      minRows: 1
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: findUsCTA
+name: CTA
+sortOrder: 3

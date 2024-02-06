@@ -1,0 +1,168 @@
+fieldLayouts:
+  79b09ec7-a701-451d-a2b9-11165143dbd0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 67bede6f-d589-4e00-b6db-2fd086e6ed0c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            heading: 'Primary Nav Type'
+            type: craft\fieldlayoutelements\Heading
+            uid: e57e0023-0a6a-4b1b-9be1-26537fba1d4e
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 78084c51-7735-4998-9af4-69ea9a22195c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: 86480226-b160-4ca3-9a81-2160cd00952c # Transparent Primary Nav
+                  uid: 2385ee3e-616e-41bd-8cc9-63dfd4c9a239
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: b78d2848-3680-4f07-8f04-4b69e65001d4 # Navigation Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c5248dbf-2018-4d76-972f-238660860c57
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 7780fec2-a914-4ffa-a091-4db9481eeda1
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: dd5a83f5-ea0c-496f-a259-8994149740fc # Chapter Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51cd6197-47ca-4b12-b319-392e05c19f01
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e409a0d6-eeee-4658-80de-7cf388590afe # Preview Card Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 672c2df4-168c-45c9-9827-0a2d8cad0ddb
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: bf4cbff0-5195-4ed6-866a-5d332970add1 # Hero Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec700a5b-62d6-4985-9312-1728b98859e4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0ae8bc92-1277-4a9a-87ef-f3438ecec920 # Video ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9bbc7bbd-ff52-4dbc-8f92-51258815bdd8
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 02be1ef0-11d5-4156-9682-01b20c7aa7af # Video Options
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 434a0415-0bd0-4d88-b8d4-203b7ddc67a4
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 6ac48bf1-8c69-42db-ac79-2794d352851a
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: aec3f388-f651-4e63-aeff-ca02a1dc257d # Chapter Content Builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 46a5b1f3-78e7-4697-a7b2-bcc41cd8cdc9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 59f6ef61-a8d2-4b74-adea-4fdaefe9bde3
+        userCondition: null
+handle: chapter4
+hasTitleField: true
+name: 'Chapter 4'
+section: 5ba83fce-fdcb-4f60-b44c-850d08401c5a # Hub
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 5
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

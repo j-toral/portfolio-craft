@@ -1,0 +1,45 @@
+columnSuffix: pkyqyueq
+contentColumnType: string
+fieldGroup: 8c99a7b5-ae42-4cae-aad1-37185eb9e95f # Timeline
+handle: imageSetting
+instructions: 'Select the layout format you wish to use for this timeline year entry.'
+name: 'Image Setting'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Single Image'
+        -
+          - value
+          - singleImage
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Double Image'
+        -
+          - value
+          - doubleImage
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 50-50
+        -
+          - value
+          - '5050'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

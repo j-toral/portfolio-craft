@@ -1,0 +1,45 @@
+columnSuffix: dkykvktu
+contentColumnType: string
+fieldGroup: 44c08e23-d086-4187-8c6e-1d8f08fdeb5c # Homepage
+handle: cardsDisplayed
+instructions: 'This is the number of cards shown in the section.'
+name: 'Cards Displayed'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '3'
+        -
+          - value
+          - '3'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '4'
+        -
+          - value
+          - '4'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '5'
+        -
+          - value
+          - '5'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

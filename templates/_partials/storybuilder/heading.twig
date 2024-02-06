@@ -1,0 +1,19 @@
+{# Block that contains the code for the heading #}
+{% block heading %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div {% if headingBlock.anchorId %}id="{{ headingBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%} class="px-4 flex items-center mx-auto{{ ' '~ headingBlock.containerWidth }}">
+    {# Setting the text allignment as well as the container width and the top and bottom margins #}
+    <div class="w-full{{ ' ' ~ headingBlock.headingAndStraplineAlignment }}{{ ' ' ~ headingBlock.topMargin }}{{ ' ' ~ headingBlock.bottomMargin }}">
+      {# Setting the headline to a h1 is no h1 exists, otherwise, setting it to an h2 #}
+      {% if not h1Used %}
+        <h1 class="uppercase">{{ headingBlock.heading }}</h1>
+      {% else %}
+        <h2 class="uppercase">{{ headingBlock.heading }}</h2>
+      {% endif %}
+      {# Setting the strapline only if it exists #}
+      {% if headingBlock.strapline %}
+        <p class="mt-1 uppercase text-xl md:text-2xl">{{ headingBlock.strapline }}</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

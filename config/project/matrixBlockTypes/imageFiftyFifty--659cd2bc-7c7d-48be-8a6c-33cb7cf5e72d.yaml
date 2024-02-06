@@ -1,0 +1,114 @@
+field: aec3f388-f651-4e63-aeff-ca02a1dc257d # Chapter Content Builder
+fieldLayouts:
+  4d3022af-34a1-4a14-bf55-b6e1a22ec638:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 1f086a0c-5dd4-43c6-b475-c06da7552b33 # Left Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05a7d019-3bc4-43ed-800b-576b4dd2838b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 8bfccb96-33d6-48f2-bea7-201330e2507f # Right Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a1b49992-266a-4a68-b9b1-9ac3112fe11f
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: f9ff3388-9fee-48e5-9e97-2089ef58d8bf
+        userCondition: null
+fields:
+  1f086a0c-5dd4-43c6-b475-c06da7552b33: # Left Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: leftImage
+    instructions: null
+    name: 'Left Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8bfccb96-33d6-48f2-bea7-201330e2507f: # Right Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: rightImage
+    instructions: null
+    name: 'Right Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:214ab3d8-a393-45fc-a37a-bdead817a38f' # Hub Assets
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: imageFiftyFifty
+name: 'Image 50-50'
+sortOrder: 4

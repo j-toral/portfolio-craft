@@ -1,0 +1,372 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  b13e03d3-f02c-4eca-a48b-b666e965ca3c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ae11c76a-e8f7-4e9f-8a17-b45dfe003d5e # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ffd70f1-7d3c-4fde-879b-5e01b329c349
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 81ebdcfe-3ba4-402a-a0cb-2200cc362d65 # Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2ac843f-380e-4c1c-ad43-cf9407ff8368
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 3dd2a966-4bbb-4416-a526-f1b148f9a185 # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 59b7549b-e774-4c8d-8529-9a9c65477aa9
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f5e317c2-792b-4c86-aed5-e6a246941fe5 # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ecd1d0e9-241e-495e-9f64-afbdda253231
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: daddfc12-0bb5-4eb8-ad74-472367d3e1c2 # CTA Buttons
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0b53239-cdf8-4469-87d9-4430e34867a0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e247361c-c295-471e-b3a4-0648ffc9ee0e
+        userCondition: null
+fields:
+  3dd2a966-4bbb-4416-a526-f1b148f9a185: # Top Margin
+    columnSuffix: qtyndple
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  81ebdcfe-3ba4-402a-a0cb-2200cc362d65: # Container Width
+    columnSuffix: hypgijts
+    contentColumnType: string
+    fieldGroup: null
+    handle: containerWidth
+    instructions: 'This sets the maximum width that the 50/50 will be contained at.'
+    name: 'Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  ae11c76a-e8f7-4e9f-8a17-b45dfe003d5e: # Anchor ID
+    columnSuffix: xcawutbr
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  daddfc12-0bb5-4eb8-ad74-472367d3e1c2: # CTA Buttons
+    columnSuffix: uksplksn
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaButtons
+    instructions: 'This table holds all the button requirements from 1 to 3 buttons'
+    name: 'CTA Buttons'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'CTA Text'
+                -
+                  - handle
+                  - ctaText
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'CTA Url'
+                -
+                  - handle
+                  - ctaUrl
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'CTA Type'
+                -
+                  - handle
+                  - ctaType
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - select
+                -
+                  - options
+                  -
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Solid
+                        -
+                          - value
+                          - btn-solid-dark
+                        -
+                          - default
+                          - true
+                    -
+                      __assoc__:
+                        -
+                          - label
+                          - Ghost
+                        -
+                          - value
+                          - btn-outline-dark
+                        -
+                          - default
+                          - false
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+            -
+              - col3
+              - btn-solid-dark
+      maxRows: 3
+      minRows: 1
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  f5e317c2-792b-4c86-aed5-e6a246941fe5: # Bottom Margin
+    columnSuffix: yxbzoplc
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: ctaButtons
+name: 'CTA Buttons'
+sortOrder: 9

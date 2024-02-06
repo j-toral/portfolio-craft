@@ -1,0 +1,22 @@
+columnSuffix: qdqhskyj
+contentColumnType: text
+fieldGroup: 0211bdba-4813-477a-9e80-356c54781ef1 # Store Locator
+handle: storeSubHeader
+instructions: null
+name: 'Store Sub Header'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+  columnType: text
+  defaultTransform: null
+  enableSourceEditingForNonAdmins: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

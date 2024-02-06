@@ -1,0 +1,23 @@
+columnSuffix: qlowarwo
+contentColumnType: text
+fieldGroup: 8c99a7b5-ae42-4cae-aad1-37185eb9e95f # Timeline
+handle: introText
+instructions: 'This is the larger font size text, used as an intro/heading.'
+name: 'Intro Text'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  ckeConfig: 4b06473c-3b88-48b3-af83-ab4a681373bf # Link Only
+  columnType: text
+  defaultTransform: null
+  purifierConfig: null
+  purifyHtml: true
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

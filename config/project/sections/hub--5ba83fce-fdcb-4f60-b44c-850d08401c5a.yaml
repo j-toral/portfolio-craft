@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: hub
+name: Hub
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  30a8fd08-2242-4239-8d98-6f56c65592a4: # Craft Portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: hub/_entry.twig
+    uriFormat: 'hub/{slug}'
+structure:
+  maxLevels: 1
+  uid: 5f02d88b-718c-407b-9a9b-cc6b96263d24
+type: structure

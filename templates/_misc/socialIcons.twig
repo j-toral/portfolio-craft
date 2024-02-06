@@ -1,0 +1,25 @@
+<!--
+  Renders the social media icons
+
+  Accepts:
+  - classes: pass in the classes for styling
+-->
+
+{% if skip == "true" %}
+  {% set svgTable = table | filter( svg => svg.socialName | lower != "weibo" and svg.socialName | lower != "wechat" ) %}
+{% else %}
+  {% set svgTable = table %}
+{% endif %}
+
+{% block socialIcons %}
+  <ul class="flex space-x-3.5 ty:space-x-5">
+    {% for socialIcon in svgTable %}
+      <li class="w-5 h-5">
+        <a href="{{ socialIcon.socialUrl }}" class="w-full h-full flex items-center justify-center">
+          {%- include socialIcon.assetUrl with { 'classes': "fill-black w-full h-full" } -%}
+          <span class="sr-only">{{ socialIcon.socialName }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

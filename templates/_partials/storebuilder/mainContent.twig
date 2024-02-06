@@ -1,0 +1,6 @@
+{# Block that contains the code for the main content #}
+{% block mainBlock %}
+  <div class="mb-4">
+    {{ mainContent.findUsRTF | retconAttr('p', { 'class': 'mb-4' }, false) }}
+  </div>
+{% endblock %}

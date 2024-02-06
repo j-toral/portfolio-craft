@@ -1,0 +1,114 @@
+{# Extending the regular layout template #}
+{% extends '_layouts/layout' %}
+
+{% set blocks = entry.stockistLocations.all() %}
+
+{% block main %}
+  <link rel="stylesheet" href="/assets/css/leaflet@1.9.4.css" />
+  <link rel="stylesheet" href="/assets/css/MarkerCluster.css" />
+  <link rel="stylesheet" href="/assets/css/MarkerCluster.Default.css" />
+  <script src="/assets/js/leaflet@1.9.4.min.js"></script>
+  <script src="/assets/js/leaflet.markercluster.js"></script>
+  <script src="/assets/js/stockistLocator.js" defer></script>
+
+  <div class="px-4 pb-4 max-w-screen-2xl mx-auto">
+    <div class="w-full flex flex-col items-center">
+      <h1 class="mx-auto mt-16 mb-14 leading-none text-center">{{ entry.title }}</h1>
+      <div class="flex flex-col justify-center items-center md:flex-row w-full mb-6 md:mb-16 max-w-2xl">
+        <label for="stockist-search" class="mb-4 md:mb-0 md:mr-4 text-lg">{{ entry.searchLabel }}</label>
+        <div class="w-full md:w-auto relative flex py-2 border grow">
+          <span class="flex items-center pl-3">
+            {% include "_misc/searchSVG" with { "classes": "w-6 h-6 stroke-black" } %}
+          </span>
+          <input type="text" id="stockist-search" placeholder="{{ entry.searchPlaceholder }}" class="border-0 focus:border-0 focus:ring-0 h-full w-full bg-neutral-300 bg-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:h-[45rem]">
+      <div class="relative w-full h-full">
+        <div id="store-spinner" class="hidden w-full h-full absolute bg-black/25 items-center justify-center z-10">
+          {% include "_misc/spinnerSVG" with { "classes": "w-8 h-8 mr-2 animate-spin text-white fill-black" } %}
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div id="store-scroll-container" class="max-h-[45rem] md:h-full border flex flex-col overflow-y-scroll relative">
+          <div id="no-results" class="hidden p-14 border-b flex-col justify-center items-center">
+            <h2 class="mb-4">{{ entry.noResultsHeader }}</h2>
+            <h3 class="mb-4">{{ entry.noResultsBody }}</h3>
+          </div>
+
+          {% for block in blocks %}
+            <div class="p-14 border-y first:border-t-0 last:border-b-0 parentClickContainer" onclick="flyToMarker(event)">
+
+              <span id="{{ loop.index }}-latitude" class="hidden hiddenLatitude">{{ block.latitude }}</span>
+              <span id="{{ loop.index }}-longitude" class="hidden hiddenLongitude">{{ block.longitude }}</span>
+
+              <div class="mb-5">
+                <h3 class="uppercase mb-4">{{ block.city }}</h3>
+                <h2 class="mb-4">{{ block.locationName }}</h2>
+                <p>{{ block.address }}</p>
+                <p>T: <a href="tel:{{ block.telNum }}">{{ block.telNum }}</a></p>
+              </div>
+
+              <div>
+                <p>{{ entry.availableText }}</p>
+                {% for available in block.availability %}
+                  <p>{{ available.label }}</p>
+                {% endfor %}
+              </div>
+
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 order-first md:order-none">
+        <div id="map" class="w-full h-96 md:h-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <script defer="defer">
+      const markerOnClick = (event) => {
+          const stockistContainer = document.getElementById('store-scroll-container');
+
+          scrollStockistList(event, stockistContainer);
+      }
+
+      let map = L.map('map').setView([55, -4], 5);
+
+      L.tileLayer('https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z} ', {
+          maxZoom: 19,
+          attribution: '© Google Maps'
+      }).addTo(map);
+
+      let stockistIcon = L.icon({
+          iconUrl: '/assets/img/stockist-icon.png',
+          shadowUrl: '/assets/img/shadow-icon.png',
+
+          iconSize:     [42, 42],
+          shadowSize:   [42, 42],
+          iconAnchor:   [-21, 42],
+          shadowAnchor: [12, 42],
+      });
+
+      let mapHTMLElement = document.getElementById('map');
+
+      let markers = L.markerClusterGroup();
+
+      {% for block in blocks %}
+          markers.addLayer(L.marker([parseFloat({{ block.latitude }}), parseFloat({{ block.longitude }})], {icon: stockistIcon, title: "{{ block.locationName | lower ~ ' ' ~ block.city | lower }}"}).on('click', markerOnClick));
+      {% endfor %}
+
+      map.addLayer(markers);
+
+      const flyToMarker = (event) => {
+          const parent = event.target.closest('.parentClickContainer');
+
+          const latitude = parseFloat(parent.querySelector('.hiddenLatitude').innerText);
+          const longitude = parseFloat(parent.querySelector('.hiddenLongitude').innerText);
+
+          map.flyTo([latitude, longitude], 14);
+      }
+  </script>
+{% endblock %}

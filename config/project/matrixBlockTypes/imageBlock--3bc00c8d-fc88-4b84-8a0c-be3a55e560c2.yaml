@@ -1,0 +1,645 @@
+field: 014f6ebf-7850-4cf6-ad76-967a93a7fd0a # Story Builder
+fieldLayouts:
+  0ebef3f6-e3f4-4bab-80e5-9d383ddd10ec:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5f873e75-55a1-42c2-b666-df08fb806bb2 # Anchor ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5db1b566-a361-4da2-a23b-8f0792a202c1
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f1d89faf-c50d-4904-909b-58e4c889522b # Override Container Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: efa40d5c-d728-42d7-8163-d86244aba90f
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: ad3bd760-ae20-4f25-bf46-b98ab19cc2b2 # Top Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 086fa836-b86a-4f15-b8bb-91dd3554318a
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 541a9977-ef9f-4592-8c11-b946629b5cb8 # Bottom Margin
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35b221e6-7a13-437b-be78-c4341a7f08cb
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: fcbf1b0c-b0fb-4958-a49a-fa5a0bcf0080 # Images
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c5d8769-c5b7-4414-b59a-38f9340f17bd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 27916aa3-ea5f-4fe1-9319-b0957d9b8e5e # Image URLs
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c98f0fcb-36aa-4a67-9437-dc4dd38f7b0e
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: ca9a1f00-dfb4-452e-a845-8ac8a3e51943 # Image Captions
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32f7c642-fbf2-45a5-a552-202dccb1b085
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 86cda4e1-28cc-4d84-8a29-8048d5e65de1 # Image Caption URLs
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a459fba7-737f-43c3-8f0c-d80303dab61f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 48ff847d-a952-4d89-b9e6-e26a36e2e391 # Image Caption Alignment
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d1c88f8-7d5a-4a9f-8ef9-b037c8b959d0
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: 2fb7482a-ad5f-4b6c-ba8d-084fbfd855cf
+        userCondition: null
+fields:
+  5f873e75-55a1-42c2-b666-df08fb806bb2: # Anchor ID
+    columnSuffix: nckhrsui
+    contentColumnType: text
+    fieldGroup: null
+    handle: anchorId
+    instructions: 'Add this to give the block a specific unique ID to target with CSS or anything else. This input should be in all lower-case with no spaces. Use hyphens instead of spaces.'
+    name: 'Anchor ID'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  48ff847d-a952-4d89-b9e6-e26a36e2e391: # Image Caption Alignment
+    columnSuffix: fdyaiwtm
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageCaptionAlignment
+    instructions: 'This dropdown determines the text alignment for the image captions.'
+    name: 'Image Caption Alignment'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - text-left
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - text-center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - text-right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  86cda4e1-28cc-4d84-8a29-8048d5e65de1: # Image Caption URLs
+    columnSuffix: tteahyli
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageCaptionUrls
+    instructions: 'These are the links for the captions that appear under each respective image.'
+    name: 'Image Caption URLs'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Caption URL 1'
+                -
+                  - handle
+                  - captionUrl1
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Caption URL 2'
+                -
+                  - handle
+                  - captionUrl2
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Caption URL 3'
+                -
+                  - handle
+                  - captionUrl3
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+      defaults: null
+      maxRows: 1
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  541a9977-ef9f-4592-8c11-b946629b5cb8: # Bottom Margin
+    columnSuffix: xtoiqtzg
+    contentColumnType: string
+    fieldGroup: null
+    handle: bottomMargin
+    instructions: 'This is the spacing for the bottom of the block.'
+    name: 'Bottom Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mb-0
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mb-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mb-regular
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mb-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  27916aa3-ea5f-4fe1-9319-b0957d9b8e5e: # Image URLs
+    columnSuffix: bggglbin
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageUrls
+    instructions: 'These are the links for the images that are selected.'
+    name: 'Image URLs'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image 1 URL'
+                -
+                  - handle
+                  - imageUrl1
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image 2 URL'
+                -
+                  - handle
+                  - imageUrl2
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image 3 URL'
+                -
+                  - handle
+                  - imageUrl3
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - url
+      defaults: null
+      maxRows: 1
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  ad3bd760-ae20-4f25-bf46-b98ab19cc2b2: # Top Margin
+    columnSuffix: cfgvpffr
+    contentColumnType: string
+    fieldGroup: null
+    handle: topMargin
+    instructions: 'This is the spacing for the top of the block.'
+    name: 'Top Margin'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - mt-0
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - mt-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - mt-regular
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - mt-large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  ca9a1f00-dfb4-452e-a845-8ac8a3e51943: # Image Captions
+    columnSuffix: pjdhvthd
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageCaptions
+    instructions: 'These are the captions that appear under each respective image.'
+    name: 'Image Captions'
+    searchable: false
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Caption 1'
+                -
+                  - handle
+                  - imageCaption1
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Caption 2'
+                -
+                  - handle
+                  - imageCaption2
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col3
+            -
+              __assoc__:
+                -
+                  - heading
+                  - 'Image Caption 3'
+                -
+                  - handle
+                  - imageCaption3
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults: null
+      maxRows: 1
+      minRows: 0
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  f1d89faf-c50d-4904-909b-58e4c889522b: # Override Container Width
+    columnSuffix: vrwkilwq
+    contentColumnType: string
+    fieldGroup: null
+    handle: overrideContainerWidth
+    instructions: 'This overrides the maximum width that the image block will be contained at rather than calculating it depending on how many images were added.'
+    name: 'Override Container Width'
+    searchable: false
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - 1
+        -
+          __assoc__:
+            -
+              - label
+              - Regular
+            -
+              - value
+              - container
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Extra Narrow'
+            -
+              - value
+              - max-w-x-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Narrow
+            -
+              - value
+              - max-w-narrow
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - max-w-medium
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  fcbf1b0c-b0fb-4958-a49a-fa5a0bcf0080: # Images
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: "This field takes up to 3 images and calculates the container width depending on the amount of images unless specifically overridden. All images should be the same aspect ratio. \r\nSingle image width 1600px - For multiple images width 800px."
+    name: Images
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 3
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:aeda56c8-0dfe-48c2-a8d4-e54a8d48906d' # Homepage
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+          -
+            - conditionRules
+            -
+              -
+                __assoc__:
+                  -
+                    - class
+                    - craft\elements\conditions\assets\FileTypeConditionRule
+                  -
+                    - uid
+                    - 56210617-50af-43fe-b33a-39a4a95dc25b
+                  -
+                    - operator
+                    - in
+                  -
+                    - values
+                    -
+                      - image
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:070d2805-1bf4-402b-b249-cdfbfe4714e5' # Blog Posts
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: imageBlock
+name: 'Image Block'
+sortOrder: 4

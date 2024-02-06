@@ -1,0 +1,40 @@
+{# Get all images from the matrix block #}
+{% set image = imageQuote5050Block.image.one() %}
+
+{# Block that contains the code for the Image 50/50 Text Block #}
+{% block image5050QuoteBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if imageQuote5050Block.anchorId %} id="{{ imageQuote5050Block.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %} class="px-4">
+    {# Adding the container width as well as the top and borrom margins #}
+    <div class="{{ imageQuote5050Block.containerWidth ~ ' ' }}mx-auto grid grid-cols-1 md:grid-cols-2 gap-8{{ ' ' ~ imageQuote5050Block.topMargin }}{{ ' ' ~ imageQuote5050Block.bottomMargin }}">
+      <div class="relative">
+        {# Adding anchor tags if there is an image url #}
+        {% if imageQuote5050Block.imageUrl %}<a href="{{ imageQuote5050Block.imageUrl }}">{% endif %}
+          <img class="h-full w-full object-cover" src="/images/{{ image.url }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}">
+          {# Closing anchor tags if there is an image url #}
+          {% if imageQuote5050Block.imageUrl %}</a>{% endif %}
+      </div>
+      {# Setting order-first to the text if the image is set to being on the right #}
+      <div class="flex flex-col justify-center items-center py-4{% if imageQuote5050Block.mobileStack and imageQuote5050Block.sequenceSelection %} order-first md:order-first{% elseif imageQuote5050Block.mobileStack %} order-first md:order-none{% elseif imageQuote5050Block.sequenceSelection %} order-none md:order-first{% endif %}">
+        <div>
+          {# Setting the container width and the top and bottom margins on the figure class #}
+          <figure>
+            {# Setting the quote and the quote svg into a blockquote tag #}
+            <blockquote class="tracking-wider text-xl md:text-2xl text-center">
+              {# Setting the svg of the quote #}
+              {% include '_misc/quoteSVG' with { 'classes': 'w-8 h-8 inline-flex -mt-12 fill-black' } %}
+              {# Italic Quote Text #}
+              <em>
+                {{ imageQuote5050Block.quoteText }}
+              </em>
+              {# If statement that only prints the figcaption if the quotee exists #}
+              {% if imageQuote5050Block.quoteeText %}
+                <figcaption class="text-lg">- {{ imageQuote5050Block.quoteeText }}</figcaption>
+              {% endif %}
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

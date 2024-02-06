@@ -1,0 +1,13 @@
+{# Block that contains the code for the CTA Buttons #}
+{% block ctaButtonsBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div {% if ctaButtonsBlock.anchorId %}id="{{ ctaButtonsBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif%} class="px-4 flex items-center justify-center">
+    {# Setting the container width and the top and bottom margins on the div #}
+    <div class="gap-5 flex flex-col md:flex-row justify-center items-center{{ ' ' ~ ctaButtonsBlock.containerWidth }}{{ ' ' ~ ctaButtonsBlock.topMargin }}{{ ' ' ~ ctaButtonsBlock.bottomMargin }}">
+      {# For loop for the CTA table #}
+      {% for button in ctaButtonsBlock.ctaButtons %}
+        <a href="{{ button.ctaUrl }}" class="btn {{ button.ctaType }}">{{ button.ctaText }}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

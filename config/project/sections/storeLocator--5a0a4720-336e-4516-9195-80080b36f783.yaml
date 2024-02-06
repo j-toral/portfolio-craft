@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: storeLocator
+name: 'Store Locator'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  30a8fd08-2242-4239-8d98-6f56c65592a4: # Craft Portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: store-locator/_entry.twig
+    uriFormat: 'visit-us/{slug}'
+structure:
+  maxLevels: 1
+  uid: cd8477f5-aba4-42aa-bd86-f66751d7d68f
+type: structure

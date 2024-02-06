@@ -1,0 +1,69 @@
+{# Transform sizes for the different breakpoints #}
+{% set smMobileTransform = { width: 640, height: 1280 } %}
+{% set mdDesktopTransform = { width: 752, height: 423 } %}
+{% set lgDesktopTransform = { width: 1008, height: 567 } %}
+{% set twoXLDesktopTransform = { width: 1600, height: 900 } %}
+
+{# Trying to get the svgOverlay #}
+{% set svgImage = heroBlock.svgOverlay.one() %}
+
+{# Block that contains the code for the hero #}
+{% block hero %}
+  {# Container div for hero image #}
+  {# Setting the id lower case and replacing any spaces with hyphens #}
+  {# Calling the hero image vertical margin directly as it brings in a tailwind class #}
+  {# Adding top padding if the nav is not transparent #}
+  {# Adding mx-auto and container tailwind classes depending of the value of the widthOptions dropdown #}
+  <div{% if heroBlock.anchorId %} id="{{ heroBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %}>
+    <div  class="relative overflow-hidden {{ heroBlock.verticalMargin }}{% if heroBlock.widthOptions %} mx-auto container{% endif %}">
+      <div class="max-w-full">
+        {# Setting the div to justify-center and items-center if there is an svgOverlay, otherwise calling the horizontal and vertival position variables directly #}
+        <div class="relative flex{% if svgImage %} justify-center items-center{% else %} {{ heroBlock.titleAndBodyHorizontalPosition }} {{ heroBlock.titleAndBodyVerticalPosition }}{% endif%} sm:overflow-hidden h-full aspect-[9/16] md:aspect-video">
+          {# Hero Background Image #}
+          <div class="absolute inset-0">
+            {# Getting the image and mobile image from the block #}
+            {% set image = heroBlock.image.one() %}
+            {% set mobileImage = heroBlock.mobileImage.one() %}
+
+            <picture>
+              {# Setting the source srcsets for the picture tags for breakpoints if a mobile image is added to the entry #}
+              {% if mobileImage %}
+                <source media="(max-width: 639px)" srcset="/images/{{ mobileImage.getUrl() }}" />
+                <source media="(max-width: 767px)" srcset="/images/{{ mobileImage.url }}" />
+              {# Setting the source srcset if there is no mobile image #}
+              {% else %}
+                <source media="(max-width: 767px)" srcset="/images/{{ image.getUrl() }}" />
+              {% endif %}
+              <source media="(max-width: 1023px)" srcset="/images/{{ image.getUrl() }}" />
+              <source media="(max-width: 1535px)" srcset="/images/{{ image.getUrl() }}" />
+              <img class="h-full w-full object-cover" src="{% if heroBlock.widthOptions %}/images/{{ image.getUrl() }}{% else %}/images/{{ image.url }}{% endif %}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}">
+            </picture>
+
+          </div>
+          {# Hero Content Block #}
+          {# Determining whether there is an svgOverlay, otherwise rendering the title and body #}
+          {% if svgImage %}
+            <div class="relative w-full h-full flex items-center justify-center py-16">
+              <img src="/images/{{ svgImage.url }}" alt="{% if not svgImage.alt %}Alt Text SVG{% else %}{{ svgImage.alt }}{% endif %}" width="{{ heroBlock.svgWidth }}%" class="max-h-[75%]">
+            </div>
+          {# Creating the title and body text  #}
+          {% elseif heroBlock.heroTitle or heroBlock.heroBody %}
+            <div class="relative">
+              <div class="p-4 max-w-prose{{ ' ' ~ heroBlock.titleBodyAlignment }}">
+                {# Setting the color of the text using inline styles from the hexidecimal variables on the admin side #}
+                {% if heroBlock.heroTitle %}
+                  <h1 class="uppercase" style="color: {{ heroBlock.bodyAndTitleColor }};">{{ heroBlock.heroTitle }}</h1>
+                {% endif %}
+                {% if heroBlock.heroBody %}
+                  <div style="color: {{ heroBlock.bodyAndTitleColor }};">
+                    {{ heroBlock.heroBody | retconAttr('p', { 'class': 'uppercase text-xl md:text-2xl' }) }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

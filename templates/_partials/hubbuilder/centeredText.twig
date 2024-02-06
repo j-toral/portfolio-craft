@@ -1,0 +1,47 @@
+{# Creating the transforms for the different breakpoints #}
+{% set xlTransform = { mode: 'crop', width: 1200, height: 675 } %}
+{% set mdTransform = { mode: 'crop', width: 1024, height: 576 } %}
+{% set smallestTransform = { mode: 'crop', width: 774, height: 1376 } %}
+
+{# Getting the image #}
+{% set image = centeredTextBlock.image.one() %}
+
+{# Block that contains the code for the heading #}
+{% block centeredText %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div>
+    {# Setting the w-full #}
+    {# Adding styles if there is an image #}
+    <div class="relative flex items-center justify-center px-4 w-full{% if image %} h-max min-h-[100vmax] text-white overflow-hidden lg:min-h-screen{% endif %}">
+      {# Rendering the image if it exists #}
+      {% if image %}
+        <div class="absolute inset-0">
+          <picture>
+            <source media="(min-width: 1536px)" srcset="{{ image.url }}">
+            <source media="(min-width: 1280px)" srcset="{{ image.getUrl(xlTransform) }}">
+            <source media="(min-width: 768px)" srcset="{{ image.getUrl(mdTransform) }}">
+            <img src="{{ image.getUrl(smallestTransform) }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="object-cover w-full h-full">
+          </picture>
+        </div>
+      {% endif %}
+      <div class="relative py-24 lg:py-32 max-w-xs sm:max-w-xl md:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl font-sans flex flex-col items-center{% if centeredTextBlock.cta | length > 0 %} space-y-11{% else %} space-y-10{% endif %}">
+        {# Changing the decoration of the anchor tags if there is an image #}
+        <div class="max-w-2xl flex flex-col{% if centeredTextBlock.cta | length > 0 %} space-y-11{% else %} space-y-10{% endif %}">
+          {% if image %}
+            {{ centeredTextBlock.richTextField | retconAttr('a', { 'class': 'decoration-white font-sans' }) }}
+          {% else %}
+            {{ centeredTextBlock.richTextField }}
+          {% endif %}
+        </div>
+
+        {% if centeredTextBlock.cta | length > 0 %}
+          <div>
+            <a href="{{ centeredTextBlock.cta[0].buttonUrl }}" class="btn {{ centeredTextBlock.cta[0].buttonType }}">{{ centeredTextBlock.cta[0].buttonText }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+

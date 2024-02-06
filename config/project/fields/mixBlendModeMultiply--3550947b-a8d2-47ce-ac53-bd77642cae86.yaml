@@ -1,0 +1,14 @@
+columnSuffix: lazpjkwn
+contentColumnType: boolean
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: mixBlendModeMultiply
+instructions: 'Let the background show through the image'
+name: 'Mix Blend Mode Multiply'
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

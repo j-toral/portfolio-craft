@@ -1,0 +1,20 @@
+columnSuffix: hjuqzjwm
+contentColumnType: integer(10)
+fieldGroup: 1f0bf44d-ae4f-4e27-b3a0-78c91c9851fa # Common
+handle: videoID
+instructions: 'ID for the vimeo video'
+name: 'Video ID'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: none
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

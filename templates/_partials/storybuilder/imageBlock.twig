@@ -1,0 +1,69 @@
+{# Getting all the images from the matrix block and the count of the array #}
+{% set images = imageBlock.images.all() %}
+{% set imageCount = images | length %}
+
+{# Transform sizes for the different breakpoints #}
+{% set xNarrowTransform = { mode: 'fit', width: 384 / imageCount } %}
+{% set narrowTransform = { mode: 'fit', width: 768 / imageCount } %}
+{% set mediumTransform = { mode: 'fit', width: 1024 / imageCount } %}
+{% set regularTransform = { mode: 'fit', width: 1536 / imageCount } %}
+
+{# Getting the container width depending on the image count #}
+{# Unless the user overrides the container width, setting the variable to the block override #}
+{% if imageBlock.overrideContainerWidth == "none" %}
+  {% if imageCount < 3 %}
+    {% set containerWidth = "max-w-narrow" %}
+  {% else %}
+    {% set containerWidth = "max-w-medium" %}
+  {% endif %}
+{% else %}
+  {% set containerWidth = imageBlock.overrideContainerWidth %}
+{% endif %}
+
+{# Getting the correct transform depending on the container width #}
+{% switch containerWidth %}
+  {% case 'max-w-x-narrow' %}
+    {% set containerTransform = xNarrowTransform %}
+  {% case 'max-w-narrow' %}
+    {% set containerTransform = narrowTransform %}
+  {% case 'max-w-medium' %}
+    {% set containerTransform = mediumTransform %}
+  {% case 'container' %}
+    {% set containerTransform = regularTransform %}
+{% endswitch %}
+
+{# Block that contains the code for the Image Block #}
+{% block imageBlock %}
+  {# Adding an id if the admin user added an anchor id #}
+  <div{% if imageBlock.anchorId %} id="{{ imageBlock.anchorId | lower | replace({ ' ': '-' }) }}"{% endif %} class="px-4">
+    {# Bringing in the container width and setting the grid cols at mid depending on image count #}
+    {# Setting the top and bottom margin #}
+    <div class="mx-auto{{ ' ' ~ containerWidth }} grid grid-cols-1 gap-y-6 md:grid-cols-{{ imageCount }} md:gap-x-6{{ ' ' ~ imageBlock.topMargin }}{{ ' ' ~ imageBlock.bottomMargin }}">
+      {# For loop that loops through all the images in the image array #}
+      {% for image in images %}
+        {# Parent div for the images and the captions #}
+        <div>
+          {# If statement that adds an anchor tag if a url exits for the image #}
+          {% if imageBlock.imageUrls | length and attribute(imageBlock.imageUrls[0], 'imageUrl' ~ loop.index ) %}<a href="{{ attribute(imageBlock.imageUrls[0], 'imageUrl' ~ loop.index ) }}">{% endif %}
+          {# Image tag that gets the correct transform #}
+          <img src="/images/{{ image.getUrl() }}" alt="{% if not image.alt %}Alt Text{% else %}{{ image.alt }}{% endif %}" class="w-full">
+          {# If statement that adds exit anchor tag if a url exits for the image #}
+          {% if imageBlock.imageUrls | length and attribute(imageBlock.imageUrls[0], 'imageUrl' ~ loop.index ) %}</a>{% endif %}
+
+          {# If statement that determines whether there are any captions #}
+          {% if imageBlock.imageCaptions | length %}
+            {# Parent for the anchor tag and captions and setting the caption alignment #}
+            <div class="{{ imageBlock.imageCaptionAlignment }}">
+              {# If statement that adds an anchor tag if a url exits for the heading #}
+              {% if imageBlock.imageCaptionUrls | length and attribute(imageBlock.imageCaptionUrls[0], 'captionUrl' ~ loop.index ) %}<a href="{{ attribute(imageBlock.imageCaptionUrls[0], 'captionUrl' ~ loop.index ) }}">{% endif %}
+              {# Heading tag from the table in the matrix block #}
+              <p class="mt-4">{{ attribute(imageBlock.imageCaptions[0], 'imageCaption' ~ loop.index ) }}</p>
+              {# If statement that adds an anchor tag if a url exits for the heading #}
+              {% if imageBlock.imageCaptionUrls | length and attribute(imageBlock.imageCaptionUrls[0], 'captionUrl' ~ loop.index ) %}</a>{% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

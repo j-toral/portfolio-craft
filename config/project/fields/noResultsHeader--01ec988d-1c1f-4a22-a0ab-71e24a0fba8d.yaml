@@ -1,0 +1,19 @@
+columnSuffix: hbaacavp
+contentColumnType: text
+fieldGroup: 0211bdba-4813-477a-9e80-356c54781ef1 # Store Locator
+handle: noResultsHeader
+instructions: null
+name: 'No Results Found Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
