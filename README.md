@@ -30,3 +30,8 @@ Full build and deployment system for the Portfolio "CraftCMS" website.
 - Make sure the DDEV server is up and running ddev
 - Frontend [https://portfolio-craft.ddev.site](https://portfolio-craft.ddev.site)
 - Control Panel [https://portfolio-craft.ddev.site/admin](https://portfolio-craft.ddev.site/admin)
+
+## Static Site Content
+
+- A static site has been deployed using GitHub Pages to showcase the portfolio easily without the need for creating a Docker/DDEV container
+- The site can be accessed at [https://j-toral.github.io/portfolio-craft/](https://j-toral.github.io/portfolio-craft/)
